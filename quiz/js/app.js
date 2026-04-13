@@ -12,6 +12,7 @@ import {
   getRecentAttempts,
   clearAll,
 } from "./quiz-storage.js";
+import { initTheme } from "./theme.js";
 
 const els = {
   progressFill: document.getElementById("progress-fill"),
@@ -32,7 +33,6 @@ const els = {
   btnNext: document.getElementById("btn-next"),
   btnFinish: document.getElementById("btn-finish"),
   questionJump: document.getElementById("question-jump"),
-  chips: document.querySelectorAll(".chip"),
   scoreValue: document.getElementById("score-value"),
   scoreSummary: document.getElementById("score-summary"),
   reviewList: document.getElementById("review-list"),
@@ -44,11 +44,11 @@ const els = {
   btnClearStorage: document.getElementById("btn-clear-storage"),
 };
 
+initTheme();
+
 /** @type {ReturnType<normalizeQuestion>[]} */
 let queue = [];
 let index = 0;
-/** @type {Record<number, 'confident'|'unsure'|'review'|''>} */
-let confidence = {};
 /** @type {Record<number, { choiceIndex: number, correct: boolean }>} */
 let answers = {};
 
@@ -106,12 +106,6 @@ function renderQuestion() {
     showFeedback(answered.correct);
   }
 
-  // Confidence chips
-  const level = confidence[q.order] || "";
-  els.chips.forEach((chip) => {
-    chip.classList.toggle("active", chip.dataset.level === level);
-  });
-
   const stat = getQuestionStat(q.order);
   if (stat && stat.seen > 0) {
     const acc = Math.round((stat.correctCount / stat.seen) * 100);
@@ -162,15 +156,6 @@ function showFeedback(ok) {
   els.feedback.textContent = ok ? "Correct." : "Not quite — the highlighted answer is correct.";
 }
 
-function setConfidence(level) {
-  const q = queue[index];
-  if (!q) return;
-  confidence[q.order] = confidence[q.order] === level ? "" : level;
-  els.chips.forEach((chip) => {
-    chip.classList.toggle("active", chip.dataset.level === confidence[q.order]);
-  });
-}
-
 function goNext() {
   if (!queue.length) return;
   index = (index + 1) % queue.length;
@@ -203,9 +188,10 @@ function updateJumpHighlight() {
   const buttons = els.questionJump.querySelectorAll(".jump-btn");
   buttons.forEach((btn, i) => {
     const q = queue[i];
-    const done = q && answers[q.order];
+    const a = q ? answers[q.order] : null;
     btn.classList.toggle("jump-btn--current", i === index);
-    btn.classList.toggle("jump-btn--answered", !!done);
+    btn.classList.toggle("jump-btn--correct", !!a?.correct);
+    btn.classList.toggle("jump-btn--wrong", !!a && !a.correct);
   });
   const currentBtn = buttons[index];
   if (currentBtn) {
@@ -278,7 +264,6 @@ function showResults() {
 function restart() {
   index = 0;
   answers = {};
-  confidence = {};
   els.viewResults.classList.add("hidden");
   els.viewQuiz.classList.remove("hidden");
   buildJumpNav();
@@ -370,7 +355,6 @@ async function init() {
       queue = filtered.length ? filtered : bank.questions.map(normalizeQuestion);
       index = 0;
       answers = {};
-      confidence = {};
       els.viewStart.classList.add("hidden");
       els.viewQuiz.classList.remove("hidden");
       buildJumpNav();
@@ -402,10 +386,6 @@ async function init() {
       clearAll();
       ensureBankContext(bank);
       renderProgressPanel();
-    });
-
-    els.chips.forEach((chip) => {
-      chip.addEventListener("click", () => setConfidence(chip.dataset.level));
     });
 
     document.addEventListener(

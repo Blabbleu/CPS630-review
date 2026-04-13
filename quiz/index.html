@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CPS630 — Practice Quiz</title>
+    <script>
+      (function () {
+        try {
+          var k = "cps630-theme";
+          var p = localStorage.getItem(k);
+          var dark =
+            p === "dark" || (p !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("theme-dark", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="css/atelier.css" />
   </head>
   <body>
@@ -48,62 +60,50 @@
 
           <p id="load-error" class="status-banner bad hidden" role="alert"></p>
 
-          <button type="button" class="btn btn-primary" id="btn-start">Begin</button>
+          <div class="btn-row">
+            <button type="button" class="btn btn-secondary js-theme-toggle" id="btn-theme-start">
+              Theme: Auto
+            </button>
+            <button type="button" class="btn btn-primary" id="btn-start">Begin</button>
+          </div>
         </div>
 
         <div id="view-quiz" class="hidden">
-          <header class="top-bar" aria-label="Quiz progress">
-            <div class="top-bar-inner">
-              <div class="brand-row">
-                <span class="brand-mark">CPS630</span>
-                <span id="progress-meta" class="meta-muted"></span>
-              </div>
-              <div class="progress-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                <div id="progress-fill" class="progress-fill"></div>
+          <div class="quiz-outer">
+            <div class="quiz-head-sticky">
+              <div class="card quiz-sticky-card">
+                <div class="quiz-sticky-top" aria-label="Quiz progress">
+                  <div class="brand-row">
+                    <span class="brand-mark">CPS630</span>
+                    <div class="brand-row-end">
+                      <span id="progress-meta" class="meta-muted"></span>
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-theme-compact js-theme-toggle"
+                        id="btn-theme-quiz"
+                      >
+                        Theme: Auto
+                      </button>
+                    </div>
+                  </div>
+                  <div class="progress-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div id="progress-fill" class="progress-fill"></div>
+                  </div>
+                </div>
+                <div class="nav-toolbar quiz-sticky-nav" role="toolbar" aria-label="Question navigation">
+                  <button type="button" class="btn btn-secondary" id="btn-prev" title="Previous question">
+                    Previous
+                  </button>
+                  <button type="button" class="btn btn-secondary" id="btn-next" title="Next question">
+                    Next
+                  </button>
+                  <button type="button" class="btn btn-primary" id="btn-finish">Finish session</button>
+                </div>
               </div>
             </div>
-          </header>
 
-          <div class="quiz-body">
-            <div class="card explore-nav">
-              <p class="label-md" style="margin-bottom: 0.75rem">Explore</p>
-              <p class="meta-muted explore-nav-hint" style="margin: 0 0 1rem; font-size: 0.875rem">
-                Move between questions anytime — answering is optional until you finish.
-                <span class="kbd-hint">←</span> previous ·
-                <span class="kbd-hint">→</span> next
-              </p>
-              <div class="nav-toolbar">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  id="btn-prev"
-                  title="Previous question (←)"
-                  aria-label="Previous question, keyboard shortcut Left Arrow"
-                >
-                  Previous
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  id="btn-next"
-                  title="Next question (→)"
-                  aria-label="Next question, keyboard shortcut Right Arrow"
-                >
-                  Next
-                </button>
-                <button type="button" class="btn btn-primary" id="btn-finish">Finish session</button>
-              </div>
-              <details class="nav-jump-details">
-                <summary class="nav-jump-summary">Jump to question</summary>
-                <div
-                  id="question-jump"
-                  class="question-jump"
-                  role="navigation"
-                  aria-label="All questions"
-                ></div>
-              </details>
-            </div>
-
+            <div class="quiz-columns">
+              <div class="quiz-body quiz-main-column">
             <p id="question-tag" class="label-md" style="margin-bottom: 0.75rem"></p>
             <p id="question-history" class="question-history meta-muted hidden" aria-live="polite"></p>
             <h2 id="question-stem" class="title-lg"></h2>
@@ -117,13 +117,18 @@
               aria-live="polite"
             ></div>
 
-            <div class="confidence-row">
-              <span class="confidence-label">Confidence</span>
-              <button type="button" class="chip" data-level="confident">Confident</button>
-              <button type="button" class="chip" data-level="unsure">Unsure</button>
-              <button type="button" class="chip" data-level="review">Review</button>
+              </div>
+              <aside class="quiz-sidebar" aria-label="Question index">
+                <div class="quiz-sidebar-inner">
+                  <p class="label-md" style="margin-bottom: 0.75rem">Jump to question</p>
+                  <div
+                    id="question-jump"
+                    class="question-jump question-jump--side"
+                    role="navigation"
+                  ></div>
+                </div>
+              </aside>
             </div>
-
           </div>
         </div>
 
@@ -150,6 +155,7 @@
                 <button type="button" class="btn btn-secondary" data-results-action="restart">
                   Practice again
                 </button>
+                <button type="button" class="btn btn-secondary js-theme-toggle">Theme: Auto</button>
               </div>
             </div>
             <h2 class="title-lg results-review-heading">Review misses</h2>
