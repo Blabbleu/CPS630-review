@@ -28,13 +28,14 @@ const els = {
   questionStem: document.getElementById("question-stem"),
   options: document.getElementById("options"),
   feedback: document.getElementById("feedback"),
+  btnPrev: document.getElementById("btn-prev"),
   btnNext: document.getElementById("btn-next"),
+  btnFinish: document.getElementById("btn-finish"),
+  questionJump: document.getElementById("question-jump"),
   chips: document.querySelectorAll(".chip"),
   scoreValue: document.getElementById("score-value"),
   scoreSummary: document.getElementById("score-summary"),
   reviewList: document.getElementById("review-list"),
-  btnRestart: document.getElementById("btn-restart"),
-  btnHome: document.getElementById("btn-home"),
   loadError: document.getElementById("load-error"),
   statsPanel: document.getElementById("stats-panel"),
   statsSummary: document.getElementById("stats-summary"),
@@ -76,7 +77,6 @@ function renderQuestion() {
   els.options.innerHTML = "";
   els.feedback.classList.add("hidden");
   els.feedback.textContent = "";
-  els.btnNext.disabled = true;
 
   const answered = answers[q.order];
 
@@ -104,7 +104,6 @@ function renderQuestion() {
 
   if (answered) {
     showFeedback(answered.correct);
-    els.btnNext.disabled = false;
   }
 
   // Confidence chips
@@ -123,6 +122,7 @@ function renderQuestion() {
     els.questionHistory.classList.add("hidden");
   }
 
+  updateJumpHighlight();
   setProgress();
 }
 
@@ -153,7 +153,7 @@ function selectOption(choiceIndex) {
   }
 
   showFeedback(correct);
-  els.btnNext.disabled = false;
+  updateJumpHighlight();
 }
 
 function showFeedback(ok) {
@@ -172,11 +172,44 @@ function setConfidence(level) {
 }
 
 function goNext() {
-  if (index < queue.length - 1) {
-    index += 1;
-    renderQuestion();
-  } else {
-    showResults();
+  if (!queue.length) return;
+  index = (index + 1) % queue.length;
+  renderQuestion();
+}
+
+function goPrev() {
+  if (!queue.length) return;
+  index = (index - 1 + queue.length) % queue.length;
+  renderQuestion();
+}
+
+function buildJumpNav() {
+  els.questionJump.innerHTML = "";
+  queue.forEach((_, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "jump-btn";
+    b.textContent = String(i + 1);
+    b.setAttribute("aria-label", `Question ${i + 1} of ${queue.length}`);
+    b.addEventListener("click", () => {
+      index = i;
+      renderQuestion();
+    });
+    els.questionJump.appendChild(b);
+  });
+}
+
+function updateJumpHighlight() {
+  const buttons = els.questionJump.querySelectorAll(".jump-btn");
+  buttons.forEach((btn, i) => {
+    const q = queue[i];
+    const done = q && answers[q.order];
+    btn.classList.toggle("jump-btn--current", i === index);
+    btn.classList.toggle("jump-btn--answered", !!done);
+  });
+  const currentBtn = buttons[index];
+  if (currentBtn) {
+    currentBtn.scrollIntoView({ block: "nearest", inline: "nearest" });
   }
 }
 
@@ -185,14 +218,20 @@ function showResults() {
   els.viewResults.classList.remove("hidden");
 
   let correctN = 0;
+  let answeredCount = 0;
   queue.forEach((q) => {
     const a = answers[q.order];
+    if (a) answeredCount += 1;
     if (a?.correct) correctN += 1;
   });
   const total = queue.length;
   const pct = total ? Math.round((correctN / total) * 100) : 0;
+  const skipped = total - answeredCount;
   els.scoreValue.textContent = `${pct}%`;
-  els.scoreSummary.textContent = `${correctN} of ${total} correct.`;
+  let summary = `${correctN} of ${total} correct`;
+  if (skipped > 0) summary += ` · ${skipped} not answered`;
+  summary += ".";
+  els.scoreSummary.textContent = summary;
 
   els.reviewList.innerHTML = "";
   queue.forEach((q) => {
@@ -242,6 +281,7 @@ function restart() {
   confidence = {};
   els.viewResults.classList.add("hidden");
   els.viewQuiz.classList.remove("hidden");
+  buildJumpNav();
   renderQuestion();
 }
 
@@ -333,12 +373,23 @@ async function init() {
       confidence = {};
       els.viewStart.classList.add("hidden");
       els.viewQuiz.classList.remove("hidden");
+      buildJumpNav();
       renderQuestion();
     });
 
+    els.btnPrev.addEventListener("click", goPrev);
     els.btnNext.addEventListener("click", goNext);
-    els.btnRestart.addEventListener("click", restart);
-    els.btnHome.addEventListener("click", goHome);
+    els.btnFinish.addEventListener("click", () => {
+      if (!queue.length) return;
+      showResults();
+    });
+    els.viewResults.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-results-action]");
+      if (!btn) return;
+      const action = btn.getAttribute("data-results-action");
+      if (action === "home") goHome();
+      if (action === "restart") restart();
+    });
 
     els.btnClearStorage.addEventListener("click", () => {
       if (
@@ -357,16 +408,35 @@ async function init() {
       chip.addEventListener("click", () => setConfidence(chip.dataset.level));
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (els.viewQuiz.classList.contains("hidden")) return;
-      const q = queue[index];
-      if (!q || answers[q.order]) {
-        if (e.key === "Enter" && !els.btnNext.disabled) goNext();
-        return;
-      }
-      const map = { "1": 0, "2": 1, "3": 2, "4": 3 };
-      if (e.key in map) selectOption(map[e.key]);
-    });
+    document.addEventListener(
+      "keydown",
+      (e) => {
+        if (els.viewQuiz.classList.contains("hidden")) return;
+        if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+        if (e.target instanceof HTMLSelectElement) return;
+
+        const goNextKey = e.key === "ArrowRight" || e.code === "ArrowRight";
+        const goPrevKey = e.key === "ArrowLeft" || e.code === "ArrowLeft";
+        if (goNextKey) {
+          e.preventDefault();
+          e.stopPropagation();
+          goNext();
+          return;
+        }
+        if (goPrevKey) {
+          e.preventDefault();
+          e.stopPropagation();
+          goPrev();
+          return;
+        }
+
+        const q = queue[index];
+        if (!q || answers[q.order]) return;
+        const map = { "1": 0, "2": 1, "3": 2, "4": 3 };
+        if (e.key in map) selectOption(map[e.key]);
+      },
+      true
+    );
   } catch (err) {
     console.error(err);
     els.loadError.classList.remove("hidden");

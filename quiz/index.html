@@ -65,6 +65,45 @@
           </header>
 
           <div class="quiz-body">
+            <div class="card explore-nav">
+              <p class="label-md" style="margin-bottom: 0.75rem">Explore</p>
+              <p class="meta-muted explore-nav-hint" style="margin: 0 0 1rem; font-size: 0.875rem">
+                Move between questions anytime — answering is optional until you finish.
+                <span class="kbd-hint">←</span> previous ·
+                <span class="kbd-hint">→</span> next
+              </p>
+              <div class="nav-toolbar">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  id="btn-prev"
+                  title="Previous question (←)"
+                  aria-label="Previous question, keyboard shortcut Left Arrow"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  id="btn-next"
+                  title="Next question (→)"
+                  aria-label="Next question, keyboard shortcut Right Arrow"
+                >
+                  Next
+                </button>
+                <button type="button" class="btn btn-primary" id="btn-finish">Finish session</button>
+              </div>
+              <details class="nav-jump-details">
+                <summary class="nav-jump-summary">Jump to question</summary>
+                <div
+                  id="question-jump"
+                  class="question-jump"
+                  role="navigation"
+                  aria-label="All questions"
+                ></div>
+              </details>
+            </div>
+
             <p id="question-tag" class="label-md" style="margin-bottom: 0.75rem"></p>
             <p id="question-history" class="question-history meta-muted hidden" aria-live="polite"></p>
             <h2 id="question-stem" class="title-lg"></h2>
@@ -85,21 +124,36 @@
               <button type="button" class="chip" data-level="review">Review</button>
             </div>
 
-            <div class="btn-row">
-              <button type="button" class="btn btn-primary" id="btn-next" disabled>Next</button>
-            </div>
           </div>
         </div>
 
-        <div id="view-results" class="hidden">
-          <p class="brand-mark">Results</p>
-          <p id="score-value" class="score-ring"></p>
-          <p id="score-summary" class="results-summary"></p>
-          <h2 class="title-lg" style="margin-bottom: 1rem">Review misses</h2>
-          <div id="review-list"></div>
-          <div class="btn-row">
-            <button type="button" class="btn btn-primary" id="btn-home">Home</button>
-            <button type="button" class="btn btn-secondary" id="btn-restart">Practice again</button>
+        <div id="view-results" class="hidden view-results">
+          <div class="results-body">
+            <p class="brand-mark">Results</p>
+            <p id="score-value" class="score-ring"></p>
+            <p id="score-summary" class="results-summary"></p>
+            <p class="results-footer-hint meta-muted">
+              <a href="#results-actions-panel" class="results-skip-link">Jump to actions</a>
+              <span class="results-footer-hint-sep"> · </span>
+              Home and Practice again stay fixed at the bottom while you scroll.
+            </p>
+            <div
+              id="results-actions-panel"
+              class="results-footer"
+              role="toolbar"
+              aria-label="Results actions"
+              data-results-footer
+              tabindex="-1"
+            >
+              <div class="results-footer-inner">
+                <button type="button" class="btn btn-primary" data-results-action="home">Home</button>
+                <button type="button" class="btn btn-secondary" data-results-action="restart">
+                  Practice again
+                </button>
+              </div>
+            </div>
+            <h2 class="title-lg results-review-heading">Review misses</h2>
+            <div id="review-list"></div>
           </div>
         </div>
       </main>
