@@ -1,0 +1,6337 @@
+{
+  "title": "CPS630 Practice Question Bank",
+  "source": "Copy of Exam__CPS630_PractiseQuestionBank - Sheet1.csv",
+  "questionCount": 211,
+  "questions": [
+    {
+      "order": 1,
+      "number": 1,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What does the \"sandbox\" in a web browser do?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Stores passwords permanently",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Deletes browsing history",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Limits web app access to the local system",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Increases internet speed",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 2,
+      "number": 2,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Which component of MERN is a document-oriented NoSQL database?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "React",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Express.js",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Node.js",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "MongoDB",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 3,
+      "number": 3,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What is the main role of React in the MERN stack?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Handling server-side logic",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Building the user interface",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Managing the database",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Encrypting passwords",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 4,
+      "number": 4,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Node.js is built on which JavaScript engine?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Firefox's SpiderMonkey",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Edge's Chakra",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Chrome's V8",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Safari's JavaScriptCore",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 5,
+      "number": 5,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What does \"non-blocking I/O\" in Node.js allow?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Blocking user input",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Stopping all data flow",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Handling many requests efficiently",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Slower server processing",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 6,
+      "number": 6,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "In the Client-Server model, which entity initiates communication?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The Router",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "The Database",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "The Client",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "The Server",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 7,
+      "number": 7,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What type of file is CSS?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Static",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Superscript",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Non-blocking",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Dynamic",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 8,
+      "number": 8,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Which JavaScript keyword is \"function scoped\" and not recommended?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "arrow",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "var",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "let",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "const",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 9,
+      "number": 9,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What is \"Business Logic\" also known as?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "System logic",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Database logic",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Domain logic",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "UI logic",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 10,
+      "number": 10,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "According to the restaurant analogy, what represents \"Application Logic\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The ingredients",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "The kitchen workflow",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "The food prices",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "The menu items",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 11,
+      "number": 11,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Why is the Server considered a \"Single Source of Truth\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "It is the only device on the network",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "It stores data on the client",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "It never makes mistakes",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "It holds centralized, shared data",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 12,
+      "number": 12,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Which architecture involves every node acting as both client and server?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Single-tier",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Monolithic",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Peer-to-Peer (P2P)",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Microservices",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 13,
+      "number": 13,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "HTTP is a \"stateless\" protocol. What does this mean?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "No data can be sent",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Each request is independent",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "The connection is always open",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "The server saves every user action",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 14,
+      "number": 14,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What is the purpose of HTTPS?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Deleting user cookies",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Encrypting data in transit",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Making websites load faster",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Reducing server costs",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 15,
+      "number": 15,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "In an HTTP request, where are the \"Method\" and \"Path\" located?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Headers",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Request line",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Metadata",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Body",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 16,
+      "number": 16,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Which HTTP method is used to retrieve data without side effects?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "POST",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "DELETE",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "PUT",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "GET",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 17,
+      "number": 17,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Why is the POST method considered \"not idempotent\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "It is safer than GET",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "It deletes data accidentally",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Multiple calls create multiple resources",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "It only works once",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 18,
+      "number": 18,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Which method is used to replace an entire resource with new data?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "GET",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "PUT",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "PATCH",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "POST",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 19,
+      "number": 19,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What is a \"Safe\" HTTP method?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "One that requires a password",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "One that only admins use",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "One that doesn't modify server state",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "One that is encrypted",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 20,
+      "number": 20,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What does the status code \"201 Created\" signify?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Server error",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Unauthorized access",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Success: new resource created",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Page not found",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 21,
+      "number": 21,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "In REST design, what should URIs represent?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Actions (Verbs)",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "CSS classes",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "JavaScript functions",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Resources (Nouns)",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 22,
+      "number": 22,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Which URI traditionally represents a specific user with ID 42?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "/api/users/42",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "/api/actions/42",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "/api/users?id=42",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "/api/getUser42",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 23,
+      "number": 23,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What does \"JSON\" stand for?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Just Some Online News",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Java Standard Object Name",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "JavaScript Object Notation",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Joint System Online Network",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 24,
+      "number": 24,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Express.js provides \"Middleware.\" What is its purpose?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Replacing React",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Adding functions to the request cycle",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Speeding up CSS rendering",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Storing browser cookies",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 25,
+      "number": 25,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "In modern JS, which keyword defines a variable that cannot be reassigned?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "const",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "let",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "static",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "var",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 26,
+      "number": 26,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What does REST stand for?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Representational State Transfer",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "JavaScript Runtime Transfer",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Remote Entity State Transfer",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Resource Exchange Standard Transfer",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 27,
+      "number": 27,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "In the MERN workflow, what format is data usually sent from Server to Client?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "JSON",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "XML only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Plain text only",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Binary protobuf",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 28,
+      "number": 28,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Which architecture is typically used by large websites like Netflix and Uber to scale?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Microservices (distributed services)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Single monolithic binary only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Pure peer-to-peer with no servers",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Desktop-only two-tier",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 29,
+      "number": 29,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What separates HTTP headers from the body in a request?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A blank line (CRLF) between headers and body",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "A semicolon",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A tab character",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "The string '---'",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 30,
+      "number": 30,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Which HTTP header specifies the format of the request body?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Content-Type",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Accept",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "User-Agent",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Cache-Control",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 31,
+      "number": 31,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What is the \"Safe\" way to retry a request after a network failure?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Retry using idempotent/safe semantics (e.g., GET) or documented retry tokens",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Always blindly retry POST",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Disable all retries",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Switch to FTP",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 32,
+      "number": 32,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What does \"Separation of Concerns\" achieve in web architecture?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Splitting responsibilities so each part can evolve independently",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Putting all code in one file",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Avoiding APIs",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Client-only logic with no server",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 33,
+      "number": 33,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "In a React SPA, where does the application primarily run?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "In the user's browser (client)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Only on the server CPU",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Only on a CDN edge node",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Only inside the database",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 34,
+      "number": 34,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Which status code range indicates a \"Server Error\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "5xx",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "1xx",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "3xx",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "4xx",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 35,
+      "number": 35,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What does the principle \"one URL = one thing\" refer to?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "REST-style resource identification (each URL names one resource)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "One CSS class per HTML file",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "One database per browser tab",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "One IP address per API call",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 36,
+      "number": 36,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Which of these is a \"Sub-resource\" URI?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "/users/42/orders",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "/getUserOrders",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "/api/action?user=42",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "/users/orders/42/all",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 37,
+      "number": 37,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What is the core characteristic of an \"Arrow Function\" in JS?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Lexical `this` (inherits from enclosing scope) and concise syntax",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Always hoisted like `var`",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Cannot return values",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Requires the `new` keyword",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 38,
+      "number": 38,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "MongoDB stores data in what type of documents?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "BSON / JSON-like documents",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Fixed-width relational rows only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "CSV tables only",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Plain .txt logs",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 39,
+      "number": 39,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Which tool is used as the primary IDE in the class?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Visual Studio Code",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "IntelliJ only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Windows Notepad",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Xcode only",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 40,
+      "number": 40,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What does \"SaaS\" stand for?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Software as a Service",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Storage as a Service",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Security as a Service",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Systems as a Service",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 41,
+      "number": 41,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Why are web apps \"SaaS\" friendly?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Central hosting, updates for all users, access via browser",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "They require USB installation",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "They cannot use HTTPS",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "They are offline-only",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 42,
+      "number": 42,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Which HTTP method is used for \"Partial Updates\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "PATCH",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "GET",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "DELETE",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "TRACE",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 43,
+      "number": 43,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "In the restaurant analogy, who is the \"Client\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The customer (diner)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "The chef",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "The ingredients",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "The menu board",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 44,
+      "number": 44,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What is the main disadvantage of a \"Monolithic\" architecture?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Harder to scale/deploy independently; failure or change can affect the whole system",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Too many small Git branches",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Cannot use MongoDB",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Cannot render HTML",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 45,
+      "number": 45,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What is \"Idempotency\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The same end state when an operation is applied multiple times with the same inputs",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Only GET requests allowed",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Means 'encrypted'",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Requires WebSockets",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 46,
+      "number": 46,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "Which layer handles \"Business Logic\" in the MERN stack?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The server-side application layer (Express/Node routes and services)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Only the MongoDB shell",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Only React components",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Only CSS files",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 47,
+      "number": 47,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "How does a server \"listen\" for requests?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Binding to a port and accepting TCP connections (e.g., `listen`)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Reading local files only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "DNS lookup only",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Opening DevTools",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 48,
+      "number": 48,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What is a \"Single-Page Application\" (SPA)?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "One HTML shell; client-side routing updates the view without full page reloads",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Every click reloads the entire page from the server",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "No JavaScript is used",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Runs only as a native mobile binary",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 49,
+      "number": 49,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What does the \"Authorization\" header typically contain?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Credentials (often `Bearer <token>` or scheme-specific auth data)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Only the request body",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Only cookies from 1990s specs",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "The user's screen resolution",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 50,
+      "number": 50,
+      "section": "Section 1: S1: Web Applications and The Client-Server Model",
+      "question": "What is the \"Single Source of Truth\" for application data?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The authoritative server-side store (often the database behind the API)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "The browser cache only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "localStorage on each device",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "The user's printed notes",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 51,
+      "number": 51,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which JavaScript variable keyword is block-scoped and cannot be reassigned?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "var",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "const",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "let",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "global",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 52,
+      "number": 52,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is the main problem with using 'var' for variable declaration?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "It is function-scoped and can lead to unusual behavior",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "It is too slow",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "It cannot be used in functions",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "It only works in HTML",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 53,
+      "number": 53,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which ES6 feature allows you to extract values from arrays or properties from objects into distinct variables?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Mapping",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Destructuring",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Hoisting",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Spreading",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 54,
+      "number": 54,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What does the Spread Operator (...) do when used on an object?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Converts the object to a string",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Deletes all properties",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Merges the object with a database",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Copies properties from one object to another",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 55,
+      "number": 55,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "In React, what are the two main types of components?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Client and Server",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Static and Dynamic",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "HTML and CSS",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Functional and Class-based",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 56,
+      "number": 56,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which SOLID principle states that a class should have only one reason to change?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Interface Segregation Principle",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Single Responsibility Principle",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Open/Closed Principle",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Liskov Substitution Principle",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 57,
+      "number": 57,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is a \"Code Smell\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A hint of a deeper fundamental problem in code",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "A slow-loading image",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A virus in the software",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "A syntax error",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 58,
+      "number": 58,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "The \"O\" in SOLID stands for the Open/Closed Principle. What does it mean?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Open to the internet, closed to local networks",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Open for editing, closed for reading",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Open for extension, closed for modification",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Open for all users, closed for admins",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 59,
+      "number": 59,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which principle ensures that child classes can stand in for their parent classes without breaking logic?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Dependency Inversion Principle",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Interface Segregation Principle",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Liskov Substitution Principle",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Single Responsibility Principle",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 60,
+      "number": 60,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What does the Interface Segregation Principle discourage?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Small interfaces",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Using any interfaces at all",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Large, \"fat\" interfaces that force unused methods",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Private variables",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 61,
+      "number": 61,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "According to Dependency Inversion, modules should depend on what?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Local files",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Concretions (specific classes)",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Abstractions (interfaces)",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Global variables",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 62,
+      "number": 62,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "In the MVC architecture, what does the \"Model\" represent?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The user interface",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "The request router",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Data and business logic",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "The CSS styling",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 63,
+      "number": 63,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which part of MVC is responsible for displaying data to the user?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Database",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "View",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Controller",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Model",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 64,
+      "number": 64,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is the primary role of the \"Controller\" in MVC?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Coordinates between the Model and View",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Defines the font size",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Stores the data",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Handles the layout",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 65,
+      "number": 65,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is \"Responsive Design\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A site with many animations",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "A website that loads in under 1 second",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A site that only works on phones",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "An interface that adapts to the device's layout",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 66,
+      "number": 66,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which device type is used to access the web the most? ",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Mobile",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Wearable",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Other",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Desktop",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 67,
+      "number": 67,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is the main problem with \"Fixed Layouts\" on small screens?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "They require a password",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "They change the font colors",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "They make the battery drain faster",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "They cause horizontal scrolling and tiny text",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 68,
+      "number": 68,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which CSS technique uses percentages instead of fixed pixels for widths?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Fluid grids",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Media queries",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Fixed grids",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Flexbox",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 69,
+      "number": 69,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is the purpose of a \"Media Query\" in CSS?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "To send emails",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "To apply styles based on device breakpoints",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "To query a database",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "To play videos",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 70,
+      "number": 70,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which meta tag is essential for preventing automatic zoom-out on mobile devices?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Description meta tag",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Title meta tag",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Viewport meta tag",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Keywords meta tag",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 71,
+      "number": 71,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is the \"Mobile-First\" approach?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Building a mobile app before a website",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Only allowing mobile users",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Using small images",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Designing for mobile first, then enhancing for desktop",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 72,
+      "number": 72,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Why is mobile-first design considered \"progressive enhancement\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "It requires more code",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "You start with everything and remove features",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "You start with constraints and add features for larger screens",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "It makes the site look like an app",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 73,
+      "number": 73,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is a common breakpoint for a tablet device?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "1440px",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "320px",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "1920px",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "768px",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 74,
+      "number": 74,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "In Responsive Design, what does \"Flexible Typography\" use?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Images of text",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Only bold fonts",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Relative units like em or rem",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Fixed px sizes",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 75,
+      "number": 75,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is \"Inclusive Design\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Making a site for one specific group",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Including as many features as possible",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A method to make products usable by as many people as possible",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Designing only for accessibility standards",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 76,
+      "number": 76,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which Nielsen heuristic suggests the system should always keep users informed of what's happening?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Visibility of system status",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Match between system and the real world",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Aesthetic and minimalist design",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Help and documentation",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 77,
+      "number": 77,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which heuristic emphasizes using \"Undo\" and \"Redo\" actions?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "User control and freedom",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Recognition rather than recall",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Flexibility and efficiency of use",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Consistency and standards",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 78,
+      "number": 78,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is the goal of the \"Aesthetic and Minimalist Design\" heuristic?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Show only relevant information; avoid irrelevant or rarely needed content",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Add as many animations as possible",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Maximize color count",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Hide all navigation",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 79,
+      "number": 79,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "React was originally invented at which company?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Meta (Facebook)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Google",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Microsoft",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Netflix",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 80,
+      "number": 80,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is \"JSX\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A syntax extension for writing HTML-like markup inside JavaScript",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "A CSS preprocessor",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A SQL dialect",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "A MongoDB query operator",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 81,
+      "number": 81,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "In JSX, which attribute is used instead of the standard HTML \"class\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "className",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "class",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "id",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "style",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 82,
+      "number": 82,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "How must all tags be handled in JSX?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Tags must be properly closed; void elements must be self-closing where required",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Omit all closing tags",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Use only HTML4 rules",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Attributes are not allowed",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 83,
+      "number": 83,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is \"Vite\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A fast frontend build tool and dev server (commonly used with React)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "A relational database",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A CSS framework",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "A unit-testing runner only",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 84,
+      "number": 84,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What does \"HMR\" stand for in the context of Vite?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Hot Module Replacement",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Hyper Media Resource",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "High Memory Recovery",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "HTTP Method Registry",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 85,
+      "number": 85,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "In React, what are \"Props\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Read-only inputs passed from parent to child components",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Global variables only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Database connection strings",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Private encryption keys",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 86,
+      "number": 86,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is the \"fat finger\" problem in mobile design?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Accidental taps because targets are too small or too close together",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Only slow Wi-Fi",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Only desktop monitors",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Only physical keyboards",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 87,
+      "number": 87,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is the recommended minimum tap target size for mobile?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "About 44×44 CSS pixels (common accessibility guideline)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "10×10 pixels",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "200×200 pixels minimum always",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "No minimum exists",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 88,
+      "number": 88,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which JavaScript array method creates a new array by performing a function on each element?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "map()",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "filter()",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "forEach()",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "find()",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 89,
+      "number": 89,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "In ES6, what is an \"Arrow Function\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A concise function syntax; `this` is lexically inherited from the enclosing scope",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "A Java class constructor",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A MongoDB index type",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "A React class lifecycle hook",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 90,
+      "number": 90,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What does the \"Single Parent Element\" rule in JSX mean?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A component must return one root element (or a Fragment)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Only one text node allowed",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Props are forbidden",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "State cannot be used",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 91,
+      "number": 91,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which principle suggests: \"Don't implement features until they're actually needed\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "YAGNI (You Aren't Gonna Need It)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "SOLID",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "DRY",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Big Design Up Front only",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 92,
+      "number": 92,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What does the DRY principle stand for?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Don't Repeat Yourself",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Do Repeat Yourself",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Data Reference Yield",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Dynamic Resource Yield",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 93,
+      "number": 93,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "In the \"Car\" example for Dependency Inversion, what was the problem?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "High-level code depended directly on low-level concrete classes (hard to swap implementations)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Too many colors in the UI",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "React was not installed",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Wrong database password",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 94,
+      "number": 94,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which design pattern is used to separate data, UI, and logic?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "MVC (Model–View–Controller)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Singleton",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Factory Method only",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Observer only",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 95,
+      "number": 95,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is a \"Breakpoint\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A viewport width/condition where layout or styles change",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "A debugger pause point",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A Git branch",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "A MongoDB lock",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 96,
+      "number": 96,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which CSS unit is relative to the font-size of the element itself?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "em",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "rem",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "px",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "vw",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 97,
+      "number": 97,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "In React, what must user-defined components start with?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "An uppercase letter",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "A lowercase letter",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A leading underscore only",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "A dollar sign only",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 98,
+      "number": 98,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What happens if you try to reassign a 'const' variable?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A runtime error (TypeError: Assignment to constant variable)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Silent success",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "The variable becomes `let`",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "The value is deleted",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 99,
+      "number": 99,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "What is the benefit of \"Separation of Concerns\" in MVC?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Easier maintenance, testing, and parallel work on layers",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Forces one giant file",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Removes the need for APIs",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Eliminates the View",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 100,
+      "number": 100,
+      "section": "S2: UI/UX and Software Design Principles",
+      "question": "Which Nielsen heuristic is about preventing errors before they occur?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Error prevention",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Visibility of system status",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Recognition rather than recall",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Help users recognize, diagnose, and recover from errors",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 101,
+      "number": 101,
+      "section": "S3: Databases and Debugging",
+      "question": "What is the primary reason web applications use databases?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "To run JavaScript faster",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "To replace the server",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Persistent data storage",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "To style the UI",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 102,
+      "number": 102,
+      "section": "S3: Databases and Debugging",
+      "question": "Which database type uses tables, rows, and columns?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Key-Value",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Document (NoSQL)",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Relational (SQL)",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Graph",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 103,
+      "number": 103,
+      "section": "S3: Databases and Debugging",
+      "question": "MongoDB is classified as which type of database?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Spreadsheet",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Document-based (NoSQL)",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Relational (SQL)",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Graph",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 104,
+      "number": 104,
+      "section": "S3: Databases and Debugging",
+      "question": "What is a \"Transaction\" in database terms?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A single unit of work that fully completes or fails",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "A way to speed up CSS",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A payment made by a user",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "A type of API request",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 105,
+      "number": 105,
+      "section": "S3: Databases and Debugging",
+      "question": "What does the 'A' in ACID stand for?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Access",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Accuracy",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Availability",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Atomicity",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 106,
+      "number": 106,
+      "section": "S3: Databases and Debugging",
+      "question": "In MongoDB, what is the equivalent of a \"Table\" in SQL?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Row",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Field",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Collection",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Document",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 107,
+      "number": 107,
+      "section": "S3: Databases and Debugging",
+      "question": "In MongoDB, what is the equivalent of a \"Row\" in SQL?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Database",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Collection",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Index",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Document",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 108,
+      "number": 108,
+      "section": "S3: Databases and Debugging",
+      "question": "What format does MongoDB use to store data?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "BSON (Binary JSON)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "CSV",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "XML",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "HTML",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 109,
+      "number": 109,
+      "section": "S3: Databases and Debugging",
+      "question": "What is the maximum size for a single MongoDB document?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Unlimited",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "16 MB",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "1 GB",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "1 MB",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 110,
+      "number": 110,
+      "section": "S3: Databases and Debugging",
+      "question": "Which relationship model embeds one document inside another?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "GridFS",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Denormalized (Embedding)",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "SQL Joining",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Normalized (Referencing)",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 111,
+      "number": 111,
+      "section": "S3: Databases and Debugging",
+      "question": "When should you use \"Referencing\" instead of \"Embedding\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "When data is rarely read",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "For 1-to-1 only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "For small, static data",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "For one-to-many or many-to-many",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 112,
+      "number": 112,
+      "section": "S3: Databases and Debugging",
+      "question": "What is \"Mongoose\" in the MERN stack?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A front-end framework",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "An ODM (Object Data Modeling) library",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "A debugging tool",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "A type of database",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 113,
+      "number": 113,
+      "section": "S3: Databases and Debugging",
+      "question": "Which Mongoose function defines the structure of a document?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Schema",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Middleware",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Route",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Model",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 114,
+      "number": 114,
+      "section": "S3: Databases and Debugging",
+      "question": "What is the purpose of an \"Index\" in MongoDB?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "To encrypt passwords",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "To improve query performance",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "To delete old data",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "To store images",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 115,
+      "number": 115,
+      "section": "S3: Databases and Debugging",
+      "question": "Which tool provides a GUI to visualize MongoDB data?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "MongoDB Compass",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Chrome DevTools",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "VS Code",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Postman",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 116,
+      "number": 116,
+      "section": "S3: Databases and Debugging",
+      "question": "What is \"CRUD\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Create, Read, Update, Delete",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Code, Reset, Undo, Done",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Click, Run, Use, Deploy",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Central, Remote, User, Data",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 117,
+      "number": 117,
+      "section": "S3: Databases and Debugging",
+      "question": "Which Mongoose method finds a single document by its ID?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "getOne()",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "search()",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "selectID()",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "findById()",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 118,
+      "number": 118,
+      "section": "S3: Databases and Debugging",
+      "question": "What is a common pitfall when designing MongoDB schemas?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Embedding unbounded arrays",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Using too many indexes",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Connecting to React",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Not using enough CSS",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 119,
+      "number": 119,
+      "section": "S3: Databases and Debugging",
+      "question": "In the MERN project structure, where do Mongoose schemas live?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "/server/models",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "/public",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "/server/routes",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "/client/src",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 120,
+      "number": 120,
+      "section": "S3: Databases and Debugging",
+      "question": "Why is it a good idea to test API endpoints before connecting the UI?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "To ensure dependency",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Earlier Bug Detection",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "To test workarounds",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "To be nice to collaborators",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 121,
+      "number": 121,
+      "section": "S3: Databases and Debugging",
+      "question": "What is the first step in a systematic debugging process?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Reinstall Node.js",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Change code randomly",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Reproduce the bug reliably",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Delete the database",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 122,
+      "number": 122,
+      "section": "S3: Databases and Debugging",
+      "question": "Why should we love errors?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Gives us confidence when we fix",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "We don't",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Gives us clues to solve code issues",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Errors are just natural",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 123,
+      "number": 123,
+      "section": "S3: Databases and Debugging",
+      "question": "Which tool allows you to inspect the HTML and CSS of a live site?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "React DevTools",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Inspector/DevTools",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Console tab",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Network tab",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 124,
+      "number": 124,
+      "section": "S3: Databases and Debugging",
+      "question": "Where would you look in DevTools to see failed API requests?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Elements tab",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Sources tab",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Network tab",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Memory tab",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 125,
+      "number": 125,
+      "section": "S3: Databases and Debugging",
+      "question": "What does console.log() do?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Styles the text",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Pauses code execution",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Deletes variables",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Prints messages to the console",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 126,
+      "number": 126,
+      "section": "S3: Databases and Debugging",
+      "question": "Why are breakpoints better than console.log?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Pause execution and inspect live state without re-running prints",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Always slower than logging",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Cannot inspect variables",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Cannot be used in browsers",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 127,
+      "number": 127,
+      "section": "S3: Databases and Debugging",
+      "question": "In Chrome DevTools, what does \"Step Over\" do?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Run the current line and go to the next without entering callees",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Step into every function call",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Stop the entire browser",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Skip all breakpoints",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 128,
+      "number": 128,
+      "section": "S3: Databases and Debugging",
+      "question": "Which DevTools tab is used to debug JavaScript logic and set breakpoints?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Sources",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Elements",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Network",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Application",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 129,
+      "number": 129,
+      "section": "S3: Databases and Debugging",
+      "question": "What specific tool helps you inspect React props and state?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "React DevTools",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Lighthouse only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Webpack only",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "MongoDB Compass",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 130,
+      "number": 130,
+      "section": "S3: Databases and Debugging",
+      "question": "A \"404 Not Found\" error in the Network tab usually means:",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The requested URL/resource was not found on the server",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "The server process crashed",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Authentication failed",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "CORS blocked the stylesheet only",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 131,
+      "number": 131,
+      "section": "S3: Databases and Debugging",
+      "question": "A \"500 Internal Server Error\" usually indicates a problem in:",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The server / backend application",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "The user's GPU driver",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "The DNS resolver only",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "The IDE theme",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 132,
+      "number": 132,
+      "section": "S3: Databases and Debugging",
+      "question": "Why is \"pair programming\" helpful for debugging?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Two perspectives catch issues faster and share knowledge",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "It is always slower",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "It is not allowed in industry",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "It removes the need for tests",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 133,
+      "number": 133,
+      "section": "S3: Databases and Debugging",
+      "question": "In Node.js, what is 'npm start' an example of?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "An npm script / CLI command defined in package.json",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "A JavaScript keyword",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "An HTTP status code",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "A MongoDB aggregation stage",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 134,
+      "number": 134,
+      "section": "S3: Databases and Debugging",
+      "question": "How do you view the \"Call Stack\" in VS Code during debugging?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Debug sidebar / Run and Debug view (Call Stack panel) while execution is paused",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "The Source Control tab only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "The Extensions marketplace",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "The Terminal font settings",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 135,
+      "number": 135,
+      "section": "S3: Databases and Debugging",
+      "question": "What is a \"Regression\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A defect that reappears after a fix, or old behavior breaking after new changes",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "A new feature shipped to production",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "The first bug ever filed",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "A successful deployment",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 136,
+      "number": 136,
+      "section": "S3: Databases and Debugging",
+      "question": "Which status code represents \"Unauthorized\" access?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "401",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "403",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "404",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "500",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 137,
+      "number": 137,
+      "section": "S3: Databases and Debugging",
+      "question": "What is \"Structured Logging\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Machine-parseable logs with consistent fields (e.g., JSON, levels, correlation IDs)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Printing only emojis",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Logging only to paper",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Disabling all timestamps",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 138,
+      "number": 138,
+      "section": "S3: Databases and Debugging",
+      "question": "What should you do after fixing a bug?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Add or update regression tests and verify the fix does not break other behavior",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Delete all logs permanently",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Never tell teammates",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Skip QA",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 139,
+      "number": 139,
+      "section": "S3: Databases and Debugging",
+      "question": "Which tab in DevTools shows how long a request took?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Network",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Elements",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Console",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Sources",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 140,
+      "number": 140,
+      "section": "S3: Databases and Debugging",
+      "question": "What is a \"Race Condition\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Behavior depends on timing/order of concurrent operations",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Only one thread is allowed",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Only CSS can cause it",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "It means the race car game",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 141,
+      "number": 141,
+      "section": "S3: Databases and Debugging",
+      "question": "In Mongoose, what does required: true do?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The field must be present; validation fails if missing",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Automatically creates an index",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Encrypts the field at rest",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Deletes the document",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 142,
+      "number": 142,
+      "section": "S3: Databases and Debugging",
+      "question": "Which HTTP method corresponds to \"Update\" in CRUD?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "PUT or PATCH (often PATCH for partial update)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "GET",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "HEAD",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "OPTIONS",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 143,
+      "number": 143,
+      "section": "S3: Databases and Debugging",
+      "question": "What is \"Middleware\" in Express?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Functions that run in the Express pipeline between request and response",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Only React components",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Only MongoDB queries",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Only HTML templates",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 144,
+      "number": 144,
+      "section": "S3: Databases and Debugging",
+      "question": "What does \"Scalability\" mean for a database?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Ability to handle growth in data volume and traffic (scale up/out)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Only encryption strength",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Only UI pixel density",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Only single-user mode",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 145,
+      "number": 145,
+      "section": "S3: Databases and Debugging",
+      "question": "What is a \"Foreign Key\" equivalent in MongoDB?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A stored reference / ObjectId to another document (manual referencing)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "A SQL FOREIGN KEY constraint",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A browser cookie",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "A CSS selector",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 146,
+      "number": 146,
+      "section": "S3: Databases and Debugging",
+      "question": "Which character is used to separate query parameters in a URL?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "&",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "?",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": ";",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "#",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 147,
+      "number": 147,
+      "section": "S3: Databases and Debugging",
+      "question": "What is the purpose of res.status(200).json(data)?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Send an HTTP 200 response with a JSON body",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Redirect to login only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Close the TCP connection without responding",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Return only HTML",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 148,
+      "number": 148,
+      "section": "S3: Databases and Debugging",
+      "question": "If your React app is blank, what is the FIRST place to check?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The browser developer console for JavaScript/runtime errors",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "The database first",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "The Wi-Fi router",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "The monitor brightness",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 149,
+      "number": 149,
+      "section": "S3: Databases and Debugging",
+      "question": "What profession most closely resembles debugging?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Detective / investigator",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Chef",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Librarian",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Pilot",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 150,
+      "number": 150,
+      "section": "S3: Databases and Debugging",
+      "question": "In the MERN stack, Node.js acts as the:",
+      "choices": [
+        {
+          "id": "A",
+          "text": "JavaScript runtime / server hosting the backend API",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Only the React front end",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Only MongoDB",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Only the CSS preprocessor",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 151,
+      "number": 151,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is the primary advantage of WebSockets over HTTP?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "It only works on mobile",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "It doesn't require a server",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Full-duplex, bidirectional communication",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "It is faster for loading images",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 152,
+      "number": 152,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Which technology is best suited for Peer-to-Peer (P2P) video calls?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "WebSockets",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Polling",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "WebRTC",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "REST API",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 153,
+      "number": 153,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "In Socket.IO, what does 'broadcasting' do?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Sends a message only to the sender",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Posts the message to Twitter",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Deletes the message",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Sends a message to everyone except the sender",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 154,
+      "number": 154,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'Polling' in the context of real-time data?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Users vote on a feature",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Server pushes data to client automatically",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "The browser refreshes the page",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Client repeatedly asks server for updates",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 155,
+      "number": 155,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Which OWASP risk involves attackers executing scripts in a victim's browser?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Broken Access Control",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Security Misconfiguration",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "SQL Injection",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Cross-Site Scripting (XSS)",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 156,
+      "number": 156,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What does JWT stand for in web security?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "JSON Web Token",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Just Weekly Testing",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Java Web Terminal",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Joint Web Transfer",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 157,
+      "number": 157,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Which HTTP header helps prevent Clickjacking attacks?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "User-Agent",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "X-Frame-Options",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Accept-Language",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Content-Type",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 158,
+      "number": 158,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'Salt' used for in password security?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Deleting old passwords",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Encrypting the username",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Making the database load faster",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Adding random data to a password before hashing",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 159,
+      "number": 159,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Which principle suggests giving users only the access they need?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Open Access",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Least Privilege",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Dependency Inversion",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Maximum Security",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 160,
+      "number": 160,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is the purpose of a Content Security Policy (CSP)?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "To style the website",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "To track user analytics",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "To restrict which resources the browser can load",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "To store user passwords",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 161,
+      "number": 161,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "In the Testing Pyramid, which tests are the fastest and cheapest?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Integration Tests",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Unit Tests",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Manual Tests",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "End-to-End (E2E) Tests",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 162,
+      "number": 162,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Which testing tool is a popular JavaScript Unit Testing framework?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Jest",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "MongoDB",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Express",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "React",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 163,
+      "number": 163,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What does 'Code Coverage' measure?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "How many lines of code are in the project",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "The physical size of the JS file",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "How many users are testing the app",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "The percentage of code executed during tests",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 164,
+      "number": 164,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What kind of attack was \"Samy?\"",
+      "choices": [
+        {
+          "id": "A",
+          "text": "XSS",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Supply Chain",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Clickjacking",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Database attack",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 165,
+      "number": 165,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Which type of test checks if the entire system works from a user's perspective?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Integration Test",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Unit Test",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Linting",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "End-to-End (E2E)",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 166,
+      "number": 166,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'TDD' in software development?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Time-Delayed Deployment",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Test-Driven Development",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Total Data Design",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Technical Debt Delivery",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 167,
+      "number": 167,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What does IDOR stand for?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "In Done Object Reference",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Insecure Direct Object Retaliation",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Inner Direct Object Reference",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Insecure Direct Object Reference",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 168,
+      "number": 168,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'Cross-Platform Development'?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Using multiple databases",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Using one codebase for multiple platforms (iOS, Android, Web)",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Hosting a site on two servers",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Crossing from Windows to Mac",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 169,
+      "number": 169,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "React Native allows you to build mobile apps using which language?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "C++",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Kotlin",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Swift",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "JavaScript/React",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 170,
+      "number": 170,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is a 'Progressive Web App' (PWA)?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A type of database",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "A website that only works on desktop",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A web app that feels like a native mobile app",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "An app that requires an app store install",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 171,
+      "number": 171,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Which desktop framework uses web technologies and Chromium?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Flutter",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "React Native",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "MongoDB",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Electron",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 172,
+      "number": 172,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is a 'signaling server' used for in WebRTC?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "To render the HTML",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "To store video files",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "To encrypt the password",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "To help peers find and connect to each other",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 173,
+      "number": 173,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Which Socket.IO method is used to listen for an event?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "socket.listen()",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "socket.send()",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "socket.on()",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "socket.emit()",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 174,
+      "number": 174,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'CSRF'?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Code Standard Reset Form",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Cross-Site Request Forgery",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Central Security Reset File",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Common System Risk Factor",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 175,
+      "number": 175,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Why should you never store plain-text passwords?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "They make the website slow",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "They are easily stolen in a data breach",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "They are hard to type",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "They take up too much memory",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 176,
+      "number": 176,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Why should you never store plain-text passwords?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "They are easily stolen in a data breach",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "They make the website slow",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "They are hard to type",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "They take up too much memory",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 177,
+      "number": 177,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'Injection' in the OWASP Top 10?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Untrusted data interpreted as part of a command or query (e.g., SQL/LDAP/OS)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Only XSS",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Only physical theft",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Only DDoS",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 178,
+      "number": 178,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What does 'HTTPS' provide that 'HTTP' does not?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Encryption and integrity protection in transit (TLS)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Faster CPU on the client",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Smaller JPEG files automatically",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Stateless requests only",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 179,
+      "number": 179,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "In JWT, which part contains the user's data (claims)?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Payload",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Header (algorithm)",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Signature",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Footer",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 180,
+      "number": 180,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'Integration Testing'?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Testing combined modules or subsystems together (e.g., API + DB)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Testing a single function in isolation",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Manual exploratory testing only",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Linting only",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 181,
+      "number": 181,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is a 'Mock' in testing?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A fake or stub implementation used to isolate the unit under test",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "A real production database",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A code smell",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "A type of E2E browser",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 182,
+      "number": 182,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Which testing level is usually the most 'expensive' and slow?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "End-to-end (E2E) tests",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Unit tests",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Static typing",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Comment coverage",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 183,
+      "number": 183,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'CI/CD'?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Continuous Integration / Continuous Deployment (or Delivery)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Central Internet Code",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Client Integration Design",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Compiled Java Distribution",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 184,
+      "number": 184,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'Regression Testing'?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Re-running tests to ensure new changes did not break existing behavior",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Testing only brand-new code",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Deleting old test files",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Running tests once per year",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 185,
+      "number": 185,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Which framework is known for 'Write once, run anywhere' using the Dart language?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Flutter",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "React Native",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Electron",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Xamarin.Forms",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 186,
+      "number": 186,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'Hot Reload' in cross-platform development?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Refresh the running app's UI quickly after code changes without a full restart",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Reload the database schema only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Reinstall node_modules",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Rotate the screen",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 187,
+      "number": 187,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'Bridging' in React Native?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The bridge between JavaScript and native platform APIs/modules",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Only WebView rendering",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Only CSS flexbox",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Only REST polling",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 188,
+      "number": 188,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Which technology uses 'Service Workers' for offline support?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Progressive Web Apps (via service workers)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Java applets",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Adobe Flash",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "FTP",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 189,
+      "number": 189,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is the main disadvantage of Electron?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "High memory usage (bundled Chromium per app)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Cannot display HTML",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "No network access",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "No window chrome",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 190,
+      "number": 190,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Which OWASP risk involves poorly protected sensitive data?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Cryptographic failures / sensitive data exposure (OWASP; naming varies by year)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Injection only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "XSS only",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Broken access control only",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 191,
+      "number": 191,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'Bcrypt' commonly used for?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Password hashing",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Symmetric image encryption",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "JWT signing only",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Minifying CSS",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 192,
+      "number": 192,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "In WebSockets, the 'Handshake' happens over which protocol?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "HTTP (with Upgrade to WebSocket)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "FTP",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "SMTP",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "SSH only",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 193,
+      "number": 193,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What does 'stateless' mean in the context of JWT?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The server does not store session state; claims are self-contained in the token",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "JWT requires SQL",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "JWT cannot be signed",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "JWT must be stored only in cookies",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 194,
+      "number": 194,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Which tool helps identify vulnerable dependencies in your project?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "npm audit / Snyk / Dependabot (dependency vulnerability tools)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Prettier",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "ESLint only",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Figma",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 195,
+      "number": 195,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'Black Box Testing'?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Testing based on inputs/outputs without knowing internal implementation",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "White-box testing only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Only unit tests",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Only compile-time checks",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 196,
+      "number": 196,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'Code Smell'?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A hint of a deeper design problem (symptom, not always a syntax error)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "A literal bad smell in the office",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A virus signature",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "A successful build",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 197,
+      "number": 197,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "Which is a common pitfall in testing?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Flaky tests, over-mocking, or missing assertions",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Too much coverage",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Too many unit tests",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Using TypeScript",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 198,
+      "number": 198,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is the primary focus of 'Inclusive Design'?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Designing for people with diverse abilities and contexts",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Designing only for one browser",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Maximizing animations",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Avoiding accessibility",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 199,
+      "number": 199,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is the 'Network Tab' in DevTools used for?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Inspect HTTP requests/responses, status codes, and timing",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Edit SQL tables",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Change OS firewall rules",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Compile C++ code",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 200,
+      "number": 200,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "What is 'MFA'?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Multi-factor authentication",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Meta File Access",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Multi-frame API",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Main function address",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 201,
+      "number": 201,
+      "section": "S4: RTC, Security, Testing, and Cross-platform Development",
+      "question": "In cross-platform development, what is a 'Native Module'?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Platform-specific native code exposed to JavaScript (e.g., sensors not in core RN)",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "A CSS module",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "A REST endpoint only",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "A MongoDB collection",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 202,
+      "number": 201,
+      "section": "S5: Misc. (Group Management)",
+      "question": "Which type of conflict involves disagreements about work content and goals?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Personal Conflict",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Relationship Conflict",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Logical Conflict",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Task Conflict",
+          "correct": true
+        }
+      ],
+      "correctIndex": 3,
+      "correctLabel": "D"
+    },
+    {
+      "order": 203,
+      "number": 202,
+      "section": "S5: Misc. (Group Management)",
+      "question": "What is a characteristic of \"Relationship Conflict\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Solving technical bugs",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Interpersonal tensions and personality clashes",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Increased team innovation",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Focus on project milestones",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 204,
+      "number": 203,
+      "section": "S5: Misc. (Group Management)",
+      "question": "Which conflict type is most likely to reduce team performance and satisfaction?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Task Conflict",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Relationship Conflict",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Resource Conflict",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Process Conflict",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 205,
+      "number": 204,
+      "section": "S5: Misc. (Group Management)",
+      "question": "According to Tuckman’s stages, what is the first stage of team development?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Storming",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Forming",
+          "correct": true
+        },
+        {
+          "id": "C",
+          "text": "Norming",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Performing",
+          "correct": false
+        }
+      ],
+      "correctIndex": 1,
+      "correctLabel": "B"
+    },
+    {
+      "order": 206,
+      "number": 205,
+      "section": "S5: Misc. (Group Management)",
+      "question": "In which stage of team development do members start to resolve differences and develop symbols of local identity?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Forming",
+          "correct": false
+        },
+        {
+          "id": "B",
+          "text": "Performing",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Norming",
+          "correct": true
+        },
+        {
+          "id": "D",
+          "text": "Adjourning",
+          "correct": false
+        }
+      ],
+      "correctIndex": 2,
+      "correctLabel": "C"
+    },
+    {
+      "order": 207,
+      "number": 206,
+      "section": "S5: Misc. (Group Management)",
+      "question": "What is the \"Storming\" stage characterized by?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Conflict and jockeying as roles and approaches clash",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Perfect harmony with no disagreements",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "The team disbands immediately",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Only positive feedback is allowed",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 208,
+      "number": 207,
+      "section": "S5: Misc. (Group Management)",
+      "question": "Which Thomas-Kilmann conflict mode is \"High Assertiveness\" and \"Low Cooperativeness\"?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Competing",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Collaborating",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Avoiding",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Accommodating",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 209,
+      "number": 208,
+      "section": "S5: Misc. (Group Management)",
+      "question": "What is the \"Collaborating\" mode in conflict management?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "High assertiveness and high cooperativeness; seeking a win-win solution",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Low assertiveness and low cooperativeness",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Ignore the problem entirely",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Always compromise without discussion",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 210,
+      "number": 209,
+      "section": "S5: Misc. (Group Management)",
+      "question": "Which document outlines communication protocols and role assignments for a team?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Team charter / team agreement",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Gantt chart only",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Personal resume",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Invoice to the client",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    },
+    {
+      "order": 211,
+      "number": 210,
+      "section": "S5: Misc. (Group Management)",
+      "question": "The \"Compromising\" mode is characterized by what?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Moderate assertiveness and cooperativeness; both sides give up something",
+          "correct": true
+        },
+        {
+          "id": "B",
+          "text": "Maximum assertiveness and minimum cooperation",
+          "correct": false
+        },
+        {
+          "id": "C",
+          "text": "Complete avoidance",
+          "correct": false
+        },
+        {
+          "id": "D",
+          "text": "Unilateral surrender",
+          "correct": false
+        }
+      ],
+      "correctIndex": 0,
+      "correctLabel": "A"
+    }
+  ]
+}

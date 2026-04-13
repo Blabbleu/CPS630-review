@@ -1,0 +1,217 @@
+#,Question,Answer 1,Answer 2,Answer 3,Answer 4
+,Section 1: S1: Web Applications and The Client-Server Model,,,,
+1,"What does the ""sandbox"" in a web browser do?",Stores passwords permanently,Deletes browsing history,Limits web app access to the local system,Increases internet speed
+2,Which component of MERN is a document-oriented NoSQL database?,React,Express.js,Node.js,MongoDB
+3,What is the main role of React in the MERN stack?,Handling server-side logic,Building the user interface,Managing the database,Encrypting passwords
+4,Node.js is built on which JavaScript engine?,Firefox's SpiderMonkey,Edge's Chakra,Chrome's V8,Safari's JavaScriptCore
+5,"What does ""non-blocking I/O"" in Node.js allow?",Blocking user input,Stopping all data flow,Handling many requests efficiently,Slower server processing
+6,"In the Client-Server model, which entity initiates communication?",The Router,The Database,The Client,The Server
+7,What type of file is CSS?,Static,Superscript,Non-blocking,Dynamic
+8,"Which JavaScript keyword is ""function scoped"" and not recommended?",arrow,var,let,const
+9,"What is ""Business Logic"" also known as?",System logic,Database logic,Domain logic,UI logic
+10,"According to the restaurant analogy, what represents ""Application Logic""?",The ingredients,The kitchen workflow,The food prices,The menu items
+11,"Why is the Server considered a ""Single Source of Truth""?",It is the only device on the network,It stores data on the client,It never makes mistakes,"It holds centralized, shared data"
+12,Which architecture involves every node acting as both client and server?,Single-tier,Monolithic,Peer-to-Peer (P2P),Microservices
+13,"HTTP is a ""stateless"" protocol. What does this mean?",No data can be sent,Each request is independent,The connection is always open,The server saves every user action
+14,What is the purpose of HTTPS?,Deleting user cookies,Encrypting data in transit,Making websites load faster,Reducing server costs
+15,"In an HTTP request, where are the ""Method"" and ""Path"" located?",Headers,Request line,Metadata,Body
+16,Which HTTP method is used to retrieve data without side effects?,POST,DELETE,PUT,GET
+17,"Why is the POST method considered ""not idempotent""?",It is safer than GET,It deletes data accidentally,Multiple calls create multiple resources,It only works once
+18,Which method is used to replace an entire resource with new data?,GET,PUT,PATCH,POST
+19,"What is a ""Safe"" HTTP method?",One that requires a password,One that only admins use,One that doesn't modify server state,One that is encrypted
+20,"What does the status code ""201 Created"" signify?",Server error,Unauthorized access,Success: new resource created,Page not found
+21,"In REST design, what should URIs represent?",Actions (Verbs),CSS classes,JavaScript functions,Resources (Nouns)
+22,Which URI traditionally represents a specific user with ID 42?,/api/users/42,/api/actions/42,/api/users?id=42,/api/getUser42
+23,"What does ""JSON"" stand for?",Just Some Online News,Java Standard Object Name,JavaScript Object Notation,Joint System Online Network
+24,"Express.js provides ""Middleware."" What is its purpose?",Replacing React,Adding functions to the request cycle,Speeding up CSS rendering,Storing browser cookies
+25,"In modern JS, which keyword defines a variable that cannot be reassigned?",const,let,static,var
+26,What does REST stand for?,n/a,n/a,n/a,n/a
+27,"In the MERN workflow, what format is data usually sent from Server to Client?",n/a,n/a,n/a,n/a
+28,Which architecture is typically used by large websites like Netflix and Uber to scale?,n/a,n/a,n/a,n/a
+29,What separates HTTP headers from the body in a request?,n/a,n/a,n/a,n/a
+30,Which HTTP header specifies the format of the request body?,n/a,n/a,n/a,n/a
+31,"What is the ""Safe"" way to retry a request after a network failure?",n/a,n/a,n/a,n/a
+32,"What does ""Separation of Concerns"" achieve in web architecture?",n/a,n/a,n/a,n/a
+33,"In a React SPA, where does the application primarily run?",n/a,n/a,n/a,n/a
+34,"Which status code range indicates a ""Server Error""?",n/a,n/a,n/a,n/a
+35,"What does the principle ""one URL = one thing"" refer to?",n/a,n/a,n/a,n/a
+36,"Which of these is a ""Sub-resource"" URI?",n/a,n/a,n/a,n/a
+37,"What is the core characteristic of an ""Arrow Function"" in JS?",n/a,n/a,n/a,n/a
+38,MongoDB stores data in what type of documents?,n/a,n/a,n/a,n/a
+39,Which tool is used as the primary IDE in the class?,n/a,n/a,n/a,n/a
+40,"What does ""SaaS"" stand for?",n/a,n/a,n/a,n/a
+41,"Why are web apps ""SaaS"" friendly?",n/a,n/a,n/a,n/a
+42,"Which HTTP method is used for ""Partial Updates""?",n/a,n/a,n/a,n/a
+43,"In the restaurant analogy, who is the ""Client""?",n/a,n/a,n/a,n/a
+44,"What is the main disadvantage of a ""Monolithic"" architecture?",n/a,n/a,n/a,n/a
+45,"What is ""Idempotency""?",n/a,n/a,n/a,n/a
+46,"Which layer handles ""Business Logic"" in the MERN stack?",n/a,n/a,n/a,n/a
+47,"How does a server ""listen"" for requests?",n/a,n/a,n/a,n/a
+48,"What is a ""Single-Page Application"" (SPA)?",n/a,n/a,n/a,n/a
+49,"What does the ""Authorization"" header typically contain?",n/a,n/a,n/a,n/a
+50,"What is the ""Single Source of Truth"" for application data?",n/a,n/a,n/a,n/a
+,S2: UI/UX and Software Design Principles,,,,
+51,Which JavaScript variable keyword is block-scoped and cannot be reassigned?,var,const,let,global
+52,What is the main problem with using 'var' for variable declaration?,It is function-scoped and can lead to unusual behavior,It is too slow,It cannot be used in functions,It only works in HTML
+53,Which ES6 feature allows you to extract values from arrays or properties from objects into distinct variables?,Mapping,Destructuring,Hoisting,Spreading
+54,What does the Spread Operator (...) do when used on an object?,Converts the object to a string,Deletes all properties,Merges the object with a database,Copies properties from one object to another
+55,"In React, what are the two main types of components?",Client and Server,Static and Dynamic,HTML and CSS,Functional and Class-based
+56,Which SOLID principle states that a class should have only one reason to change?,Interface Segregation Principle,Single Responsibility Principle,Open/Closed Principle,Liskov Substitution Principle
+57,"What is a ""Code Smell""?",A hint of a deeper fundamental problem in code,A slow-loading image,A virus in the software,A syntax error
+58,"The ""O"" in SOLID stands for the Open/Closed Principle. What does it mean?","Open to the internet, closed to local networks","Open for editing, closed for reading","Open for extension, closed for modification","Open for all users, closed for admins"
+59,Which principle ensures that child classes can stand in for their parent classes without breaking logic?,Dependency Inversion Principle,Interface Segregation Principle,Liskov Substitution Principle,Single Responsibility Principle
+60,What does the Interface Segregation Principle discourage?,Small interfaces,Using any interfaces at all,"Large, ""fat"" interfaces that force unused methods",Private variables
+61,"According to Dependency Inversion, modules should depend on what?",Local files,Concretions (specific classes),Abstractions (interfaces),Global variables
+62,"In the MVC architecture, what does the ""Model"" represent?",The user interface,The request router,Data and business logic,The CSS styling
+63,Which part of MVC is responsible for displaying data to the user?,Database,View,Controller,Model
+64,"What is the primary role of the ""Controller"" in MVC?",Coordinates between the Model and View,Defines the font size,Stores the data,Handles the layout
+65,"What is ""Responsive Design""?",A site with many animations,A website that loads in under 1 second,A site that only works on phones,An interface that adapts to the device's layout
+66,Which device type is used to access the web the most? ,Mobile,Wearable,Other,Desktop
+67,"What is the main problem with ""Fixed Layouts"" on small screens?",They require a password,They change the font colors,They make the battery drain faster,They cause horizontal scrolling and tiny text
+68,Which CSS technique uses percentages instead of fixed pixels for widths?,Fluid grids,Media queries,Fixed grids,Flexbox
+69,"What is the purpose of a ""Media Query"" in CSS?",To send emails,To apply styles based on device breakpoints,To query a database,To play videos
+70,Which meta tag is essential for preventing automatic zoom-out on mobile devices?,Description meta tag,Title meta tag,Viewport meta tag,Keywords meta tag
+71,"What is the ""Mobile-First"" approach?",Building a mobile app before a website,Only allowing mobile users,Using small images,"Designing for mobile first, then enhancing for desktop"
+72,"Why is mobile-first design considered ""progressive enhancement""?",It requires more code,You start with everything and remove features,You start with constraints and add features for larger screens,It makes the site look like an app
+73,What is a common breakpoint for a tablet device?,1440px,320px,1920px,768px
+74,"In Responsive Design, what does ""Flexible Typography"" use?",Images of text,Only bold fonts,Relative units like em or rem,Fixed px sizes
+75,"What is ""Inclusive Design""?",Making a site for one specific group,Including as many features as possible,A method to make products usable by as many people as possible,Designing only for accessibility standards
+76,Which Nielsen heuristic suggests the system should always keep users informed of what's happening?,n/a,n/a,n/a,n/a
+77,"Which heuristic emphasizes using ""Undo"" and ""Redo"" actions?",n/a,n/a,n/a,n/a
+78,"What is the goal of the ""Aesthetic and Minimalist Design"" heuristic?",n/a,n/a,n/a,n/a
+79,React was originally invented at which company?,n/a,n/a,n/a,n/a
+80,"What is ""JSX""?",n/a,n/a,n/a,n/a
+81,"In JSX, which attribute is used instead of the standard HTML ""class""?",n/a,n/a,n/a,n/a
+82,How must all tags be handled in JSX?,n/a,n/a,n/a,n/a
+83,"What is ""Vite""?",n/a,n/a,n/a,n/a
+84,"What does ""HMR"" stand for in the context of Vite?",n/a,n/a,n/a,n/a
+85,"In React, what are ""Props""?",n/a,n/a,n/a,n/a
+86,"What is the ""fat finger"" problem in mobile design?",n/a,n/a,n/a,n/a
+87,What is the recommended minimum tap target size for mobile?,n/a,n/a,n/a,n/a
+88,Which JavaScript array method creates a new array by performing a function on each element?,n/a,n/a,n/a,n/a
+89,"In ES6, what is an ""Arrow Function""?",n/a,n/a,n/a,n/a
+90,"What does the ""Single Parent Element"" rule in JSX mean?",n/a,n/a,n/a,n/a
+91,"Which principle suggests: ""Don't implement features until they're actually needed""?",n/a,n/a,n/a,n/a
+92,What does the DRY principle stand for?,n/a,n/a,n/a,n/a
+93,"In the ""Car"" example for Dependency Inversion, what was the problem?",n/a,n/a,n/a,n/a
+94,"Which design pattern is used to separate data, UI, and logic?",n/a,n/a,n/a,n/a
+95,"What is a ""Breakpoint""?",n/a,n/a,n/a,n/a
+96,Which CSS unit is relative to the font-size of the element itself?,n/a,n/a,n/a,n/a
+97,"In React, what must user-defined components start with?",n/a,n/a,n/a,n/a
+98,What happens if you try to reassign a 'const' variable?,n/a,n/a,n/a,n/a
+99,"What is the benefit of ""Separation of Concerns"" in MVC?",n/a,n/a,n/a,n/a
+100,Which Nielsen heuristic is about preventing errors before they occur?,n/a,n/a,n/a,n/a
+,S3: Databases and Debugging,,,,
+101,What is the primary reason web applications use databases?,To run JavaScript faster,To replace the server,Persistent data storage,To style the UI
+102,"Which database type uses tables, rows, and columns?",Key-Value,Document (NoSQL),Relational (SQL),Graph
+103,MongoDB is classified as which type of database?,Spreadsheet,Document-based (NoSQL),Relational (SQL),Graph
+104,"What is a ""Transaction"" in database terms?",A single unit of work that fully completes or fails,A way to speed up CSS,A payment made by a user,A type of API request
+105,What does the 'A' in ACID stand for?,Access,Accuracy,Availability,Atomicity
+106,"In MongoDB, what is the equivalent of a ""Table"" in SQL?",Row,Field,Collection,Document
+107,"In MongoDB, what is the equivalent of a ""Row"" in SQL?",Database,Collection,Index,Document
+108,What format does MongoDB use to store data?,BSON (Binary JSON),CSV,XML,HTML
+109,What is the maximum size for a single MongoDB document?,Unlimited,16 MB,1 GB,1 MB
+110,Which relationship model embeds one document inside another?,GridFS,Denormalized (Embedding),SQL Joining,Normalized (Referencing)
+111,"When should you use ""Referencing"" instead of ""Embedding""?",When data is rarely read,For 1-to-1 only,"For small, static data",For one-to-many or many-to-many
+112,"What is ""Mongoose"" in the MERN stack?",A front-end framework,An ODM (Object Data Modeling) library,A debugging tool,A type of database
+113,Which Mongoose function defines the structure of a document?,Schema,Middleware,Route,Model
+114,"What is the purpose of an ""Index"" in MongoDB?",To encrypt passwords,To improve query performance,To delete old data,To store images
+115,Which tool provides a GUI to visualize MongoDB data?,MongoDB Compass,Chrome DevTools,VS Code,Postman
+116,"What is ""CRUD""?","Create, Read, Update, Delete","Code, Reset, Undo, Done","Click, Run, Use, Deploy","Central, Remote, User, Data"
+117,Which Mongoose method finds a single document by its ID?,getOne(),search(),selectID(),findById()
+118,What is a common pitfall when designing MongoDB schemas?,Embedding unbounded arrays,Using too many indexes,Connecting to React,Not using enough CSS
+119,"In the MERN project structure, where do Mongoose schemas live?",/server/models,/public,/server/routes,/client/src
+120,Why is it a good idea to test API endpoints before connecting the UI?,To ensure dependency,Earlier Bug Detection,To test workarounds,To be nice to collaborators
+121,What is the first step in a systematic debugging process?,Reinstall Node.js,Change code randomly,Reproduce the bug reliably,Delete the database
+122,Why should we love errors?,Gives us confidence when we fix,We don't,Gives us clues to solve code issues,Errors are just natural
+123,Which tool allows you to inspect the HTML and CSS of a live site?,React DevTools,Inspector/DevTools,Console tab,Network tab
+124,Where would you look in DevTools to see failed API requests?,Elements tab,Sources tab,Network tab,Memory tab
+125,What does console.log() do?,Styles the text,Pauses code execution,Deletes variables,Prints messages to the console
+126,Why are breakpoints better than console.log?,n/a,n/a,n/a,n/a
+127,"In Chrome DevTools, what does ""Step Over"" do?",n/a,n/a,n/a,n/a
+128,Which DevTools tab is used to debug JavaScript logic and set breakpoints?,n/a,n/a,n/a,n/a
+129,What specific tool helps you inspect React props and state?,n/a,n/a,n/a,n/a
+130,"A ""404 Not Found"" error in the Network tab usually means:",n/a,n/a,n/a,n/a
+131,"A ""500 Internal Server Error"" usually indicates a problem in:",n/a,n/a,n/a,n/a
+132,"Why is ""pair programming"" helpful for debugging?",n/a,n/a,n/a,n/a
+133,"In Node.js, what is 'npm start' an example of?",n/a,n/a,n/a,n/a
+134,"How do you view the ""Call Stack"" in VS Code during debugging?",n/a,n/a,n/a,n/a
+135,"What is a ""Regression""?",n/a,n/a,n/a,n/a
+136,"Which status code represents ""Unauthorized"" access?",n/a,n/a,n/a,n/a
+137,"What is ""Structured Logging""?",n/a,n/a,n/a,n/a
+138,What should you do after fixing a bug?,n/a,n/a,n/a,n/a
+139,Which tab in DevTools shows how long a request took?,n/a,n/a,n/a,n/a
+140,"What is a ""Race Condition""?",n/a,n/a,n/a,n/a
+141,"In Mongoose, what does required: true do?",n/a,n/a,n/a,n/a
+142,"Which HTTP method corresponds to ""Update"" in CRUD?",n/a,n/a,n/a,n/a
+143,"What is ""Middleware"" in Express?",n/a,n/a,n/a,n/a
+144,"What does ""Scalability"" mean for a database?",n/a,n/a,n/a,n/a
+145,"What is a ""Foreign Key"" equivalent in MongoDB?",n/a,n/a,n/a,n/a
+146,Which character is used to separate query parameters in a URL?,n/a,n/a,n/a,n/a
+147,What is the purpose of res.status(200).json(data)?,n/a,n/a,n/a,n/a
+148,"If your React app is blank, what is the FIRST place to check?",n/a,n/a,n/a,n/a
+149,What profession most closely resembles debugging?,n/a,n/a,n/a,n/a
+150,"In the MERN stack, Node.js acts as the:",n/a,n/a,n/a,n/a
+,"S4: RTC, Security, Testing, and Cross-platform Development",,,,
+151,What is the primary advantage of WebSockets over HTTP?,It only works on mobile,It doesn't require a server,"Full-duplex, bidirectional communication",It is faster for loading images
+152,Which technology is best suited for Peer-to-Peer (P2P) video calls?,WebSockets,Polling,WebRTC,REST API
+153,"In Socket.IO, what does 'broadcasting' do?",Sends a message only to the sender,Posts the message to Twitter,Deletes the message,Sends a message to everyone except the sender
+154,What is 'Polling' in the context of real-time data?,Users vote on a feature,Server pushes data to client automatically,The browser refreshes the page,Client repeatedly asks server for updates
+155,Which OWASP risk involves attackers executing scripts in a victim's browser?,Broken Access Control,Security Misconfiguration,SQL Injection,Cross-Site Scripting (XSS)
+156,What does JWT stand for in web security?,JSON Web Token,Just Weekly Testing,Java Web Terminal,Joint Web Transfer
+157,Which HTTP header helps prevent Clickjacking attacks?,User-Agent,X-Frame-Options,Accept-Language,Content-Type
+158,What is 'Salt' used for in password security?,Deleting old passwords,Encrypting the username,Making the database load faster,Adding random data to a password before hashing
+159,Which principle suggests giving users only the access they need?,Open Access,Least Privilege,Dependency Inversion,Maximum Security
+160,What is the purpose of a Content Security Policy (CSP)?,To style the website,To track user analytics,To restrict which resources the browser can load,To store user passwords
+161,"In the Testing Pyramid, which tests are the fastest and cheapest?",Integration Tests,Unit Tests,Manual Tests,End-to-End (E2E) Tests
+162,Which testing tool is a popular JavaScript Unit Testing framework?,Jest,MongoDB,Express,React
+163,What does 'Code Coverage' measure?,How many lines of code are in the project,The physical size of the JS file,How many users are testing the app,The percentage of code executed during tests
+164,"What kind of attack was ""Samy?""",XSS,Supply Chain,Clickjacking,Database attack
+165,Which type of test checks if the entire system works from a user's perspective?,Integration Test,Unit Test,Linting,End-to-End (E2E)
+166,What is 'TDD' in software development?,Time-Delayed Deployment,Test-Driven Development,Total Data Design,Technical Debt Delivery
+167,What does IDOR stand for?,In Done Object Reference,Insecure Direct Object Retaliation,Inner Direct Object Reference,Insecure Direct Object Reference
+168,What is 'Cross-Platform Development'?,Using multiple databases,"Using one codebase for multiple platforms (iOS, Android, Web)",Hosting a site on two servers,Crossing from Windows to Mac
+169,React Native allows you to build mobile apps using which language?,C++,Kotlin,Swift,JavaScript/React
+170,What is a 'Progressive Web App' (PWA)?,A type of database,A website that only works on desktop,A web app that feels like a native mobile app,An app that requires an app store install
+171,Which desktop framework uses web technologies and Chromium?,Flutter,React Native,MongoDB,Electron
+172,What is a 'signaling server' used for in WebRTC?,To render the HTML,To store video files,To encrypt the password,To help peers find and connect to each other
+173,Which Socket.IO method is used to listen for an event?,socket.listen(),socket.send(),socket.on(),socket.emit()
+174,What is 'CSRF'?,Code Standard Reset Form,Cross-Site Request Forgery,Central Security Reset File,Common System Risk Factor
+175,Why should you never store plain-text passwords?,They make the website slow,They are easily stolen in a data breach,They are hard to type,They take up too much memory
+176,Why should you never store plain-text passwords?,n/a,n/a,n/a,n/a
+177,What is 'Injection' in the OWASP Top 10?,n/a,n/a,n/a,n/a
+178,What does 'HTTPS' provide that 'HTTP' does not?,n/a,n/a,n/a,n/a
+179,"In JWT, which part contains the user's data (claims)?",n/a,n/a,n/a,n/a
+180,What is 'Integration Testing'?,n/a,n/a,n/a,n/a
+181,What is a 'Mock' in testing?,n/a,n/a,n/a,n/a
+182,Which testing level is usually the most 'expensive' and slow?,n/a,n/a,n/a,n/a
+183,What is 'CI/CD'?,n/a,n/a,n/a,n/a
+184,What is 'Regression Testing'?,n/a,n/a,n/a,n/a
+185,"Which framework is known for 'Write once, run anywhere' using the Dart language?",n/a,n/a,n/a,n/a
+186,What is 'Hot Reload' in cross-platform development?,n/a,n/a,n/a,n/a
+187,What is 'Bridging' in React Native?,n/a,n/a,n/a,n/a
+188,Which technology uses 'Service Workers' for offline support?,n/a,n/a,n/a,n/a
+189,What is the main disadvantage of Electron?,n/a,n/a,n/a,n/a
+190,Which OWASP risk involves poorly protected sensitive data?,n/a,n/a,n/a,n/a
+191,What is 'Bcrypt' commonly used for?,n/a,n/a,n/a,n/a
+192,"In WebSockets, the 'Handshake' happens over which protocol?",n/a,n/a,n/a,n/a
+193,What does 'stateless' mean in the context of JWT?,n/a,n/a,n/a,n/a
+194,Which tool helps identify vulnerable dependencies in your project?,n/a,n/a,n/a,n/a
+195,What is 'Black Box Testing'?,n/a,n/a,n/a,n/a
+196,What is 'Code Smell'?,n/a,n/a,n/a,n/a
+197,Which is a common pitfall in testing?,n/a,n/a,n/a,n/a
+198,What is the primary focus of 'Inclusive Design'?,n/a,n/a,n/a,n/a
+199,What is the 'Network Tab' in DevTools used for?,n/a,n/a,n/a,n/a
+200,What is 'MFA'?,n/a,n/a,n/a,n/a
+201,"In cross-platform development, what is a 'Native Module'?",n/a,n/a,n/a,n/a
+,S5: Misc. (Group Management),,,,
+201,Which type of conflict involves disagreements about work content and goals?,Personal Conflict,Relationship Conflict,Logical Conflict,Task Conflict
+202,"What is a characteristic of ""Relationship Conflict""?",Solving technical bugs,Interpersonal tensions and personality clashes,Increased team innovation,Focus on project milestones
+203,Which conflict type is most likely to reduce team performance and satisfaction?,Task Conflict,Relationship Conflict,Resource Conflict,Process Conflict
+204,"According to Tuckman’s stages, what is the first stage of team development?",Storming,Forming,Norming,Performing
+205,In which stage of team development do members start to resolve differences and develop symbols of local identity?,Forming,Performing,Norming,Adjourning
+206,"What is the ""Storming"" stage characterized by?",n/a,n/a,n/a,n/a
+207,"Which Thomas-Kilmann conflict mode is ""High Assertiveness"" and ""Low Cooperativeness""?",n/a,n/a,n/a,n/a
+208,"What is the ""Collaborating"" mode in conflict management?",n/a,n/a,n/a,n/a
+209,Which document outlines communication protocols and role assignments for a team?,n/a,n/a,n/a,n/a
+210,"The ""Compromising"" mode is characterized by what?",n/a,n/a,n/a,n/a

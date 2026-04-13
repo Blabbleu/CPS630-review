@@ -1,0 +1,378 @@
+/**
+ * Quiz app: loads bank via question-bank.js, renders questions, scores, review.
+ */
+import { loadQuestionBank, filterQuestions, normalizeQuestion } from "./question-bank.js";
+import {
+  bankFingerprint,
+  ensureBankContext,
+  recordQuestionAnswer,
+  recordAttempt,
+  getQuestionStat,
+  getAggregateStats,
+  getRecentAttempts,
+  clearAll,
+} from "./quiz-storage.js";
+
+const els = {
+  progressFill: document.getElementById("progress-fill"),
+  progressMeta: document.getElementById("progress-meta"),
+  viewStart: document.getElementById("view-start"),
+  viewQuiz: document.getElementById("view-quiz"),
+  viewResults: document.getElementById("view-results"),
+  bankTitle: document.getElementById("bank-title"),
+  bankCount: document.getElementById("bank-count"),
+  sectionFilter: document.getElementById("section-filter"),
+  btnStart: document.getElementById("btn-start"),
+  questionTag: document.getElementById("question-tag"),
+  questionHistory: document.getElementById("question-history"),
+  questionStem: document.getElementById("question-stem"),
+  options: document.getElementById("options"),
+  feedback: document.getElementById("feedback"),
+  btnNext: document.getElementById("btn-next"),
+  chips: document.querySelectorAll(".chip"),
+  scoreValue: document.getElementById("score-value"),
+  scoreSummary: document.getElementById("score-summary"),
+  reviewList: document.getElementById("review-list"),
+  btnRestart: document.getElementById("btn-restart"),
+  btnHome: document.getElementById("btn-home"),
+  loadError: document.getElementById("load-error"),
+  statsPanel: document.getElementById("stats-panel"),
+  statsSummary: document.getElementById("stats-summary"),
+  statsAttemptsWrap: document.getElementById("stats-attempts-wrap"),
+  statsAttempts: document.getElementById("stats-attempts"),
+  btnClearStorage: document.getElementById("btn-clear-storage"),
+};
+
+/** @type {ReturnType<normalizeQuestion>[]} */
+let queue = [];
+let index = 0;
+/** @type {Record<number, 'confident'|'unsure'|'review'|''>} */
+let confidence = {};
+/** @type {Record<number, { choiceIndex: number, correct: boolean }>} */
+let answers = {};
+
+/** @type {string} Section filter label for the current run (for attempt history) */
+let currentSectionFilter = "";
+
+/** @type {number} */
+let bankQuestionCount = 0;
+
+function setProgress() {
+  const total = queue.length;
+  const pct = total ? ((index + 1) / total) * 100 : 0;
+  els.progressFill.style.width = `${pct}%`;
+  els.progressMeta.textContent = total ? `Question ${index + 1} of ${total}` : "";
+  const bar = els.progressFill.closest('[role="progressbar"]');
+  if (bar) bar.setAttribute("aria-valuenow", String(Math.round(pct)));
+}
+
+function renderQuestion() {
+  const q = queue[index];
+  if (!q) return;
+
+  const shortSection = q.section.replace(/^Section\s*\d*:\s*/i, "").trim() || "Quiz";
+  els.questionTag.textContent = shortSection.slice(0, 72) + (shortSection.length > 72 ? "…" : "");
+  els.questionStem.textContent = q.question;
+  els.options.innerHTML = "";
+  els.feedback.classList.add("hidden");
+  els.feedback.textContent = "";
+  els.btnNext.disabled = true;
+
+  const answered = answers[q.order];
+
+  q.choices.forEach((choice, i) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "option-btn";
+    btn.dataset.index = String(i);
+    const key = document.createElement("span");
+    key.className = "option-key";
+    key.textContent = `${choice.id}.`;
+    btn.appendChild(key);
+    btn.appendChild(document.createTextNode(choice.text));
+
+    if (answered) {
+      btn.disabled = true;
+      if (choice.correct) btn.classList.add("correct-reveal");
+      if (answered.choiceIndex === i && !choice.correct) btn.classList.add("incorrect-reveal");
+      if (answered.choiceIndex === i && choice.correct) btn.classList.add("selected");
+    } else {
+      btn.addEventListener("click", () => selectOption(i));
+    }
+    els.options.appendChild(btn);
+  });
+
+  if (answered) {
+    showFeedback(answered.correct);
+    els.btnNext.disabled = false;
+  }
+
+  // Confidence chips
+  const level = confidence[q.order] || "";
+  els.chips.forEach((chip) => {
+    chip.classList.toggle("active", chip.dataset.level === level);
+  });
+
+  const stat = getQuestionStat(q.order);
+  if (stat && stat.seen > 0) {
+    const acc = Math.round((stat.correctCount / stat.seen) * 100);
+    els.questionHistory.textContent = `Answered ${stat.seen} time${stat.seen === 1 ? "" : "s"} · ${acc}% correct`;
+    els.questionHistory.classList.remove("hidden");
+  } else {
+    els.questionHistory.textContent = "";
+    els.questionHistory.classList.add("hidden");
+  }
+
+  setProgress();
+}
+
+function selectOption(choiceIndex) {
+  const q = queue[index];
+  const choice = q.choices[choiceIndex];
+  const correct = !!choice.correct;
+  answers[q.order] = { choiceIndex, correct };
+
+  const buttons = els.options.querySelectorAll(".option-btn");
+  buttons.forEach((btn, i) => {
+    btn.disabled = true;
+    const c = q.choices[i];
+    if (c.correct) btn.classList.add("correct-reveal");
+    if (i === choiceIndex) {
+      btn.classList.add("selected");
+      if (!c.correct) btn.classList.add("incorrect-reveal");
+    }
+  });
+
+  recordQuestionAnswer(q.order, correct);
+
+  const st = getQuestionStat(q.order);
+  if (st && st.seen > 0) {
+    const acc = Math.round((st.correctCount / st.seen) * 100);
+    els.questionHistory.textContent = `Answered ${st.seen} time${st.seen === 1 ? "" : "s"} · ${acc}% correct`;
+    els.questionHistory.classList.remove("hidden");
+  }
+
+  showFeedback(correct);
+  els.btnNext.disabled = false;
+}
+
+function showFeedback(ok) {
+  els.feedback.classList.remove("hidden", "ok", "bad");
+  els.feedback.classList.add(ok ? "ok" : "bad");
+  els.feedback.textContent = ok ? "Correct." : "Not quite — the highlighted answer is correct.";
+}
+
+function setConfidence(level) {
+  const q = queue[index];
+  if (!q) return;
+  confidence[q.order] = confidence[q.order] === level ? "" : level;
+  els.chips.forEach((chip) => {
+    chip.classList.toggle("active", chip.dataset.level === confidence[q.order]);
+  });
+}
+
+function goNext() {
+  if (index < queue.length - 1) {
+    index += 1;
+    renderQuestion();
+  } else {
+    showResults();
+  }
+}
+
+function showResults() {
+  els.viewQuiz.classList.add("hidden");
+  els.viewResults.classList.remove("hidden");
+
+  let correctN = 0;
+  queue.forEach((q) => {
+    const a = answers[q.order];
+    if (a?.correct) correctN += 1;
+  });
+  const total = queue.length;
+  const pct = total ? Math.round((correctN / total) * 100) : 0;
+  els.scoreValue.textContent = `${pct}%`;
+  els.scoreSummary.textContent = `${correctN} of ${total} correct.`;
+
+  els.reviewList.innerHTML = "";
+  queue.forEach((q) => {
+    const a = answers[q.order];
+    if (a?.correct) return;
+    const item = document.createElement("div");
+    item.className = "review-item card";
+    const stem = document.createElement("p");
+    stem.className = "title-lg";
+    stem.style.marginBottom = "0.75rem";
+    stem.textContent = q.question;
+    const detail = document.createElement("p");
+    detail.style.fontSize = "0.9375rem";
+    detail.style.color = "color-mix(in srgb, var(--on_surface) 70%, transparent)";
+    const right = q.choices.find((c) => c.correct);
+    const yours = a ? q.choices[a.choiceIndex] : null;
+    detail.innerHTML = yours
+      ? `Your answer: <strong>${yours.id}</strong>. Correct: <strong>${right?.id}</strong>.`
+      : `Correct: <strong>${right?.id}</strong>.`;
+    item.appendChild(stem);
+    item.appendChild(detail);
+    els.reviewList.appendChild(item);
+  });
+
+  if (!els.reviewList.children.length) {
+    const p = document.createElement("p");
+    p.className = "lede";
+    p.style.marginBottom = 0;
+    p.textContent = "No misses — strong work.";
+    els.reviewList.appendChild(p);
+  }
+
+  els.progressFill.style.width = "100%";
+  els.progressMeta.textContent = "Complete";
+
+  recordAttempt({
+    sectionFilter: currentSectionFilter,
+    total,
+    correct: correctN,
+    pct,
+  });
+}
+
+function restart() {
+  index = 0;
+  answers = {};
+  confidence = {};
+  els.viewResults.classList.add("hidden");
+  els.viewQuiz.classList.remove("hidden");
+  renderQuestion();
+}
+
+function renderProgressPanel() {
+  const agg = getAggregateStats(bankQuestionCount);
+  const lines = [
+    `<strong>${agg.attemptsCompleted}</strong> completed quiz run${agg.attemptsCompleted === 1 ? "" : "s"}`,
+    `<strong>${agg.questionsTouched}</strong> / ${agg.bankSize} questions answered at least once`,
+  ];
+  if (agg.totalAnswerEvents > 0 && agg.accuracyPct !== null) {
+    lines.push(
+      `<strong>${agg.accuracyPct}%</strong> overall accuracy across ${agg.totalAnswerEvents} answer${agg.totalAnswerEvents === 1 ? "" : "s"}`
+    );
+  }
+  els.statsSummary.innerHTML = lines.join("<br />");
+
+  const recent = getRecentAttempts(8);
+  if (recent.length) {
+    els.statsAttemptsWrap.classList.remove("hidden");
+    els.statsAttempts.innerHTML = "";
+    recent.forEach((a) => {
+      const li = document.createElement("li");
+      const when = new Date(a.at);
+      const timeEl = document.createElement("time");
+      timeEl.dateTime = a.at;
+      timeEl.textContent = when.toLocaleString(undefined, {
+        dateStyle: "medium",
+        timeStyle: "short",
+      });
+      const filter = a.sectionFilter ? ` · ${escapeHtml(a.sectionFilter)}` : " · All sections";
+      li.appendChild(timeEl);
+      const detail = document.createElement("span");
+      detail.innerHTML = `${a.pct}% (${a.correct}/${a.total})${filter}`;
+      li.appendChild(detail);
+      els.statsAttempts.appendChild(li);
+    });
+  } else {
+    els.statsAttemptsWrap.classList.add("hidden");
+    els.statsAttempts.innerHTML = "";
+  }
+
+  els.statsPanel.classList.remove("hidden");
+}
+
+function escapeHtml(s) {
+  const d = document.createElement("div");
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+function goHome() {
+  els.viewResults.classList.add("hidden");
+  els.viewStart.classList.remove("hidden");
+  renderProgressPanel();
+}
+
+async function init() {
+  try {
+    const bank = await loadQuestionBank();
+    bankQuestionCount = bank.questionCount ?? bank.questions?.length ?? 0;
+    ensureBankContext(bank);
+
+    els.bankTitle.textContent = bank.title || "Practice Quiz";
+    els.bankCount.textContent = `${bank.questionCount} questions`;
+    renderProgressPanel();
+
+    const sections = new Set();
+    bank.questions.forEach((q) => {
+      const s = (q.section || "").replace(/^Section\s*\d*:\s*/i, "").trim();
+      if (s) sections.add(s.split(",")[0].trim());
+    });
+    const sorted = [...sections].sort();
+    sorted.forEach((name) => {
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = name;
+      els.sectionFilter.appendChild(opt);
+    });
+
+    els.btnStart.addEventListener("click", () => {
+      const section = els.sectionFilter.value;
+      currentSectionFilter = section;
+      const filtered = filterQuestions(bank.questions.map(normalizeQuestion), {
+        section: section || undefined,
+      });
+      queue = filtered.length ? filtered : bank.questions.map(normalizeQuestion);
+      index = 0;
+      answers = {};
+      confidence = {};
+      els.viewStart.classList.add("hidden");
+      els.viewQuiz.classList.remove("hidden");
+      renderQuestion();
+    });
+
+    els.btnNext.addEventListener("click", goNext);
+    els.btnRestart.addEventListener("click", restart);
+    els.btnHome.addEventListener("click", goHome);
+
+    els.btnClearStorage.addEventListener("click", () => {
+      if (
+        !window.confirm(
+          "Clear all saved quiz progress and attempt history in this browser?"
+        )
+      ) {
+        return;
+      }
+      clearAll();
+      ensureBankContext(bank);
+      renderProgressPanel();
+    });
+
+    els.chips.forEach((chip) => {
+      chip.addEventListener("click", () => setConfidence(chip.dataset.level));
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (els.viewQuiz.classList.contains("hidden")) return;
+      const q = queue[index];
+      if (!q || answers[q.order]) {
+        if (e.key === "Enter" && !els.btnNext.disabled) goNext();
+        return;
+      }
+      const map = { "1": 0, "2": 1, "3": 2, "4": 3 };
+      if (e.key in map) selectOption(map[e.key]);
+    });
+  } catch (err) {
+    console.error(err);
+    els.loadError.classList.remove("hidden");
+    els.loadError.textContent =
+      err instanceof Error ? err.message : "Failed to load question bank.";
+  }
+}
+
+init();
