@@ -182,6 +182,7 @@ export function clearAll() {
  * @property {number} index
  * @property {Record<string, { choiceIndex: number, correct: boolean }>} answers
  * @property {boolean} [examMode]
+ * @property {number} [timerStartedAt] ms since epoch when this session timer started
  */
 
 /** @returns {ActiveSessionV1 | null} */
@@ -208,6 +209,10 @@ export function loadActiveSession() {
     answers:
       typeof parsed.answers === "object" && parsed.answers !== null ? parsed.answers : {},
     examMode: !!parsed.examMode,
+    timerStartedAt:
+      typeof parsed.timerStartedAt === "number" && Number.isFinite(parsed.timerStartedAt)
+        ? parsed.timerStartedAt
+        : undefined,
   };
 }
 
@@ -225,6 +230,9 @@ export function saveActiveSession(data) {
     index: data.index,
     answers: data.answers,
     examMode: !!data.examMode,
+    ...(typeof data.timerStartedAt === "number" && Number.isFinite(data.timerStartedAt)
+      ? { timerStartedAt: data.timerStartedAt }
+      : {}),
   };
   try {
     localStorage.setItem(SESSION_KEY, JSON.stringify(payload));

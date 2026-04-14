@@ -83,6 +83,7 @@ const els = {
   btnDiscardSession: document.getElementById("btn-discard-session"),
   btnQuizHome: document.getElementById("btn-quiz-home"),
   btnStartExam: document.getElementById("btn-start-exam"),
+  quizTimer: document.getElementById("quiz-timer"),
 };
 
 initTheme();
@@ -105,7 +106,54 @@ let bankData = null;
 /** Practice vs exam (no per-question feedback until submit). */
 let examMode = false;
 
+/** @type {number | null} ms since epoch; session timer start */
+let quizTimerStartedAt = null;
+
+/** @type {ReturnType<typeof setInterval> | null} */
+let quizTimerIntervalId = null;
+
 const EXAM_QUESTION_TARGET = 100;
+
+function formatElapsedSeconds(totalSec) {
+  const s = Math.max(0, Math.floor(totalSec));
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = s % 60;
+  if (h > 0) return `${h}:${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
+  return `${m}:${String(sec).padStart(2, "0")}`;
+}
+
+function updateQuizTimerDisplay() {
+  if (!els.quizTimer || quizTimerStartedAt == null) return;
+  els.quizTimer.textContent = formatElapsedSeconds((Date.now() - quizTimerStartedAt) / 1000);
+}
+
+function stopQuizTimerInterval() {
+  if (quizTimerIntervalId != null) {
+    clearInterval(quizTimerIntervalId);
+    quizTimerIntervalId = null;
+  }
+}
+
+/** Start or resume the stopwatch (interval updates every second). */
+function startQuizTimer(fromTimestamp = null) {
+  stopQuizTimerInterval();
+  quizTimerStartedAt = fromTimestamp ?? Date.now();
+  updateQuizTimerDisplay();
+  quizTimerIntervalId = setInterval(updateQuizTimerDisplay, 1000);
+}
+
+/** Clear interval only (keep start time for persistence). */
+function pauseQuizTimerInterval() {
+  stopQuizTimerInterval();
+}
+
+/** Stop interval and reset display/state. */
+function resetQuizTimer() {
+  stopQuizTimerInterval();
+  quizTimerStartedAt = null;
+  if (els.quizTimer) els.quizTimer.textContent = "0:00";
+}
 
 /**
  * @param {ReturnType<normalizeQuestion>[]} questions
@@ -136,6 +184,7 @@ function persistSession() {
     index,
     answers,
     examMode,
+    ...(quizTimerStartedAt != null ? { timerStartedAt: quizTimerStartedAt } : {}),
   });
 }
 
@@ -361,6 +410,10 @@ function updateJumpHighlight() {
 }
 
 function showResults() {
+  const elapsedSec =
+    quizTimerStartedAt != null ? Math.floor((Date.now() - quizTimerStartedAt) / 1000) : 0;
+  resetQuizTimer();
+
   clearActiveSession();
 
   if (examMode) {
@@ -391,7 +444,7 @@ function showResults() {
   els.scoreValue.textContent = `${pct}%`;
   let summary = `${correctN} of ${total} correct`;
   if (skipped > 0) summary += ` · ${skipped} not answered`;
-  summary += ".";
+  summary += ` · Time ${formatElapsedSeconds(elapsedSec)}.`;
   els.scoreSummary.textContent = summary;
 
   els.reviewList.innerHTML = "";
@@ -454,6 +507,7 @@ function restart() {
   answers = {};
   els.viewResults.classList.add("hidden");
   els.viewQuiz.classList.remove("hidden");
+  startQuizTimer();
   buildJumpNav();
   renderQuestion();
   persistSession();
@@ -516,6 +570,7 @@ function goHome() {
 }
 
 function goHomeFromQuiz() {
+  pauseQuizTimerInterval();
   persistSession();
   els.viewQuiz.classList.add("hidden");
   els.viewStart.classList.remove("hidden");
@@ -559,6 +614,7 @@ async function init() {
       queue = filtered.length ? filtered : bank.questions.map(normalizeQuestion);
       index = 0;
       answers = {};
+      startQuizTimer();
       els.viewStart.classList.add("hidden");
       els.viewQuiz.classList.remove("hidden");
       buildJumpNav();
@@ -578,6 +634,7 @@ async function init() {
       index = 0;
       answers = {};
       setFinishButtonLabel();
+      startQuizTimer();
       els.viewStart.classList.add("hidden");
       els.viewQuiz.classList.remove("hidden");
       buildJumpNav();
@@ -593,6 +650,7 @@ async function init() {
       }
       const rebuilt = rebuildQueueFromOrders(bankData, s.questionOrders);
       if (!rebuilt.length) {
+        resetQuizTimer();
         clearActiveSession();
         updateResumePanel();
         return;
@@ -608,9 +666,12 @@ async function init() {
       els.viewQuiz.classList.remove("hidden");
       buildJumpNav();
       renderQuestion();
+      startQuizTimer(s.timerStartedAt ?? Date.now());
+      persistSession();
     });
 
     els.btnDiscardSession.addEventListener("click", () => {
+      resetQuizTimer();
       clearActiveSession();
       updateResumePanel();
     });
@@ -652,6 +713,7 @@ async function init() {
         return;
       }
       clearAll();
+      resetQuizTimer();
       ensureBankContext(bank);
       renderProgressPanel();
     });
