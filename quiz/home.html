@@ -30,18 +30,52 @@
           </p>
 
           <div class="card" style="margin-bottom: 2rem">
-            <p class="label-md" style="margin-bottom: 0.75rem">Question bank</p>
+            <p class="label-md section-label" style="margin-bottom: 0.75rem">Question bank</p>
             <p id="bank-title" class="title-lg" style="margin-bottom: 0.5rem">Loading…</p>
             <p id="bank-count" class="meta-muted">—</p>
           </div>
 
           <div class="card" style="margin-bottom: 2rem">
-            <label class="label-md" for="section-filter" style="display: block; margin-bottom: 0.75rem"
-              >Filter by section</label
+            <label class="label-md section-label" for="section-filter" style="margin-bottom: 0.75rem"
+              >Review Concepts</label
             >
             <select id="section-filter" class="field-select">
               <option value="">All sections</option>
             </select>
+            <p class="meta-muted" style="margin: 0.9rem 0 0; max-width: 36rem">
+              Choose a section focus, then start a learning run with immediate feedback.
+            </p>
+            <div class="btn-row" style="margin-top: 1rem">
+              <button type="button" class="btn btn-primary" id="btn-start">Begin learning</button>
+            </div>
+          </div>
+
+          <div class="card" style="margin-bottom: 2rem">
+            <p class="label-md section-label" style="margin-bottom: 0.75rem">Exam mode</p>
+            <p class="meta-muted" style="margin: 0; max-width: 36rem; line-height: 1.45">
+              Starts up to 100 random questions from the current filter. You can change answers before submit;
+              feedback appears only after you finish.
+            </p>
+            <div class="btn-row" style="margin-top: 1rem">
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="btn-start-exam"
+                title="100 random questions from the current filter. No correct/incorrect until you submit."
+              >
+                Start exam mode
+              </button>
+            </div>
+          </div>
+
+          <div class="card" style="margin-bottom: 2rem">
+            <p class="label-md section-label" style="margin-bottom: 0.75rem">Flash cards</p>
+            <p class="meta-muted" style="margin: 0; max-width: 36rem; line-height: 1.45">
+              Review concepts one by one with a flipping card and quick next/previous navigation.
+            </p>
+            <div class="btn-row" style="margin-top: 1rem">
+              <a class="btn btn-primary btn-link" href="flashcards.html">Open flash cards</a>
+            </div>
           </div>
 
           <div id="stats-panel" class="card stats-panel hidden" style="margin-bottom: 2rem" aria-live="polite">
@@ -52,7 +86,7 @@
               <ul id="stats-attempts" class="stats-attempts"></ul>
             </div>
             <div class="btn-row" style="margin-top: 1.25rem; margin-bottom: 0">
-              <button type="button" class="btn btn-secondary" id="btn-clear-storage">
+              <button type="button" class="btn btn-danger" id="btn-clear-storage">
                 Clear saved progress
               </button>
             </div>
@@ -72,23 +106,12 @@
           </div>
 
           <div class="btn-row">
-            <button type="button" class="btn btn-secondary js-theme-toggle" id="btn-theme-start">
-              Theme: Auto
-            </button>
-            <button type="button" class="btn btn-primary" id="btn-start">Begin</button>
-            <button
-              type="button"
-              class="btn btn-secondary"
-              id="btn-start-exam"
-              title="100 random questions from the current filter. No correct/incorrect until you submit."
-            >
-              Exam mode (100)
-            </button>
+            <label class="theme-switch" for="theme-switch-start">
+              <span class="theme-switch-label">Dark mode</span>
+              <input id="theme-switch-start" type="checkbox" class="js-theme-switch" />
+              <span class="theme-switch-track" aria-hidden="true"></span>
+            </label>
           </div>
-          <p class="meta-muted" style="margin-top: 1rem; max-width: 36rem; line-height: 1.45">
-            Exam mode picks up to 100 random questions (or fewer if the filter has less). You can change answers
-            before submitting; results and explanations appear only after submit.
-          </p>
         </div>
 
         <div id="view-quiz" class="hidden">
@@ -107,13 +130,11 @@
                         title="Elapsed time"
                         >0:00</span>
                       <span id="progress-meta" class="meta-muted"></span>
-                      <button
-                        type="button"
-                        class="btn btn-secondary btn-theme-compact js-theme-toggle"
-                        id="btn-theme-quiz"
-                      >
-                        Theme: Auto
-                      </button>
+                      <label class="theme-switch theme-switch-compact" for="theme-switch-quiz">
+                        <span class="theme-switch-label">Dark mode</span>
+                        <input id="theme-switch-quiz" type="checkbox" class="js-theme-switch" />
+                        <span class="theme-switch-track" aria-hidden="true"></span>
+                      </label>
                     </div>
                   </div>
                   <div class="progress-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
@@ -188,7 +209,11 @@
                 <button type="button" class="btn btn-secondary" data-results-action="restart">
                   Practice again
                 </button>
-                <button type="button" class="btn btn-secondary js-theme-toggle">Theme: Auto</button>
+                <label class="theme-switch" for="theme-switch-results">
+                  <span class="theme-switch-label">Dark mode</span>
+                  <input id="theme-switch-results" type="checkbox" class="js-theme-switch" />
+                  <span class="theme-switch-track" aria-hidden="true"></span>
+                </label>
               </div>
             </div>
             <h2 class="title-lg results-review-heading">Review misses</h2>

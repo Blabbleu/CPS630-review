@@ -72,9 +72,11 @@
           </div>
 
           <div class="btn-row">
-            <button type="button" class="btn btn-secondary js-theme-toggle" id="btn-theme-start">
-              Theme: Auto
-            </button>
+            <label class="theme-switch" for="theme-switch-start">
+              <span class="theme-switch-label">Dark mode</span>
+              <input id="theme-switch-start" type="checkbox" class="js-theme-switch" />
+              <span class="theme-switch-track" aria-hidden="true"></span>
+            </label>
             <button type="button" class="btn btn-primary" id="btn-start">Begin</button>
             <button
               type="button"
@@ -107,13 +109,11 @@
                         title="Elapsed time"
                         >0:00</span>
                       <span id="progress-meta" class="meta-muted"></span>
-                      <button
-                        type="button"
-                        class="btn btn-secondary btn-theme-compact js-theme-toggle"
-                        id="btn-theme-quiz"
-                      >
-                        Theme: Auto
-                      </button>
+                      <label class="theme-switch theme-switch-compact" for="theme-switch-quiz">
+                        <span class="theme-switch-label">Dark mode</span>
+                        <input id="theme-switch-quiz" type="checkbox" class="js-theme-switch" />
+                        <span class="theme-switch-track" aria-hidden="true"></span>
+                      </label>
                     </div>
                   </div>
                   <div class="progress-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
@@ -188,7 +188,11 @@
                 <button type="button" class="btn btn-secondary" data-results-action="restart">
                   Practice again
                 </button>
-                <button type="button" class="btn btn-secondary js-theme-toggle">Theme: Auto</button>
+                <label class="theme-switch" for="theme-switch-results">
+                  <span class="theme-switch-label">Dark mode</span>
+                  <input id="theme-switch-results" type="checkbox" class="js-theme-switch" />
+                  <span class="theme-switch-track" aria-hidden="true"></span>
+                </label>
               </div>
             </div>
             <h2 class="title-lg results-review-heading">Review misses</h2>

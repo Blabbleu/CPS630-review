@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CPS630 - Flash Cards</title>
+    <script>
+      (function () {
+        try {
+          var k = "cps630-theme";
+          var p = localStorage.getItem(k);
+          var dark =
+            p === "dark" || (p !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("theme-dark", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="css/atelier.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <main class="main-stage flash-layout">
+        <div class="flash-topbar">
+          <p class="brand-mark">Concept Review</p>
+          <div class="btn-row" style="margin-top: 0">
+            <label class="theme-switch" for="theme-switch-flashcards">
+              <span class="theme-switch-label">Dark mode</span>
+              <input id="theme-switch-flashcards" type="checkbox" class="js-theme-switch" />
+              <span class="theme-switch-track" aria-hidden="true"></span>
+            </label>
+            <a class="btn btn-secondary btn-link" href="home.html">Home</a>
+          </div>
+        </div>
+
+        <h1 class="display-intro" style="font-size: clamp(1.9rem, 3.7vw, 2.9rem)">Flash cards</h1>
+        <p class="lede" style="margin-bottom: 1.5rem">
+          Click the card to flip and reveal the answer. Use sections to focus your review.
+        </p>
+
+        <div class="card flash-controls">
+          <div>
+            <label class="label-md" for="flash-section" style="display: block; margin-bottom: 0.75rem"
+              >Filter by section</label
+            >
+            <select id="flash-section" class="field-select">
+              <option value="">All sections</option>
+            </select>
+          </div>
+          <div class="btn-row" style="margin-top: 0">
+            <button type="button" class="btn btn-primary" id="btn-flip-card">Flip card</button>
+            <button type="button" class="btn btn-secondary" id="btn-shuffle-cards">Shuffle</button>
+          </div>
+          <p id="flash-progress" class="meta-muted" style="margin: 0"></p>
+        </div>
+
+        <article id="flash-card" class="flash-card" tabindex="0" aria-live="polite">
+          <div id="flash-card-inner" class="flash-card-inner">
+            <section class="card flash-face flash-face-front">
+              <p class="label-md" style="margin-bottom: 0.75rem">Question</p>
+              <p id="flash-section-label" class="label-md" style="margin-bottom: 0.75rem"></p>
+              <h2 id="flash-question" class="title-lg"></h2>
+              <p class="meta-muted" style="margin: 0">Click card to flip</p>
+            </section>
+            <section class="card flash-face flash-face-back">
+              <p class="label-md" style="margin-bottom: 0.75rem">Answer</p>
+              <p id="flash-answer-text" class="lede" style="margin: 0; max-width: 100%"></p>
+              <p class="meta-muted" style="margin-top: 1.25rem; margin-bottom: 0">Click card to flip back</p>
+            </section>
+          </div>
+        </article>
+
+        <div class="flash-nav-row" aria-label="Flash card navigation">
+          <button
+            type="button"
+            class="btn btn-secondary flash-arrow-btn"
+            id="btn-prev-card"
+            aria-label="Previous card"
+            title="Previous card"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary flash-arrow-btn"
+            id="btn-next-card"
+            aria-label="Next card"
+            title="Next card"
+          >
+            →
+          </button>
+        </div>
+
+        <p id="flash-empty" class="status-banner bad hidden" role="status"></p>
+      </main>
+    </div>
+
+    <script type="module" src="js/flashcards.js"></script>
+  </body>
+</html>
