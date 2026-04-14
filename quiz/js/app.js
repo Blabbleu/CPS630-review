@@ -11,6 +11,9 @@ import {
   getAggregateStats,
   getRecentAttempts,
   clearAll,
+  saveActiveSession,
+  loadActiveSession,
+  clearActiveSession,
 } from "./quiz-storage.js";
 import { initTheme } from "./theme.js";
 
@@ -42,6 +45,12 @@ const els = {
   statsAttemptsWrap: document.getElementById("stats-attempts-wrap"),
   statsAttempts: document.getElementById("stats-attempts"),
   btnClearStorage: document.getElementById("btn-clear-storage"),
+  resumePanel: document.getElementById("resume-panel"),
+  resumeSummary: document.getElementById("resume-summary"),
+  btnResume: document.getElementById("btn-resume"),
+  btnDiscardSession: document.getElementById("btn-discard-session"),
+  btnQuizHome: document.getElementById("btn-quiz-home"),
+  btnStartExam: document.getElementById("btn-start-exam"),
 };
 
 initTheme();
@@ -52,17 +61,91 @@ let index = 0;
 /** @type {Record<number, { choiceIndex: number, correct: boolean }>} */
 let answers = {};
 
-/** @type {string} Section filter label for the current run (for attempt history) */
-let currentSectionFilter = "";
+/** @type {string} Section dropdown value (empty = all sections); used for resume + attempt labels */
+let sectionFilterValue = "";
 
 /** @type {number} */
 let bankQuestionCount = 0;
+
+/** @type {{ title?: string, questionCount?: number, questions: object[] } | null} */
+let bankData = null;
+
+/** Practice vs exam (no per-question feedback until submit). */
+let examMode = false;
+
+const EXAM_QUESTION_TARGET = 100;
+
+/**
+ * @param {ReturnType<normalizeQuestion>[]} questions
+ * @param {number} count
+ */
+function pickRandomQuestions(questions, count) {
+  const n = Math.min(count, questions.length);
+  const copy = questions.slice();
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const t = copy[i];
+    copy[i] = copy[j];
+    copy[j] = t;
+  }
+  return copy.slice(0, n);
+}
+
+function setFinishButtonLabel() {
+  els.btnFinish.textContent = examMode ? "Submit exam" : "Finish session";
+}
+
+function persistSession() {
+  if (!bankData || !queue.length) return;
+  saveActiveSession({
+    bankFingerprint: bankFingerprint(bankData),
+    sectionFilter: sectionFilterValue,
+    questionOrders: queue.map((q) => q.order),
+    index,
+    answers,
+    examMode,
+  });
+}
+
+function updateResumePanel() {
+  const s = loadActiveSession();
+  if (!s || !bankData || s.bankFingerprint !== bankFingerprint(bankData) || !s.questionOrders.length) {
+    els.resumePanel.classList.add("hidden");
+    return;
+  }
+  const n = s.questionOrders.length;
+  const answered = Object.keys(s.answers).length;
+  const sectionLabel = s.examMode
+    ? `Exam (${s.questionOrders.length} questions)`
+    : s.sectionFilter
+      ? s.sectionFilter
+      : "All sections";
+  const at = Math.min(s.index + 1, n);
+  els.resumeSummary.textContent = `${sectionLabel} · ${answered} of ${n} answered · question ${at} of ${n}`;
+  els.resumePanel.classList.remove("hidden");
+}
+
+/**
+ * @param {{ questions: object[] }} bank
+ * @param {number[]} orders
+ */
+function rebuildQueueFromOrders(bank, orders) {
+  const map = new Map(bank.questions.map((q) => [q.order, normalizeQuestion(q)]));
+  const out = [];
+  for (const o of orders) {
+    const n = map.get(o);
+    if (!n) return [];
+    out.push(n);
+  }
+  return out;
+}
 
 function setProgress() {
   const total = queue.length;
   const pct = total ? ((index + 1) / total) * 100 : 0;
   els.progressFill.style.width = `${pct}%`;
-  els.progressMeta.textContent = total ? `Question ${index + 1} of ${total}` : "";
+  const prefix = examMode ? "Exam · " : "";
+  els.progressMeta.textContent = total ? `${prefix}Question ${index + 1} of ${total}` : "";
   const bar = els.progressFill.closest('[role="progressbar"]');
   if (bar) bar.setAttribute("aria-valuenow", String(Math.round(pct)));
 }
@@ -91,7 +174,12 @@ function renderQuestion() {
     btn.appendChild(key);
     btn.appendChild(document.createTextNode(choice.text));
 
-    if (answered) {
+    if (examMode) {
+      btn.addEventListener("click", () => selectOption(i));
+      if (answered && answered.choiceIndex === i) {
+        btn.classList.add("exam-selected");
+      }
+    } else if (answered) {
       btn.disabled = true;
       if (choice.correct) btn.classList.add("correct-reveal");
       if (answered.choiceIndex === i && !choice.correct) btn.classList.add("incorrect-reveal");
@@ -102,15 +190,20 @@ function renderQuestion() {
     els.options.appendChild(btn);
   });
 
-  if (answered) {
+  if (!examMode && answered) {
     showFeedback(answered.correct);
   }
 
-  const stat = getQuestionStat(q.order);
-  if (stat && stat.seen > 0) {
-    const acc = Math.round((stat.correctCount / stat.seen) * 100);
-    els.questionHistory.textContent = `Answered ${stat.seen} time${stat.seen === 1 ? "" : "s"} · ${acc}% correct`;
-    els.questionHistory.classList.remove("hidden");
+  if (!examMode) {
+    const stat = getQuestionStat(q.order);
+    if (stat && stat.seen > 0) {
+      const acc = Math.round((stat.correctCount / stat.seen) * 100);
+      els.questionHistory.textContent = `Answered ${stat.seen} time${stat.seen === 1 ? "" : "s"} · ${acc}% correct`;
+      els.questionHistory.classList.remove("hidden");
+    } else {
+      els.questionHistory.textContent = "";
+      els.questionHistory.classList.add("hidden");
+    }
   } else {
     els.questionHistory.textContent = "";
     els.questionHistory.classList.add("hidden");
@@ -125,6 +218,13 @@ function selectOption(choiceIndex) {
   const choice = q.choices[choiceIndex];
   const correct = !!choice.correct;
   answers[q.order] = { choiceIndex, correct };
+
+  if (examMode) {
+    renderQuestion();
+    updateJumpHighlight();
+    persistSession();
+    return;
+  }
 
   const buttons = els.options.querySelectorAll(".option-btn");
   buttons.forEach((btn, i) => {
@@ -148,6 +248,7 @@ function selectOption(choiceIndex) {
 
   showFeedback(correct);
   updateJumpHighlight();
+  persistSession();
 }
 
 function showFeedback(ok) {
@@ -160,12 +261,14 @@ function goNext() {
   if (!queue.length) return;
   index = (index + 1) % queue.length;
   renderQuestion();
+  persistSession();
 }
 
 function goPrev() {
   if (!queue.length) return;
   index = (index - 1 + queue.length) % queue.length;
   renderQuestion();
+  persistSession();
 }
 
 function buildJumpNav() {
@@ -179,6 +282,7 @@ function buildJumpNav() {
     b.addEventListener("click", () => {
       index = i;
       renderQuestion();
+      persistSession();
     });
     els.questionJump.appendChild(b);
   });
@@ -190,8 +294,14 @@ function updateJumpHighlight() {
     const q = queue[i];
     const a = q ? answers[q.order] : null;
     btn.classList.toggle("jump-btn--current", i === index);
-    btn.classList.toggle("jump-btn--correct", !!a?.correct);
-    btn.classList.toggle("jump-btn--wrong", !!a && !a.correct);
+    if (examMode) {
+      btn.classList.toggle("jump-btn--answered", !!a);
+      btn.classList.remove("jump-btn--correct", "jump-btn--wrong");
+    } else {
+      btn.classList.remove("jump-btn--answered");
+      btn.classList.toggle("jump-btn--correct", !!a?.correct);
+      btn.classList.toggle("jump-btn--wrong", !!a && !a.correct);
+    }
   });
   const currentBtn = buttons[index];
   if (currentBtn) {
@@ -200,8 +310,22 @@ function updateJumpHighlight() {
 }
 
 function showResults() {
+  clearActiveSession();
+
+  if (examMode) {
+    queue.forEach((q) => {
+      const a = answers[q.order];
+      if (a) recordQuestionAnswer(q.order, a.correct);
+    });
+  }
+
   els.viewQuiz.classList.add("hidden");
   els.viewResults.classList.remove("hidden");
+
+  const restartBtn = els.viewResults.querySelector('[data-results-action="restart"]');
+  if (restartBtn) {
+    restartBtn.textContent = examMode ? "New exam" : "Practice again";
+  }
 
   let correctN = 0;
   let answeredCount = 0;
@@ -253,8 +377,12 @@ function showResults() {
   els.progressFill.style.width = "100%";
   els.progressMeta.textContent = "Complete";
 
+  const attemptSectionLabel = examMode
+    ? `Exam · ${sectionFilterValue || "All sections"} · ${queue.length} random`
+    : sectionFilterValue || "All sections";
+
   recordAttempt({
-    sectionFilter: currentSectionFilter,
+    sectionFilter: attemptSectionLabel,
     total,
     correct: correctN,
     pct,
@@ -262,12 +390,22 @@ function showResults() {
 }
 
 function restart() {
+  if (examMode && bankData) {
+    const section = els.sectionFilter.value;
+    const filtered = filterQuestions(bankData.questions.map(normalizeQuestion), {
+      section: section || undefined,
+    });
+    const pool = filtered.length ? filtered : bankData.questions.map(normalizeQuestion);
+    queue = pickRandomQuestions(pool, EXAM_QUESTION_TARGET);
+    sectionFilterValue = section;
+  }
   index = 0;
   answers = {};
   els.viewResults.classList.add("hidden");
   els.viewQuiz.classList.remove("hidden");
   buildJumpNav();
   renderQuestion();
+  persistSession();
 }
 
 function renderProgressPanel() {
@@ -318,20 +456,33 @@ function escapeHtml(s) {
 }
 
 function goHome() {
+  examMode = false;
+  setFinishButtonLabel();
   els.viewResults.classList.add("hidden");
   els.viewStart.classList.remove("hidden");
   renderProgressPanel();
+  updateResumePanel();
+}
+
+function goHomeFromQuiz() {
+  persistSession();
+  els.viewQuiz.classList.add("hidden");
+  els.viewStart.classList.remove("hidden");
+  renderProgressPanel();
+  updateResumePanel();
 }
 
 async function init() {
   try {
     const bank = await loadQuestionBank();
+    bankData = bank;
     bankQuestionCount = bank.questionCount ?? bank.questions?.length ?? 0;
     ensureBankContext(bank);
 
     els.bankTitle.textContent = bank.title || "Practice Quiz";
     els.bankCount.textContent = `${bank.questionCount} questions`;
     renderProgressPanel();
+    updateResumePanel();
 
     const sections = new Set();
     bank.questions.forEach((q) => {
@@ -348,7 +499,9 @@ async function init() {
 
     els.btnStart.addEventListener("click", () => {
       const section = els.sectionFilter.value;
-      currentSectionFilter = section;
+      sectionFilterValue = section;
+      examMode = false;
+      setFinishButtonLabel();
       const filtered = filterQuestions(bank.questions.map(normalizeQuestion), {
         section: section || undefined,
       });
@@ -359,12 +512,76 @@ async function init() {
       els.viewQuiz.classList.remove("hidden");
       buildJumpNav();
       renderQuestion();
+      persistSession();
+    });
+
+    els.btnStartExam.addEventListener("click", () => {
+      const section = els.sectionFilter.value;
+      sectionFilterValue = section;
+      const filtered = filterQuestions(bank.questions.map(normalizeQuestion), {
+        section: section || undefined,
+      });
+      const pool = filtered.length ? filtered : bank.questions.map(normalizeQuestion);
+      examMode = true;
+      queue = pickRandomQuestions(pool, EXAM_QUESTION_TARGET);
+      index = 0;
+      answers = {};
+      setFinishButtonLabel();
+      els.viewStart.classList.add("hidden");
+      els.viewQuiz.classList.remove("hidden");
+      buildJumpNav();
+      renderQuestion();
+      persistSession();
+    });
+
+    els.btnResume.addEventListener("click", () => {
+      const s = loadActiveSession();
+      if (!s || !bankData || s.bankFingerprint !== bankFingerprint(bankData)) {
+        updateResumePanel();
+        return;
+      }
+      const rebuilt = rebuildQueueFromOrders(bankData, s.questionOrders);
+      if (!rebuilt.length) {
+        clearActiveSession();
+        updateResumePanel();
+        return;
+      }
+      queue = rebuilt;
+      index = Math.min(s.index, queue.length - 1);
+      answers = { ...s.answers };
+      sectionFilterValue = s.sectionFilter || "";
+      examMode = !!s.examMode;
+      setFinishButtonLabel();
+      els.sectionFilter.value = sectionFilterValue;
+      els.viewStart.classList.add("hidden");
+      els.viewQuiz.classList.remove("hidden");
+      buildJumpNav();
+      renderQuestion();
+    });
+
+    els.btnDiscardSession.addEventListener("click", () => {
+      clearActiveSession();
+      updateResumePanel();
+    });
+
+    els.btnQuizHome.addEventListener("click", () => {
+      goHomeFromQuiz();
     });
 
     els.btnPrev.addEventListener("click", goPrev);
     els.btnNext.addEventListener("click", goNext);
     els.btnFinish.addEventListener("click", () => {
       if (!queue.length) return;
+      if (examMode) {
+        const n = queue.length;
+        const answered = Object.keys(answers).length;
+        if (answered < n) {
+          const ok = window.confirm(
+            `Submit exam? ${n - answered} question${n - answered === 1 ? "" : "s"} still unanswered.`
+          );
+          if (!ok) return;
+        }
+      }
       showResults();
     });
     els.viewResults.addEventListener("click", (e) => {
@@ -378,7 +595,7 @@ async function init() {
     els.btnClearStorage.addEventListener("click", () => {
       if (
         !window.confirm(
-          "Clear all saved quiz progress and attempt history in this browser?"
+          "Clear all saved quiz progress, in-progress session, and attempt history in this browser?"
         )
       ) {
         return;
@@ -411,7 +628,8 @@ async function init() {
         }
 
         const q = queue[index];
-        if (!q || answers[q.order]) return;
+        if (!q) return;
+        if (!examMode && answers[q.order]) return;
         const map = { "1": 0, "2": 1, "3": 2, "4": 3 };
         if (e.key in map) selectOption(map[e.key]);
       },

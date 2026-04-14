@@ -3,8 +3,10 @@
  */
 
 const STORAGE_KEY = "cps630_quiz_progress";
+const SESSION_KEY = "cps630_quiz_active_session";
 const MAX_ATTEMPTS = 40;
 const CURRENT_VERSION = 1;
+const SESSION_VERSION = 1;
 
 /**
  * @typedef {object} QuestionStat
@@ -82,6 +84,7 @@ export function ensureBankContext(bank) {
   if (state.bankFingerprint && state.bankFingerprint !== fp) {
     state.questions = {};
     state.attempts = [];
+    clearActiveSession();
   }
   state.bankFingerprint = fp;
   saveState(state);
@@ -166,4 +169,74 @@ export function getRecentAttempts(limit = 8) {
 
 export function clearAll() {
   saveState(defaultState());
+  clearActiveSession();
+}
+
+/**
+ * In-progress session (unfinished run). Separate from per-question stats / attempts.
+ * @typedef {object} ActiveSessionV1
+ * @property {number} version
+ * @property {string} bankFingerprint
+ * @property {string} sectionFilter
+ * @property {number[]} questionOrders
+ * @property {number} index
+ * @property {Record<string, { choiceIndex: number, correct: boolean }>} answers
+ * @property {boolean} [examMode]
+ */
+
+/** @returns {ActiveSessionV1 | null} */
+export function loadActiveSession() {
+  let raw = null;
+  try {
+    raw = localStorage.getItem(SESSION_KEY);
+  } catch {
+    return null;
+  }
+  const parsed = safeParse(raw);
+  if (!parsed || typeof parsed !== "object" || parsed.version !== SESSION_VERSION) {
+    return null;
+  }
+  if (typeof parsed.bankFingerprint !== "string" || !Array.isArray(parsed.questionOrders)) {
+    return null;
+  }
+  return {
+    version: SESSION_VERSION,
+    bankFingerprint: parsed.bankFingerprint,
+    sectionFilter: typeof parsed.sectionFilter === "string" ? parsed.sectionFilter : "",
+    questionOrders: parsed.questionOrders.map((n) => Number(n)).filter((n) => Number.isFinite(n)),
+    index: typeof parsed.index === "number" && parsed.index >= 0 ? parsed.index : 0,
+    answers:
+      typeof parsed.answers === "object" && parsed.answers !== null ? parsed.answers : {},
+    examMode: !!parsed.examMode,
+  };
+}
+
+/** @param {Omit<ActiveSessionV1, "version"> & { version?: number }} data */
+export function saveActiveSession(data) {
+  if (!data.questionOrders?.length) {
+    clearActiveSession();
+    return;
+  }
+  const payload = {
+    version: SESSION_VERSION,
+    bankFingerprint: data.bankFingerprint,
+    sectionFilter: data.sectionFilter,
+    questionOrders: data.questionOrders,
+    index: data.index,
+    answers: data.answers,
+    examMode: !!data.examMode,
+  };
+  try {
+    localStorage.setItem(SESSION_KEY, JSON.stringify(payload));
+  } catch (e) {
+    console.warn("quiz-storage: could not save active session", e);
+  }
+}
+
+export function clearActiveSession() {
+  try {
+    localStorage.removeItem(SESSION_KEY);
+  } catch {
+    /* ignore */
+  }
 }

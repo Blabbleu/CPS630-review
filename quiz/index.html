@@ -60,12 +60,35 @@
 
           <p id="load-error" class="status-banner bad hidden" role="alert"></p>
 
+          <div id="resume-panel" class="card hidden" style="margin-bottom: 2rem" aria-live="polite">
+            <p class="label-md" style="margin-bottom: 0.5rem">Session in progress</p>
+            <p id="resume-summary" class="meta-muted" style="margin-bottom: 1rem"></p>
+            <div class="btn-row" style="margin-top: 0">
+              <button type="button" class="btn btn-primary" id="btn-resume">Resume</button>
+              <button type="button" class="btn btn-secondary" id="btn-discard-session">
+                Discard session
+              </button>
+            </div>
+          </div>
+
           <div class="btn-row">
             <button type="button" class="btn btn-secondary js-theme-toggle" id="btn-theme-start">
               Theme: Auto
             </button>
             <button type="button" class="btn btn-primary" id="btn-start">Begin</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="btn-start-exam"
+              title="100 random questions from the current filter. No correct/incorrect until you submit."
+            >
+              Exam mode (100)
+            </button>
           </div>
+          <p class="meta-muted" style="margin-top: 1rem; max-width: 36rem; line-height: 1.45">
+            Exam mode picks up to 100 random questions (or fewer if the filter has less). You can change answers
+            before submitting; results and explanations appear only after submit.
+          </p>
         </div>
 
         <div id="view-quiz" class="hidden">
@@ -91,6 +114,9 @@
                   </div>
                 </div>
                 <div class="nav-toolbar quiz-sticky-nav" role="toolbar" aria-label="Question navigation">
+                  <button type="button" class="btn btn-secondary" id="btn-quiz-home" title="Save and return to home">
+                    Home
+                  </button>
                   <button type="button" class="btn btn-secondary" id="btn-prev" title="Previous question">
                     Previous
                   </button>
