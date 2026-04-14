@@ -4,8 +4,8 @@ import { initTheme } from "./theme.js";
 const els = {
   section: document.getElementById("flash-section"),
   card: document.getElementById("flash-card"),
-  cardInner: document.getElementById("flash-card-inner"),
   sectionLabel: document.getElementById("flash-section-label"),
+  sectionLabelAnswer: document.getElementById("flash-section-label-answer"),
   question: document.getElementById("flash-question"),
   answerText: document.getElementById("flash-answer-text"),
   progress: document.getElementById("flash-progress"),
@@ -40,6 +40,13 @@ function getCorrectChoiceText(question) {
   return `${choice.id}. ${choice.text}`;
 }
 
+function formatSectionLabel(rawSection) {
+  const cleaned = (rawSection || "")
+    .replace(/^section\s*\d+\s*:\s*/i, "")
+    .trim();
+  return cleaned || "General";
+}
+
 function renderCard() {
   const q = deck[cardIndex];
   if (!q) {
@@ -52,7 +59,9 @@ function renderCard() {
 
   els.empty.classList.add("hidden");
   els.card.classList.remove("hidden");
-  els.sectionLabel.textContent = q.section || "General";
+  const sectionLabel = formatSectionLabel(q.section);
+  els.sectionLabel.textContent = sectionLabel;
+  if (els.sectionLabelAnswer) els.sectionLabelAnswer.textContent = sectionLabel;
   els.question.textContent = q.question;
   els.answerText.textContent = getCorrectChoiceText(q);
   els.card.classList.toggle("is-flipped", revealed);

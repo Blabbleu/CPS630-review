@@ -68,15 +68,20 @@
         <article id="flash-card" class="flash-card" tabindex="0" aria-live="polite">
           <div id="flash-card-inner" class="flash-card-inner">
             <section class="card flash-face flash-face-front">
-              <p class="label-md" style="margin-bottom: 0.75rem">Question</p>
-              <p id="flash-section-label" class="label-md" style="margin-bottom: 0.75rem"></p>
-              <h2 id="flash-question" class="title-lg"></h2>
-              <p class="meta-muted" style="margin: 0">Click card to flip</p>
+              <div class="flash-face-body">
+                <p class="label-md" style="margin-bottom: 0.75rem">Question</p>
+                <p id="flash-section-label" class="label-md" style="margin-bottom: 0.75rem"></p>
+                <h2 id="flash-question" class="title-lg"></h2>
+                <p class="meta-muted" style="margin: 0">Click card to flip</p>
+              </div>
             </section>
             <section class="card flash-face flash-face-back">
-              <p class="label-md" style="margin-bottom: 0.75rem">Answer</p>
-              <p id="flash-answer-text" class="lede" style="margin: 0; max-width: 100%"></p>
-              <p class="meta-muted" style="margin-top: 1.25rem; margin-bottom: 0">Click card to flip back</p>
+              <div class="flash-face-body">
+                <p class="label-md" style="margin-bottom: 0.75rem">Answer</p>
+                <p id="flash-section-label-answer" class="label-md" style="margin-bottom: 0.75rem"></p>
+                <p id="flash-answer-text" class="title-lg" style="margin: 0; max-width: 100%"></p>
+                <p class="meta-muted" style="margin-top: 1.25rem; margin-bottom: 0">Click card to flip back</p>
+              </div>
             </section>
           </div>
         </article>
