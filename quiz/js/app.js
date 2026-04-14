@@ -17,6 +17,38 @@ import {
 } from "./quiz-storage.js";
 import { initTheme } from "./theme.js";
 
+/** @param {number} seed */
+function mulberry32(seed) {
+  let a = seed >>> 0;
+  return function () {
+    let t = (a += 0x6d2b79f5);
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/**
+ * Deterministic permutation of choice indices for display (same order every time for this question).
+ * @param {number} choiceCount
+ * @param {number | string} orderSeed
+ */
+function getShuffledChoiceIndices(choiceCount, orderSeed) {
+  const indices = Array.from({ length: choiceCount }, (_, i) => i);
+  const seed =
+    (typeof orderSeed === "string"
+      ? [...orderSeed].reduce((acc, ch) => (Math.imul(acc, 31) + ch.charCodeAt(0)) | 0, 0)
+      : Number(orderSeed)) >>> 0;
+  const rng = mulberry32(seed || 1);
+  for (let i = choiceCount - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    const tmp = indices[i];
+    indices[i] = indices[j];
+    indices[j] = tmp;
+  }
+  return indices;
+}
+
 const els = {
   progressFill: document.getElementById("progress-fill"),
   progressMeta: document.getElementById("progress-meta"),
@@ -162,32 +194,50 @@ function renderQuestion() {
   els.feedback.textContent = "";
 
   const answered = answers[q.order];
+  const perm = getShuffledChoiceIndices(q.choices.length, q.order);
 
-  q.choices.forEach((choice, i) => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "option-btn";
-    btn.dataset.index = String(i);
-    const key = document.createElement("span");
-    key.className = "option-key";
-    key.textContent = `${choice.id}.`;
-    btn.appendChild(key);
-    btn.appendChild(document.createTextNode(choice.text));
+  els.options.className = "options options--radio";
+
+  perm.forEach((originalIndex) => {
+    const choice = q.choices[originalIndex];
+    const label = document.createElement("label");
+    label.className = "option-radio option-btn";
+    label.dataset.originalIndex = String(originalIndex);
+
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = `q-${q.order}`;
+    input.value = String(originalIndex);
+    input.className = "option-radio-input";
+
+    const text = document.createElement("span");
+    text.className = "option-radio-text";
+    text.textContent = choice.text;
+
+    label.appendChild(input);
+    label.appendChild(text);
 
     if (examMode) {
-      btn.addEventListener("click", () => selectOption(i));
-      if (answered && answered.choiceIndex === i) {
-        btn.classList.add("exam-selected");
+      if (answered && answered.choiceIndex === originalIndex) {
+        input.checked = true;
+        label.classList.add("exam-selected");
       }
+      input.addEventListener("change", () => {
+        if (input.checked) selectOption(originalIndex);
+      });
     } else if (answered) {
-      btn.disabled = true;
-      if (choice.correct) btn.classList.add("correct-reveal");
-      if (answered.choiceIndex === i && !choice.correct) btn.classList.add("incorrect-reveal");
-      if (answered.choiceIndex === i && choice.correct) btn.classList.add("selected");
+      input.disabled = true;
+      input.checked = answered.choiceIndex === originalIndex;
+      if (choice.correct) label.classList.add("correct-reveal");
+      if (answered.choiceIndex === originalIndex && !choice.correct) label.classList.add("incorrect-reveal");
+      if (answered.choiceIndex === originalIndex && choice.correct) label.classList.add("selected");
     } else {
-      btn.addEventListener("click", () => selectOption(i));
+      input.addEventListener("change", () => {
+        if (input.checked) selectOption(originalIndex);
+      });
     }
-    els.options.appendChild(btn);
+
+    els.options.appendChild(label);
   });
 
   if (!examMode && answered) {
@@ -226,14 +276,15 @@ function selectOption(choiceIndex) {
     return;
   }
 
-  const buttons = els.options.querySelectorAll(".option-btn");
-  buttons.forEach((btn, i) => {
-    btn.disabled = true;
-    const c = q.choices[i];
-    if (c.correct) btn.classList.add("correct-reveal");
-    if (i === choiceIndex) {
-      btn.classList.add("selected");
-      if (!c.correct) btn.classList.add("incorrect-reveal");
+  els.options.querySelectorAll(".option-radio.option-btn").forEach((label) => {
+    const oi = Number(label.dataset.originalIndex);
+    const c = q.choices[oi];
+    const input = label.querySelector("input");
+    if (input) input.disabled = true;
+    if (c.correct) label.classList.add("correct-reveal");
+    if (oi === choiceIndex) {
+      label.classList.add("selected");
+      if (!c.correct) label.classList.add("incorrect-reveal");
     }
   });
 
@@ -630,8 +681,12 @@ async function init() {
         const q = queue[index];
         if (!q) return;
         if (!examMode && answers[q.order]) return;
+        const perm = getShuffledChoiceIndices(q.choices.length, q.order);
         const map = { "1": 0, "2": 1, "3": 2, "4": 3 };
-        if (e.key in map) selectOption(map[e.key]);
+        if (e.key in map) {
+          const displayIdx = map[e.key];
+          if (displayIdx < perm.length) selectOption(perm[displayIdx]);
+        }
       },
       true
     );
