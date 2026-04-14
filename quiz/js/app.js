@@ -478,7 +478,9 @@ function showResults() {
       return {
         question: q.question,
         yourChoiceId: yours?.id || null,
+        yourChoiceText: yours?.text || null,
         correctChoiceId: right?.id || null,
+        correctChoiceText: right?.text || null,
       };
     })
     .filter(Boolean);
@@ -595,9 +597,13 @@ function renderSavedResults() {
     const detail = document.createElement("p");
     detail.style.fontSize = "0.9375rem";
     detail.style.color = "color-mix(in srgb, var(--on_surface) 70%, transparent)";
-    detail.innerHTML = m.yourChoiceId
-      ? `Your answer: <strong>${m.yourChoiceId}</strong>. Correct: <strong>${m.correctChoiceId}</strong>.`
-      : `Correct: <strong>${m.correctChoiceId}</strong>.`;
+    const yourLabel = m.yourChoiceId
+      ? `<strong>${m.yourChoiceId}.</strong> ${escapeHtml(m.yourChoiceText || "")}`
+      : null;
+    const correctLabel = `<strong>${m.correctChoiceId}.</strong> ${escapeHtml(m.correctChoiceText || "")}`;
+    detail.innerHTML = yourLabel
+      ? `Your answer: ${yourLabel}<br />Correct answer: ${correctLabel}`
+      : `Correct answer: ${correctLabel}`;
     item.appendChild(stem);
     item.appendChild(detail);
     els.reviewList.appendChild(item);
