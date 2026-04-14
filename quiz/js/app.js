@@ -14,8 +14,23 @@ import {
   saveActiveSession,
   loadActiveSession,
   clearActiveSession,
+  saveLastResults,
+  loadLastResults,
 } from "./quiz-storage.js";
 import { initTheme } from "./theme.js";
+
+const PAGE_HOME = "home";
+const PAGE_QUIZ = "quiz";
+const PAGE_REVIEW = "review";
+
+function getPageKind() {
+  const path = window.location.pathname.toLowerCase();
+  if (path.endsWith("/quiz.html")) return PAGE_QUIZ;
+  if (path.endsWith("/review.html")) return PAGE_REVIEW;
+  return PAGE_HOME;
+}
+
+const currentPage = getPageKind();
 
 /** @param {number} seed */
 function mulberry32(seed) {
@@ -173,6 +188,13 @@ function pickRandomQuestions(questions, count) {
 
 function setFinishButtonLabel() {
   els.btnFinish.textContent = examMode ? "Submit exam" : "Finish session";
+}
+
+function navigateTo(page) {
+  const target = page === PAGE_QUIZ ? "quiz.html" : page === PAGE_REVIEW ? "review.html" : "home.html";
+  const here = window.location.pathname.toLowerCase();
+  if (here.endsWith(`/${target}`)) return;
+  window.location.assign(target);
 }
 
 function persistSession() {
@@ -423,14 +445,6 @@ function showResults() {
     });
   }
 
-  els.viewQuiz.classList.add("hidden");
-  els.viewResults.classList.remove("hidden");
-
-  const restartBtn = els.viewResults.querySelector('[data-results-action="restart"]');
-  if (restartBtn) {
-    restartBtn.textContent = examMode ? "New exam" : "Practice again";
-  }
-
   let correctN = 0;
   let answeredCount = 0;
   queue.forEach((q) => {
@@ -441,43 +455,6 @@ function showResults() {
   const total = queue.length;
   const pct = total ? Math.round((correctN / total) * 100) : 0;
   const skipped = total - answeredCount;
-  els.scoreValue.textContent = `${pct}%`;
-  let summary = `${correctN} of ${total} correct`;
-  if (skipped > 0) summary += ` · ${skipped} not answered`;
-  summary += ` · Time ${formatElapsedSeconds(elapsedSec)}.`;
-  els.scoreSummary.textContent = summary;
-
-  els.reviewList.innerHTML = "";
-  queue.forEach((q) => {
-    const a = answers[q.order];
-    if (a?.correct) return;
-    const item = document.createElement("div");
-    item.className = "review-item card";
-    const stem = document.createElement("p");
-    stem.className = "title-lg";
-    stem.style.marginBottom = "0.75rem";
-    stem.textContent = q.question;
-    const detail = document.createElement("p");
-    detail.style.fontSize = "0.9375rem";
-    detail.style.color = "color-mix(in srgb, var(--on_surface) 70%, transparent)";
-    const right = q.choices.find((c) => c.correct);
-    const yours = a ? q.choices[a.choiceIndex] : null;
-    detail.innerHTML = yours
-      ? `Your answer: <strong>${yours.id}</strong>. Correct: <strong>${right?.id}</strong>.`
-      : `Correct: <strong>${right?.id}</strong>.`;
-    item.appendChild(stem);
-    item.appendChild(detail);
-    els.reviewList.appendChild(item);
-  });
-
-  if (!els.reviewList.children.length) {
-    const p = document.createElement("p");
-    p.className = "lede";
-    p.style.marginBottom = 0;
-    p.textContent = "No misses — strong work.";
-    els.reviewList.appendChild(p);
-  }
-
   els.progressFill.style.width = "100%";
   els.progressMeta.textContent = "Complete";
 
@@ -491,6 +468,31 @@ function showResults() {
     correct: correctN,
     pct,
   });
+
+  const misses = queue
+    .map((q) => {
+      const a = answers[q.order];
+      if (a?.correct) return null;
+      const right = q.choices.find((c) => c.correct);
+      const yours = a ? q.choices[a.choiceIndex] : null;
+      return {
+        question: q.question,
+        yourChoiceId: yours?.id || null,
+        correctChoiceId: right?.id || null,
+      };
+    })
+    .filter(Boolean);
+
+  saveLastResults({
+    examMode,
+    scorePct: pct,
+    correct: correctN,
+    total,
+    skipped,
+    elapsedSec,
+    misses,
+  });
+  navigateTo(PAGE_REVIEW);
 }
 
 function restart() {
@@ -505,6 +507,11 @@ function restart() {
   }
   index = 0;
   answers = {};
+  if (currentPage !== PAGE_QUIZ) {
+    persistSession();
+    navigateTo(PAGE_QUIZ);
+    return;
+  }
   els.viewResults.classList.add("hidden");
   els.viewQuiz.classList.remove("hidden");
   startQuizTimer();
@@ -560,22 +567,61 @@ function escapeHtml(s) {
   return d.innerHTML;
 }
 
+function renderSavedResults() {
+  const saved = loadLastResults();
+  if (!saved || !els.viewResults) {
+    navigateTo(PAGE_HOME);
+    return;
+  }
+  examMode = !!saved.examMode;
+
+  const restartBtn = els.viewResults.querySelector('[data-results-action="restart"]');
+  if (restartBtn) restartBtn.textContent = saved.examMode ? "New exam" : "Practice again";
+
+  els.scoreValue.textContent = `${saved.scorePct}%`;
+  let summary = `${saved.correct} of ${saved.total} correct`;
+  if (saved.skipped > 0) summary += ` · ${saved.skipped} not answered`;
+  summary += ` · Time ${formatElapsedSeconds(saved.elapsedSec || 0)}.`;
+  els.scoreSummary.textContent = summary;
+
+  els.reviewList.innerHTML = "";
+  (saved.misses || []).forEach((m) => {
+    const item = document.createElement("div");
+    item.className = "review-item card";
+    const stem = document.createElement("p");
+    stem.className = "title-lg";
+    stem.style.marginBottom = "0.75rem";
+    stem.textContent = m.question;
+    const detail = document.createElement("p");
+    detail.style.fontSize = "0.9375rem";
+    detail.style.color = "color-mix(in srgb, var(--on_surface) 70%, transparent)";
+    detail.innerHTML = m.yourChoiceId
+      ? `Your answer: <strong>${m.yourChoiceId}</strong>. Correct: <strong>${m.correctChoiceId}</strong>.`
+      : `Correct: <strong>${m.correctChoiceId}</strong>.`;
+    item.appendChild(stem);
+    item.appendChild(detail);
+    els.reviewList.appendChild(item);
+  });
+
+  if (!els.reviewList.children.length) {
+    const p = document.createElement("p");
+    p.className = "lede";
+    p.style.marginBottom = 0;
+    p.textContent = "No misses — strong work.";
+    els.reviewList.appendChild(p);
+  }
+}
+
 function goHome() {
   examMode = false;
   setFinishButtonLabel();
-  els.viewResults.classList.add("hidden");
-  els.viewStart.classList.remove("hidden");
-  renderProgressPanel();
-  updateResumePanel();
+  navigateTo(PAGE_HOME);
 }
 
 function goHomeFromQuiz() {
   pauseQuizTimerInterval();
   persistSession();
-  els.viewQuiz.classList.add("hidden");
-  els.viewStart.classList.remove("hidden");
-  renderProgressPanel();
-  updateResumePanel();
+  navigateTo(PAGE_HOME);
 }
 
 async function init() {
@@ -603,6 +649,47 @@ async function init() {
       els.sectionFilter.appendChild(opt);
     });
 
+    if (currentPage === PAGE_HOME) {
+      els.viewStart.classList.remove("hidden");
+      els.viewQuiz.classList.add("hidden");
+      els.viewResults.classList.add("hidden");
+    } else if (currentPage === PAGE_QUIZ) {
+      const s = loadActiveSession();
+      if (!s || s.bankFingerprint !== bankFingerprint(bankData)) {
+        navigateTo(PAGE_HOME);
+        return;
+      }
+      const rebuilt = rebuildQueueFromOrders(bankData, s.questionOrders);
+      if (!rebuilt.length) {
+        resetQuizTimer();
+        clearActiveSession();
+        navigateTo(PAGE_HOME);
+        return;
+      }
+      queue = rebuilt;
+      index = Math.min(s.index, queue.length - 1);
+      answers = { ...s.answers };
+      sectionFilterValue = s.sectionFilter || "";
+      examMode = !!s.examMode;
+      setFinishButtonLabel();
+      els.sectionFilter.value = sectionFilterValue;
+      els.viewStart.classList.add("hidden");
+      els.viewQuiz.classList.remove("hidden");
+      els.viewResults.classList.add("hidden");
+      buildJumpNav();
+      renderQuestion();
+      startQuizTimer(s.timerStartedAt ?? Date.now());
+      persistSession();
+    } else if (currentPage === PAGE_REVIEW) {
+      els.viewStart.classList.add("hidden");
+      els.viewQuiz.classList.add("hidden");
+      els.viewResults.classList.remove("hidden");
+      renderSavedResults();
+      els.progressFill.style.width = "100%";
+      els.progressMeta.textContent = "Complete";
+      resetQuizTimer();
+    }
+
     els.btnStart.addEventListener("click", () => {
       const section = els.sectionFilter.value;
       sectionFilterValue = section;
@@ -615,11 +702,8 @@ async function init() {
       index = 0;
       answers = {};
       startQuizTimer();
-      els.viewStart.classList.add("hidden");
-      els.viewQuiz.classList.remove("hidden");
-      buildJumpNav();
-      renderQuestion();
       persistSession();
+      navigateTo(PAGE_QUIZ);
     });
 
     els.btnStartExam.addEventListener("click", () => {
@@ -635,11 +719,8 @@ async function init() {
       answers = {};
       setFinishButtonLabel();
       startQuizTimer();
-      els.viewStart.classList.add("hidden");
-      els.viewQuiz.classList.remove("hidden");
-      buildJumpNav();
-      renderQuestion();
       persistSession();
+      navigateTo(PAGE_QUIZ);
     });
 
     els.btnResume.addEventListener("click", () => {
@@ -648,26 +729,7 @@ async function init() {
         updateResumePanel();
         return;
       }
-      const rebuilt = rebuildQueueFromOrders(bankData, s.questionOrders);
-      if (!rebuilt.length) {
-        resetQuizTimer();
-        clearActiveSession();
-        updateResumePanel();
-        return;
-      }
-      queue = rebuilt;
-      index = Math.min(s.index, queue.length - 1);
-      answers = { ...s.answers };
-      sectionFilterValue = s.sectionFilter || "";
-      examMode = !!s.examMode;
-      setFinishButtonLabel();
-      els.sectionFilter.value = sectionFilterValue;
-      els.viewStart.classList.add("hidden");
-      els.viewQuiz.classList.remove("hidden");
-      buildJumpNav();
-      renderQuestion();
-      startQuizTimer(s.timerStartedAt ?? Date.now());
-      persistSession();
+      navigateTo(PAGE_QUIZ);
     });
 
     els.btnDiscardSession.addEventListener("click", () => {

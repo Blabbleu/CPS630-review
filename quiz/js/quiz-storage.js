@@ -4,6 +4,7 @@
 
 const STORAGE_KEY = "cps630_quiz_progress";
 const SESSION_KEY = "cps630_quiz_active_session";
+const LAST_RESULTS_KEY = "cps630_quiz_last_results";
 const MAX_ATTEMPTS = 40;
 const CURRENT_VERSION = 1;
 const SESSION_VERSION = 1;
@@ -170,6 +171,7 @@ export function getRecentAttempts(limit = 8) {
 export function clearAll() {
   saveState(defaultState());
   clearActiveSession();
+  clearLastResults();
 }
 
 /**
@@ -244,6 +246,36 @@ export function saveActiveSession(data) {
 export function clearActiveSession() {
   try {
     localStorage.removeItem(SESSION_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
+/** @param {object} data */
+export function saveLastResults(data) {
+  try {
+    localStorage.setItem(LAST_RESULTS_KEY, JSON.stringify(data));
+  } catch (e) {
+    console.warn("quiz-storage: could not save last results", e);
+  }
+}
+
+/** @returns {any | null} */
+export function loadLastResults() {
+  let raw = null;
+  try {
+    raw = localStorage.getItem(LAST_RESULTS_KEY);
+  } catch {
+    return null;
+  }
+  const parsed = safeParse(raw);
+  if (!parsed || typeof parsed !== "object") return null;
+  return parsed;
+}
+
+export function clearLastResults() {
+  try {
+    localStorage.removeItem(LAST_RESULTS_KEY);
   } catch {
     /* ignore */
   }
