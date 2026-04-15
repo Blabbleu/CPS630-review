@@ -780,6 +780,8 @@ async function init() {
       ) {
         return;
       }
+      const typed = window.prompt('Type "CLEAR" to confirm deleting all saved progress.');
+      if (typed !== "CLEAR") return;
       clearAll();
       resetQuizTimer();
       ensureBankContext(bank);
