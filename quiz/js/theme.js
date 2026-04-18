@@ -1,5 +1,5 @@
 /**
- * Theme: Auto (system) / Light / Dark — persisted as cps630-theme.
+ * Theme switch: Light / Dark, persisted as cps630-theme.
  * Pair with html.theme-dark in atelier.css (DESIGN-DARK.md tokens).
  */
 const STORAGE_KEY = "cps630-theme";
@@ -24,49 +24,46 @@ export function applyTheme() {
   document.documentElement.style.colorScheme = dark ? "dark" : "light";
 }
 
-/** Cycles: Auto → Light → Dark → Auto */
-export function cycleTheme() {
-  const p = getThemePreference();
-  if (p === null) {
-    localStorage.setItem(STORAGE_KEY, "light");
-  } else if (p === "light") {
-    localStorage.setItem(STORAGE_KEY, "dark");
-  } else {
-    localStorage.removeItem(STORAGE_KEY);
-  }
+/** @param {boolean} dark */
+export function setThemeDark(dark) {
+  localStorage.setItem(STORAGE_KEY, dark ? "dark" : "light");
   applyTheme();
-  updateThemeButtons();
+  updateThemeControls();
 }
 
-function themeButtonLabel() {
-  const p = getThemePreference();
-  if (p === null) return "Theme: Auto";
-  if (p === "light") return "Theme: Light";
-  return "Theme: Dark";
-}
+function updateThemeControls() {
+  const isDark = resolvedIsDark();
 
-function updateThemeButtons() {
-  const label = themeButtonLabel();
-  const mode = getThemePreference() ?? "auto";
+  document.querySelectorAll(".js-theme-switch").forEach((input) => {
+    if (!(input instanceof HTMLInputElement)) return;
+    input.checked = isDark;
+    input.setAttribute("aria-label", `Theme switch. ${isDark ? "Dark" : "Light"} mode active.`);
+  });
+
+  // Backward compatibility if any legacy theme buttons remain.
   document.querySelectorAll(".js-theme-toggle").forEach((btn) => {
-    btn.textContent = label;
-    btn.setAttribute(
-      "aria-label",
-      `Color theme ${mode}. Current appearance is ${resolvedIsDark() ? "dark" : "light"}. Press to cycle auto, light, dark.`
-    );
+    btn.textContent = isDark ? "Theme: Dark" : "Theme: Light";
+    btn.setAttribute("aria-label", `Color theme ${isDark ? "dark" : "light"}.`);
   });
 }
+
 
 export function initTheme() {
   applyTheme();
-  updateThemeButtons();
-  document.querySelectorAll(".js-theme-toggle").forEach((btn) => {
-    btn.addEventListener("click", () => cycleTheme());
+  updateThemeControls();
+  document.querySelectorAll(".js-theme-switch").forEach((input) => {
+    if (!(input instanceof HTMLInputElement)) return;
+    input.addEventListener("change", () => setThemeDark(input.checked));
   });
+
+  // Backward compatibility if any legacy theme buttons remain.
+  document.querySelectorAll(".js-theme-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => setThemeDark(!resolvedIsDark()));
+  });
+
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-    if (getThemePreference() === null) {
-      applyTheme();
-      updateThemeButtons();
-    }
+    if (getThemePreference() !== null) return;
+    applyTheme();
+    updateThemeControls();
   });
 }

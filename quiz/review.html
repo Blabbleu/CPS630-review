@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6DMQSBHCW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-T6DMQSBHCW");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CPS630 — Review</title>
+    <script>
+      (function () {
+        try {
+          var k = "cps630-theme";
+          var p = localStorage.getItem(k);
+          var dark =
+            p === "dark" || (p !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("theme-dark", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="css/atelier.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <main class="main-stage">
+        <div id="view-start">
+          <p class="brand-mark">The Academic Atelier</p>
+          <h1 class="display-intro">Cognitive sanctuary</h1>
+          <p class="lede">
+            A focused study session drawn from your course question bank. Choose a section or
+            attempt the full set.
+          </p>
+
+          <div class="card" style="margin-bottom: 2rem">
+            <p class="label-md" style="margin-bottom: 0.75rem">Question bank</p>
+            <p id="bank-title" class="title-lg" style="margin-bottom: 0.5rem">Loading…</p>
+            <p id="bank-count" class="meta-muted">—</p>
+          </div>
+
+          <div class="card" style="margin-bottom: 2rem">
+            <label class="label-md" for="section-filter" style="display: block; margin-bottom: 0.75rem"
+              >Filter by section</label
+            >
+            <select id="section-filter" class="field-select">
+              <option value="">All sections</option>
+            </select>
+          </div>
+
+          <div id="stats-panel" class="card stats-panel hidden" style="margin-bottom: 2rem" aria-live="polite">
+            <p class="label-md" style="margin-bottom: 0.75rem">Your progress (this browser)</p>
+            <div id="stats-summary" class="stats-summary"></div>
+            <div id="stats-attempts-wrap" class="stats-attempts-wrap hidden">
+              <p class="label-md" style="margin-top: 1.25rem; margin-bottom: 0.5rem">Recent attempts</p>
+              <ul id="stats-attempts" class="stats-attempts"></ul>
+            </div>
+            <div class="btn-row" style="margin-top: 1.25rem; margin-bottom: 0">
+              <button type="button" class="btn btn-secondary" id="btn-clear-storage">
+                Clear saved progress
+              </button>
+            </div>
+          </div>
+
+          <p id="load-error" class="status-banner bad hidden" role="alert"></p>
+
+          <div id="resume-panel" class="card hidden" style="margin-bottom: 2rem" aria-live="polite">
+            <p class="label-md" style="margin-bottom: 0.5rem">Session in progress</p>
+            <p id="resume-summary" class="meta-muted" style="margin-bottom: 1rem"></p>
+            <div class="btn-row" style="margin-top: 0">
+              <button type="button" class="btn btn-primary" id="btn-resume">Resume</button>
+              <button type="button" class="btn btn-secondary" id="btn-discard-session">
+                Discard session
+              </button>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <label class="theme-switch" for="theme-switch-start">
+              <span class="theme-switch-label">Dark mode</span>
+              <input id="theme-switch-start" type="checkbox" class="js-theme-switch" />
+              <span class="theme-switch-track" aria-hidden="true"></span>
+            </label>
+            <button type="button" class="btn btn-primary" id="btn-start">Begin</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="btn-start-exam"
+              title="100 random questions from the current filter. No correct/incorrect until you submit."
+            >
+              Exam mode (100)
+            </button>
+          </div>
+          <p class="meta-muted" style="margin-top: 1rem; max-width: 36rem; line-height: 1.45">
+            Exam mode picks up to 100 random questions (or fewer if the filter has less). You can change answers
+            before submitting; results and explanations appear only after submit.
+          </p>
+        </div>
+
+        <div id="view-quiz" class="hidden">
+          <div class="quiz-outer">
+            <div class="quiz-head-sticky">
+              <div class="card quiz-sticky-card">
+                <div class="quiz-sticky-top" aria-label="Quiz progress">
+                  <div class="brand-row">
+                    <span class="brand-mark">CPS630</span>
+                    <div class="brand-row-end">
+                      <span
+                        id="quiz-timer"
+                        class="quiz-timer"
+                        role="timer"
+                        aria-live="off"
+                        title="Elapsed time"
+                        >0:00</span>
+                      <span id="progress-meta" class="meta-muted"></span>
+                      <label class="theme-switch theme-switch-compact" for="theme-switch-quiz">
+                        <span class="theme-switch-label">Dark mode</span>
+                        <input id="theme-switch-quiz" type="checkbox" class="js-theme-switch" />
+                        <span class="theme-switch-track" aria-hidden="true"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="progress-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div id="progress-fill" class="progress-fill"></div>
+                  </div>
+                </div>
+                <div class="nav-toolbar quiz-sticky-nav" role="toolbar" aria-label="Question navigation">
+                  <button type="button" class="btn btn-secondary" id="btn-quiz-home" title="Save and return to home">
+                    Home
+                  </button>
+                  <button type="button" class="btn btn-secondary" id="btn-prev" title="Previous question">
+                    Previous
+                  </button>
+                  <button type="button" class="btn btn-secondary" id="btn-next" title="Next question">
+                    Next
+                  </button>
+                  <button type="button" class="btn btn-primary" id="btn-finish">Finish session</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="quiz-columns">
+              <div class="quiz-body quiz-main-column">
+            <p id="question-tag" class="label-md" style="margin-bottom: 0.75rem"></p>
+            <p id="question-history" class="question-history meta-muted hidden" aria-live="polite"></p>
+            <h2 id="question-stem" class="title-lg"></h2>
+
+            <div id="options" class="options"></div>
+
+            <div
+              id="feedback"
+              class="status-banner hidden"
+              role="status"
+              aria-live="polite"
+            ></div>
+
+              </div>
+              <aside class="quiz-sidebar" aria-label="Question index">
+                <div class="quiz-sidebar-inner">
+                  <p class="label-md" style="margin-bottom: 0.75rem">Jump to question</p>
+                  <div
+                    id="question-jump"
+                    class="question-jump question-jump--side"
+                    role="navigation"
+                  ></div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+
+        <div id="view-results" class="hidden view-results">
+          <div class="results-body">
+            <section class="card results-hero">
+              <p class="brand-mark">Results</p>
+              <p id="score-value" class="score-ring"></p>
+              <p id="score-summary" class="results-summary"></p>
+              <p class="results-footer-hint meta-muted">
+                <a href="#results-actions-panel" class="results-skip-link">Jump to actions</a>
+                <span class="results-footer-hint-sep"> · </span>
+                Home and Practice again stay fixed at the bottom while you scroll.
+              </p>
+            </section>
+
+            <h2 class="title-lg results-review-heading">Review misses</h2>
+            <div id="review-list" class="results-review-list"></div>
+
+            <div
+              id="results-actions-panel"
+              class="results-footer"
+              role="toolbar"
+              aria-label="Results actions"
+              data-results-footer
+              tabindex="-1"
+            >
+              <div class="results-footer-inner">
+                <button type="button" class="btn btn-primary" data-results-action="home">Home</button>
+                <button type="button" class="btn btn-secondary" data-results-action="restart">
+                  Practice again
+                </button>
+                <label class="theme-switch" for="theme-switch-results">
+                  <span class="theme-switch-label">Dark mode</span>
+                  <input id="theme-switch-results" type="checkbox" class="js-theme-switch" />
+                  <span class="theme-switch-track" aria-hidden="true"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

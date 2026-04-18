@@ -20,6 +20,10 @@
   --tertiary: #6b5a4a;
   --success: #1b6e3a;
   --error: #b3261e;
+  /* Filled destructive — lighter red, still readable with white label */
+  --danger-fill: #d14b42;
+  --on-danger-fill: #ffffff;
+  --danger-fill-hover: #b33f37;
   --ambient-shadow: 0 20px 40px rgba(25, 28, 29, 0.06);
   --card-raise:
     0 1px 2px rgba(25, 28, 29, 0.05),
@@ -209,7 +213,8 @@ body {
     display: none;
   }
 
-  .quiz-head-sticky .btn-theme-compact {
+  .quiz-head-sticky .btn-theme-compact,
+  .quiz-head-sticky .theme-switch-compact {
     display: none;
   }
 
@@ -299,6 +304,67 @@ body {
   font-size: 0.8125rem;
   padding: 0.35rem 0.65rem;
   flex-shrink: 0;
+}
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.8125rem;
+  color: color-mix(in srgb, var(--on_surface) 82%, transparent);
+}
+
+.theme-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.theme-switch-label {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.theme-switch-track {
+  width: 2.6rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  background: var(--surface-container-high);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--on_surface) 16%, transparent);
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.theme-switch-track::after {
+  content: "";
+  position: absolute;
+  top: 0.14rem;
+  left: 0.16rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: var(--surface-container-lowest);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+  transition: transform 0.2s ease;
+}
+
+.theme-switch input:checked + .theme-switch-track {
+  background: color-mix(in srgb, var(--primary) 26%, var(--surface-container-high));
+}
+
+.theme-switch input:checked + .theme-switch-track::after {
+  transform: translateX(1.08rem);
+}
+
+.theme-switch input:focus-visible + .theme-switch-track {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.theme-switch-compact .theme-switch-label {
+  display: none;
 }
 
 .quiz-timer {
@@ -393,6 +459,16 @@ body {
   color: color-mix(in srgb, var(--on_surface) 50%, transparent);
 }
 
+.section-label {
+  display: block;
+  width: fit-content;
+  padding: 0.28rem 0.6rem;
+  border-radius: var(--radius-full);
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, var(--surface-container-lowest));
+  letter-spacing: 0.06em;
+}
+
 /* —— Surfaces —— */
 .card {
   background: var(--surface-container-lowest);
@@ -419,6 +495,13 @@ body {
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 .btn:disabled {
   opacity: 0.45;
   cursor: not-allowed;
@@ -441,6 +524,16 @@ body {
 
 .btn-secondary:hover:not(:disabled) {
   background: color-mix(in srgb, var(--surface-container-high) 85%, var(--on_surface));
+}
+
+.btn-danger {
+  background: var(--danger-fill);
+  color: var(--on-danger-fill);
+  box-shadow: var(--ambient-shadow);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: var(--danger-fill-hover);
 }
 
 .btn-row {
@@ -597,11 +690,20 @@ body {
 /* —— Results —— */
 .view-results {
   position: relative;
-  padding-bottom: 5.5rem;
+  padding-bottom: 6.25rem;
 }
 
 .results-body {
+  display: grid;
+  gap: 1.5rem;
   padding-bottom: 1rem;
+}
+
+.results-hero {
+  background: color-mix(in srgb, var(--surface-container-lowest) 84%, var(--surface-container-high));
+  box-shadow: var(--card-raise);
+  outline: none;
+  padding-bottom: 1.5rem;
 }
 
 .results-footer-hint {
@@ -626,8 +728,12 @@ body {
 }
 
 .results-review-heading {
-  margin-bottom: 1rem;
-  margin-top: 1.75rem;
+  margin: 0;
+}
+
+.results-review-list {
+  display: grid;
+  gap: 1.5rem;
 }
 
 .results-footer {
@@ -641,6 +747,7 @@ body {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: var(--shadow-footer-up);
+  outline: none;
 }
 
 .results-footer-inner {
@@ -668,11 +775,14 @@ body {
 }
 
 .review-item {
-  padding: 1.25rem 0;
+  padding: 1.35rem 1.4rem 1.5rem;
+  margin: 0;
+  background: color-mix(in srgb, var(--surface-container-lowest) 80%, var(--surface-container-high));
+  outline: none;
 }
 
 .review-item + .review-item {
-  margin-top: 1.5rem;
+  margin-top: 0;
 }
 
 .hidden {
@@ -895,6 +1005,112 @@ select.field-select:focus {
   margin-bottom: 0.2rem;
 }
 
+/* —— Flash cards —— */
+.flash-layout {
+  max-width: 52rem;
+}
+
+.flash-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.flash-controls {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* 3D context lives here. Faces will be `.card` elements so the whole visible box rotates. */
+.flash-card {
+  position: relative;
+  perspective: 1200px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.flash-card-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 420ms ease;
+  height: clamp(13.5rem, 38vh, 22rem);
+  min-height: 12rem;
+  will-change: transform;
+}
+
+.flash-card.is-flipped .flash-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flash-face {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  padding: 0; /* Override default `.card` padding to let `.flash-face-body` handle scrolling */
+  margin: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(1px);
+}
+
+/* Prevent global `.card + .card` spacing from offsetting the back face. */
+.flash-card-inner > .flash-face + .flash-face {
+  margin-top: 0;
+}
+
+.flash-face-body {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1.25rem 1.35rem 1.35rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.flash-face-body::after {
+  content: "flip";
+  position: absolute;
+  top: 0.9rem;
+  right: 0.95rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--on_surface) 48%, transparent);
+}
+
+.flash-hint {
+  text-align: center;
+  margin: 0.6rem 0 0;
+}
+
+.flash-face .title-lg {
+  margin-bottom: 1rem;
+}
+
+.flash-face-back {
+  transform: rotateY(180deg) translateZ(1px);
+}
+
+.flash-nav-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.flash-arrow-btn {
+  min-width: 3.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
 @media (min-width: 640px) {
   .main-stage {
     padding-left: 2rem;
@@ -921,6 +1137,10 @@ html.theme-dark {
   --tertiary: #a08b7a;
   --success: #81c995;
   --error: #f28b82;
+  /* Dark UI: lighter red fill */
+  --danger-fill: #ef6a65;
+  --on-danger-fill: #ffffff;
+  --danger-fill-hover: #e8554f;
   --ambient-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
   --card-raise:
     0 1px 2px rgba(0, 0, 0, 0.35),
