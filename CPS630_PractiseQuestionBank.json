@@ -766,17 +766,17 @@
         },
         {
           "id": "B",
-          "text": "JavaScript Runtime Transfer",
+          "text": "JavaScript Runtime Execution and Secure Transport",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Remote Entity State Transfer",
+          "text": "Remote Entity Serialization and Transport",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Resource Exchange Standard Transfer",
+          "text": "Resource Exchange and Session Transfer",
           "correct": false
         }
       ],
@@ -796,17 +796,17 @@
         },
         {
           "id": "B",
-          "text": "XML only",
+          "text": "Verbose XML documents for every API response",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Plain text only",
+          "text": "Unstructured plain-text bodies without a schema",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Binary protobuf",
+          "text": "Binary protobuf payloads without JSON fallbacks",
           "correct": false
         }
       ],
@@ -821,22 +821,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Microservices (distributed services)",
+          "text": "Microservices (small services deployed and scaled independently)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Single monolithic binary only",
+          "text": "One monolithic binary that bundles every subsystem together",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Pure peer-to-peer with no servers",
+          "text": "Pure peer-to-peer mesh with no central servers at all",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Desktop-only two-tier",
+          "text": "Classic desktop-only two-tier client/database setup",
           "correct": false
         }
       ],
@@ -851,22 +851,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "A blank line (CRLF) between headers and body",
+          "text": "A blank line (CRLF) between the header block and the body",
           "correct": true
         },
         {
           "id": "B",
-          "text": "A semicolon",
+          "text": "A semicolon placed after the last header line",
           "correct": false
         },
         {
           "id": "C",
-          "text": "A tab character",
+          "text": "A tab character that marks where headers end",
           "correct": false
         },
         {
           "id": "D",
-          "text": "The string '---'",
+          "text": "The literal delimiter '---' between headers and body",
           "correct": false
         }
       ],
@@ -886,17 +886,17 @@
         },
         {
           "id": "B",
-          "text": "Accept",
+          "text": "Accept (content types the client prefers for responses)",
           "correct": false
         },
         {
           "id": "C",
-          "text": "User-Agent",
+          "text": "User-Agent (client software identification string)",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Cache-Control",
+          "text": "Cache-Control (freshness and caching directives)",
           "correct": false
         }
       ],
@@ -911,22 +911,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Retry using idempotent/safe semantics (e.g., GET) or documented retry tokens",
+          "text": "Retry with idempotent methods or documented safe-retry tokens (not blind POST repeats)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Always blindly retry POST",
+          "text": "Always resend the same POST without checking server outcome",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Disable all retries",
+          "text": "Disable retries entirely for reliability",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Switch to FTP",
+          "text": "Fall back to FTP for the same operation",
           "correct": false
         }
       ],
@@ -946,17 +946,17 @@
         },
         {
           "id": "B",
-          "text": "Putting all code in one file",
+          "text": "Collapse routing, data access, and UI into one unmaintainable file",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Avoiding APIs",
+          "text": "Remove HTTP APIs so only static files exist",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Client-only logic with no server",
+          "text": "Run all business rules exclusively inside the browser cache",
           "correct": false
         }
       ],
@@ -976,17 +976,17 @@
         },
         {
           "id": "B",
-          "text": "Only on the server CPU",
+          "text": "Only inside the origin database cluster",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Only on a CDN edge node",
+          "text": "Only on CDN edges with no JavaScript execution",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Only inside the database",
+          "text": "Only within server-side batch cron containers",
           "correct": false
         }
       ],
@@ -1006,17 +1006,17 @@
         },
         {
           "id": "B",
-          "text": "1xx",
+          "text": "1xx informational responses",
           "correct": false
         },
         {
           "id": "C",
-          "text": "3xx",
+          "text": "3xx redirection responses",
           "correct": false
         },
         {
           "id": "D",
-          "text": "4xx",
+          "text": "4xx client error responses",
           "correct": false
         }
       ],
@@ -1031,22 +1031,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "REST-style resource identification (each URL names one resource)",
+          "text": "REST-style resource IDs—each URL names one resource",
           "correct": true
         },
         {
           "id": "B",
-          "text": "One CSS class per HTML file",
+          "text": "Mapping one CSS class token to a single HTML file",
           "correct": false
         },
         {
           "id": "C",
-          "text": "One database per browser tab",
+          "text": "Assigning one database instance per browser tab",
           "correct": false
         },
         {
           "id": "D",
-          "text": "One IP address per API call",
+          "text": "Issuing one IP address for every REST verb",
           "correct": false
         }
       ],
@@ -1066,17 +1066,17 @@
         },
         {
           "id": "B",
-          "text": "/getUserOrders",
+          "text": "RPC-style action endpoint `/getUserOrders`",
           "correct": false
         },
         {
           "id": "C",
-          "text": "/api/action?user=42",
+          "text": "Opaque query string `/api/action?user=42`",
           "correct": false
         },
         {
           "id": "D",
-          "text": "/users/orders/42/all",
+          "text": "Ambiguous path `/users/orders/42/all`",
           "correct": false
         }
       ],
@@ -1091,22 +1091,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Lexical `this` (inherits from enclosing scope) and concise syntax",
+          "text": "Lexical `this` from the enclosing scope; concise function syntax",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Always hoisted like `var`",
+          "text": "Hoisted like `var` declarations across the whole file",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Cannot return values",
+          "text": "Cannot return expressions from single-line bodies",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Requires the `new` keyword",
+          "text": "Must always be constructed with the `new` keyword",
           "correct": false
         }
       ],
@@ -1126,17 +1126,17 @@
         },
         {
           "id": "B",
-          "text": "Fixed-width relational rows only",
+          "text": "Strict fixed-width relational tuples only",
           "correct": false
         },
         {
           "id": "C",
-          "text": "CSV tables only",
+          "text": "Comma-separated spreadsheet tables only",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Plain .txt logs",
+          "text": "Unstructured plain-text log lines only",
           "correct": false
         }
       ],
@@ -1156,17 +1156,17 @@
         },
         {
           "id": "B",
-          "text": "IntelliJ only",
+          "text": "JetBrains IntelliJ as the exclusive required editor",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Windows Notepad",
+          "text": "Notepad without extensions or debugging",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Xcode only",
+          "text": "Apple Xcode regardless of project stack",
           "correct": false
         }
       ],
@@ -1211,22 +1211,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Central hosting, updates for all users, access via browser",
+          "text": "Hosted centrally; updates roll out to every tenant over HTTPS",
           "correct": true
         },
         {
           "id": "B",
-          "text": "They require USB installation",
+          "text": "Require USB installers for each workstation",
           "correct": false
         },
         {
           "id": "C",
-          "text": "They cannot use HTTPS",
+          "text": "Cannot be deployed behind TLS termination",
           "correct": false
         },
         {
           "id": "D",
-          "text": "They are offline-only",
+          "text": "Offline-only kiosk bundles with no sync",
           "correct": false
         }
       ],
@@ -1246,17 +1246,17 @@
         },
         {
           "id": "B",
-          "text": "GET",
+          "text": "GET for safe reads of resource representations",
           "correct": false
         },
         {
           "id": "C",
-          "text": "DELETE",
+          "text": "DELETE for resource removal operations",
           "correct": false
         },
         {
           "id": "D",
-          "text": "TRACE",
+          "text": "TRACE for diagnostic loopback (rarely enabled)",
           "correct": false
         }
       ],
@@ -1271,22 +1271,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "The customer (diner)",
+          "text": "The patron ordering and receiving the meal",
           "correct": true
         },
         {
           "id": "B",
-          "text": "The chef",
+          "text": "The chef executing recipes in the kitchen",
           "correct": false
         },
         {
           "id": "C",
-          "text": "The ingredients",
+          "text": "The raw ingredients stored in inventory",
           "correct": false
         },
         {
           "id": "D",
-          "text": "The menu board",
+          "text": "The printed menu board listing dishes",
           "correct": false
         }
       ],
@@ -1301,22 +1301,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Harder to scale/deploy independently; failure or change can affect the whole system",
+          "text": "Harder to scale or deploy pieces independently; failures/changes ripple system-wide",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Too many small Git branches",
+          "text": "Forces an excessive number of small Git feature branches",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Cannot use MongoDB",
+          "text": "Prevents MongoDB from being used as the document store",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Cannot render HTML",
+          "text": "Prevents the server from returning HTML responses",
           "correct": false
         }
       ],
@@ -1331,22 +1331,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "The same end state when an operation is applied multiple times with the same inputs",
+          "text": "Applying the same operation multiple times leaves the same end state",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Only GET requests allowed",
+          "text": "Only GET requests are permitted on public APIs",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Means 'encrypted'",
+          "text": "The property that payloads are always encrypted end-to-end",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Requires WebSockets",
+          "text": "A requirement that all traffic uses WebSockets",
           "correct": false
         }
       ],
@@ -1361,22 +1361,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "The server-side application layer (Express/Node routes and services)",
+          "text": "Express/Node routes and services (the server application tier)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Only the MongoDB shell",
+          "text": "Only the interactive MongoDB shell session",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Only React components",
+          "text": "Only React component render functions",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Only CSS files",
+          "text": "Only stylesheets and static asset folders",
           "correct": false
         }
       ],
@@ -1391,22 +1391,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Binding to a port and accepting TCP connections (e.g., `listen`)",
+          "text": "Bind to a TCP port and accept connections (e.g., `listen`)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Reading local files only",
+          "text": "Poll the filesystem for new files continuously",
           "correct": false
         },
         {
           "id": "C",
-          "text": "DNS lookup only",
+          "text": "Perform DNS lookups for every static asset",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Opening DevTools",
+          "text": "Open Chrome DevTools on the developer machine",
           "correct": false
         }
       ],
@@ -1421,22 +1421,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "One HTML shell; client-side routing updates the view without full page reloads",
+          "text": "One HTML shell; client-side routing swaps views without full page reloads",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Every click reloads the entire page from the server",
+          "text": "Every navigation performs a full server round-trip HTML reload",
           "correct": false
         },
         {
           "id": "C",
-          "text": "No JavaScript is used",
+          "text": "A deployment with zero JavaScript on the client",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Runs only as a native mobile binary",
+          "text": "A mobile app distributed only as a native binary package",
           "correct": false
         }
       ],
@@ -1451,22 +1451,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Credentials (often `Bearer <token>` or scheme-specific auth data)",
+          "text": "Credential material such as `Bearer <token>` or scheme-specific auth data",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Only the request body",
+          "text": "A copy of the JSON request body duplicated in headers",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Only cookies from 1990s specs",
+          "text": "Legacy cookie names from obsolete HTTP specifications only",
           "correct": false
         },
         {
           "id": "D",
-          "text": "The user's screen resolution",
+          "text": "Client display metadata like resolution and color depth",
           "correct": false
         }
       ],
@@ -1481,22 +1481,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "The authoritative server-side store (often the database behind the API)",
+          "text": "The authoritative server-side store (typically the DB behind the API)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "The browser cache only",
+          "text": "Whatever is newest in the browser tab cache",
           "correct": false
         },
         {
           "id": "C",
-          "text": "localStorage on each device",
+          "text": "localStorage snapshots on each user device",
           "correct": false
         },
         {
           "id": "D",
-          "text": "The user's printed notes",
+          "text": "Printed reference sheets maintained by the user",
           "correct": false
         }
       ],
@@ -2266,17 +2266,17 @@
         },
         {
           "id": "B",
-          "text": "Match between system and the real world",
+          "text": "Match between system terminology and the user's mental model",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Aesthetic and minimalist design",
+          "text": "Aesthetic and minimalist presentation of information",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Help and documentation",
+          "text": "Help and documentation that is easy to search",
           "correct": false
         }
       ],
@@ -2296,17 +2296,17 @@
         },
         {
           "id": "B",
-          "text": "Recognition rather than recall",
+          "text": "Recognition rather than recall of objects and actions",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Flexibility and efficiency of use",
+          "text": "Flexibility and efficiency for expert shortcuts",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Consistency and standards",
+          "text": "Consistency and adherence to platform standards",
           "correct": false
         }
       ],
@@ -2321,22 +2321,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Show only relevant information; avoid irrelevant or rarely needed content",
+          "text": "Keep interfaces minimal—show what users need, hide noise",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Add as many animations as possible",
+          "text": "Add motion and transitions on every control regardless of task",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Maximize color count",
+          "text": "Maximize decorative color palettes for brand presence",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Hide all navigation",
+          "text": "Remove navigation affordances to reduce visual clutter",
           "correct": false
         }
       ],
@@ -2356,7 +2356,7 @@
         },
         {
           "id": "B",
-          "text": "Google",
+          "text": "Alphabet / Google",
           "correct": false
         },
         {
@@ -2381,22 +2381,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "A syntax extension for writing HTML-like markup inside JavaScript",
+          "text": "HTML-like markup embedded directly inside JavaScript",
           "correct": true
         },
         {
           "id": "B",
-          "text": "A CSS preprocessor",
+          "text": "A CSS preprocessor that runs at build time",
           "correct": false
         },
         {
           "id": "C",
-          "text": "A SQL dialect",
+          "text": "A SQL dialect for JSON columns",
           "correct": false
         },
         {
           "id": "D",
-          "text": "A MongoDB query operator",
+          "text": "A MongoDB aggregation operator family",
           "correct": false
         }
       ],
@@ -2416,17 +2416,17 @@
         },
         {
           "id": "B",
-          "text": "class",
+          "text": "class (identical to HTML global attribute spelling)",
           "correct": false
         },
         {
           "id": "C",
-          "text": "id",
+          "text": "id (duplicate of HTML id attribute)",
           "correct": false
         },
         {
           "id": "D",
-          "text": "style",
+          "text": "style (inline CSS string only, never objects)",
           "correct": false
         }
       ],
@@ -2441,22 +2441,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Tags must be properly closed; void elements must be self-closing where required",
+          "text": "Tags must close correctly; void elements self-close where required",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Omit all closing tags",
+          "text": "Omit closing tags whenever the parser can guess",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Use only HTML4 rules",
+          "text": "Follow legacy HTML4 rules even when JSX forbids them",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Attributes are not allowed",
+          "text": "Disallow attributes on host elements entirely",
           "correct": false
         }
       ],
@@ -2471,22 +2471,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "A fast frontend build tool and dev server (commonly used with React)",
+          "text": "Fast ESM dev server and bundler (commonly paired with React)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "A relational database",
+          "text": "A relational database engine for analytics",
           "correct": false
         },
         {
           "id": "C",
-          "text": "A CSS framework",
+          "text": "A component-only styling framework with no build step",
           "correct": false
         },
         {
           "id": "D",
-          "text": "A unit-testing runner only",
+          "text": "A dedicated runner that executes only snapshot tests",
           "correct": false
         }
       ],
@@ -2506,17 +2506,17 @@
         },
         {
           "id": "B",
-          "text": "Hyper Media Resource",
+          "text": "Hypermedia resource negotiation protocol",
           "correct": false
         },
         {
           "id": "C",
-          "text": "High Memory Recovery",
+          "text": "High-memory recovery mode in Vite",
           "correct": false
         },
         {
           "id": "D",
-          "text": "HTTP Method Registry",
+          "text": "HTTP method registry maintenance tool",
           "correct": false
         }
       ],
@@ -2531,22 +2531,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Read-only inputs passed from parent to child components",
+          "text": "Read-only inputs flowing from parent to child components",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Global variables only",
+          "text": "Mutable globals shared across the entire bundle",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Database connection strings",
+          "text": "Encrypted database connection strings in props",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Private encryption keys",
+          "text": "Private signing keys embedded in JSX trees",
           "correct": false
         }
       ],
@@ -2561,22 +2561,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Accidental taps because targets are too small or too close together",
+          "text": "Miss-taps when touch targets are cramped or crowded",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Only slow Wi-Fi",
+          "text": "Latency caused exclusively by slow Wi-Fi radios",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Only desktop monitors",
+          "text": "Issues that appear only on large desktop panels",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Only physical keyboards",
+          "text": "Problems limited to hardware QWERTY keyboards",
           "correct": false
         }
       ],
@@ -2591,22 +2591,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "About 44×44 CSS pixels (common accessibility guideline)",
+          "text": "About 44×44 CSS pixels (common WCAG-style touch target guidance)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "10×10 pixels",
+          "text": "Roughly 10×10 CSS pixels for dense data tables",
           "correct": false
         },
         {
           "id": "C",
-          "text": "200×200 pixels minimum always",
+          "text": "At least 200×200 CSS pixels for every interactive control",
           "correct": false
         },
         {
           "id": "D",
-          "text": "No minimum exists",
+          "text": "There is no agreed minimum; platforms vary randomly",
           "correct": false
         }
       ],
@@ -2626,17 +2626,17 @@
         },
         {
           "id": "B",
-          "text": "filter()",
+          "text": "filter() returning a subset without transforming elements",
           "correct": false
         },
         {
           "id": "C",
-          "text": "forEach()",
+          "text": "forEach() executing side effects without returning arrays",
           "correct": false
         },
         {
           "id": "D",
-          "text": "find()",
+          "text": "find() returning the first element matching a predicate",
           "correct": false
         }
       ],
@@ -2651,22 +2651,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "A concise function syntax; `this` is lexically inherited from the enclosing scope",
+          "text": "Concise syntax; `this` is lexically bound like surrounding code",
           "correct": true
         },
         {
           "id": "B",
-          "text": "A Java class constructor",
+          "text": "A Java constructor invoked from JSX props",
           "correct": false
         },
         {
           "id": "C",
-          "text": "A MongoDB index type",
+          "text": "A MongoDB compound index definition keyword",
           "correct": false
         },
         {
           "id": "D",
-          "text": "A React class lifecycle hook",
+          "text": "A deprecated React class component lifecycle hook",
           "correct": false
         }
       ],
@@ -2681,22 +2681,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "A component must return one root element (or a Fragment)",
+          "text": "Return a single root node (often via `<React.Fragment>`)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Only one text node allowed",
+          "text": "Allow only one literal text child inside JSX",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Props are forbidden",
+          "text": "Forbid passing props from parent components",
           "correct": false
         },
         {
           "id": "D",
-          "text": "State cannot be used",
+          "text": "Disallow hooks or state inside function components",
           "correct": false
         }
       ],
@@ -2716,17 +2716,17 @@
         },
         {
           "id": "B",
-          "text": "SOLID",
+          "text": "SOLID (five OO design principles)",
           "correct": false
         },
         {
           "id": "C",
-          "text": "DRY",
+          "text": "DRY (Don't Repeat Yourself)",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Big Design Up Front only",
+          "text": "Big Design Up Front for every feature",
           "correct": false
         }
       ],
@@ -2746,17 +2746,17 @@
         },
         {
           "id": "B",
-          "text": "Do Repeat Yourself",
+          "text": "Do Repeat Yourself on purpose",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Data Reference Yield",
+          "text": "Data Reference Yield pattern",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Dynamic Resource Yield",
+          "text": "Dynamic Resource Yield protocol",
           "correct": false
         }
       ],
@@ -2771,22 +2771,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "High-level code depended directly on low-level concrete classes (hard to swap implementations)",
+          "text": "High-level modules depended on concrete low-level classes (hard to swap)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Too many colors in the UI",
+          "text": "Too many accent colors in the marketing landing page",
           "correct": false
         },
         {
           "id": "C",
-          "text": "React was not installed",
+          "text": "React dependencies missing from package.json",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Wrong database password",
+          "text": "Incorrect database password in a `.env` file",
           "correct": false
         }
       ],
@@ -2806,17 +2806,17 @@
         },
         {
           "id": "B",
-          "text": "Singleton",
+          "text": "Singleton (single shared instance lifecycle)",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Factory Method only",
+          "text": "Factory Method creational pattern only",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Observer only",
+          "text": "Observer behavioral notification pattern only",
           "correct": false
         }
       ],
@@ -2836,17 +2836,17 @@
         },
         {
           "id": "B",
-          "text": "A debugger pause point",
+          "text": "A debugger instruction that pauses JavaScript on a source line",
           "correct": false
         },
         {
           "id": "C",
-          "text": "A Git branch",
+          "text": "A long-lived Git integration branch for releases",
           "correct": false
         },
         {
           "id": "D",
-          "text": "A MongoDB lock",
+          "text": "A MongoDB collection-level write lock",
           "correct": false
         }
       ],
@@ -2866,17 +2866,17 @@
         },
         {
           "id": "B",
-          "text": "rem",
+          "text": "rem (root em, relative to document font size)",
           "correct": false
         },
         {
           "id": "C",
-          "text": "px",
+          "text": "px (absolute CSS pixels)",
           "correct": false
         },
         {
           "id": "D",
-          "text": "vw",
+          "text": "vw (percentage of viewport width)",
           "correct": false
         }
       ],
@@ -2896,17 +2896,17 @@
         },
         {
           "id": "B",
-          "text": "A lowercase letter",
+          "text": "A lowercase letter (reserved for intrinsic DOM tags)",
           "correct": false
         },
         {
           "id": "C",
-          "text": "A leading underscore only",
+          "text": "A leading underscore for private identifiers",
           "correct": false
         },
         {
           "id": "D",
-          "text": "A dollar sign only",
+          "text": "A dollar sign prefix for codegen utilities",
           "correct": false
         }
       ],
@@ -2921,22 +2921,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "A runtime error (TypeError: Assignment to constant variable)",
+          "text": "A thrown TypeError: assignment to a constant binding",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Silent success",
+          "text": "Silent reassignment without errors",
           "correct": false
         },
         {
           "id": "C",
-          "text": "The variable becomes `let`",
+          "text": "Automatic promotion of the binding to `let`",
           "correct": false
         },
         {
           "id": "D",
-          "text": "The value is deleted",
+          "text": "Deletion of the identifier from the scope chain",
           "correct": false
         }
       ],
@@ -2951,22 +2951,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Easier maintenance, testing, and parallel work on layers",
+          "text": "Easier maintenance, testing, and parallel work across layers",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Forces one giant file",
+          "text": "Forces all logic into a single unmaintainable file",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Removes the need for APIs",
+          "text": "Removes the need for any HTTP API surface",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Eliminates the View",
+          "text": "Eliminates the presentation layer entirely",
           "correct": false
         }
       ],
@@ -2986,17 +2986,17 @@
         },
         {
           "id": "B",
-          "text": "Visibility of system status",
+          "text": "Visibility of current system status at a glance",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Recognition rather than recall",
+          "text": "Recognition rather than recall of prior actions",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Help users recognize, diagnose, and recover from errors",
+          "text": "Error recovery once mistakes already occurred",
           "correct": false
         }
       ],
@@ -3766,17 +3766,17 @@
         },
         {
           "id": "B",
-          "text": "Always slower than logging",
+          "text": "Always slower than printf-style logging to stdout",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Cannot inspect variables",
+          "text": "Cannot inspect live variables when execution pauses",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Cannot be used in browsers",
+          "text": "Unsupported in evergreen desktop browsers",
           "correct": false
         }
       ],
@@ -3796,17 +3796,17 @@
         },
         {
           "id": "B",
-          "text": "Step into every function call",
+          "text": "Always step into nested function bodies line by line",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Stop the entire browser",
+          "text": "Terminate every browser tab immediately",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Skip all breakpoints",
+          "text": "Ignore every breakpoint until the next full reload",
           "correct": false
         }
       ],
@@ -3826,17 +3826,17 @@
         },
         {
           "id": "B",
-          "text": "Elements",
+          "text": "Elements panel for DOM/CSS inspection",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Network",
+          "text": "Network waterfall for HTTP timing",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Application",
+          "text": "Application storage for cookies and caches",
           "correct": false
         }
       ],
@@ -3856,17 +3856,17 @@
         },
         {
           "id": "B",
-          "text": "Lighthouse only",
+          "text": "Lighthouse audits for performance budgets only",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Webpack only",
+          "text": "Webpack bundle analyzer exclusively",
           "correct": false
         },
         {
           "id": "D",
-          "text": "MongoDB Compass",
+          "text": "MongoDB Compass for document browsing",
           "correct": false
         }
       ],
@@ -3881,22 +3881,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "The requested URL/resource was not found on the server",
+          "text": "The server could not locate the requested URL or resource",
           "correct": true
         },
         {
           "id": "B",
-          "text": "The server process crashed",
+          "text": "The Node process exited unexpectedly",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Authentication failed",
+          "text": "Authentication or authorization was rejected",
           "correct": false
         },
         {
           "id": "D",
-          "text": "CORS blocked the stylesheet only",
+          "text": "CORS blocked only stylesheet MIME types",
           "correct": false
         }
       ],
@@ -3911,22 +3911,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "The server / backend application",
+          "text": "The backend application or infrastructure failed",
           "correct": true
         },
         {
           "id": "B",
-          "text": "The user's GPU driver",
+          "text": "A faulty GPU driver on the client machine",
           "correct": false
         },
         {
           "id": "C",
-          "text": "The DNS resolver only",
+          "text": "DNS misconfiguration for the apex domain only",
           "correct": false
         },
         {
           "id": "D",
-          "text": "The IDE theme",
+          "text": "IDE color theme incompatibility",
           "correct": false
         }
       ],
@@ -3941,22 +3941,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Two perspectives catch issues faster and share knowledge",
+          "text": "Two reviewers spot defects faster and transfer tacit knowledge",
           "correct": true
         },
         {
           "id": "B",
-          "text": "It is always slower",
+          "text": "Always slower than solo debugging with prints",
           "correct": false
         },
         {
           "id": "C",
-          "text": "It is not allowed in industry",
+          "text": "Disallowed under most enterprise SDLC policies",
           "correct": false
         },
         {
           "id": "D",
-          "text": "It removes the need for tests",
+          "text": "Eliminates automated testing requirements entirely",
           "correct": false
         }
       ],
@@ -3971,22 +3971,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "An npm script / CLI command defined in package.json",
+          "text": "npm script entry executed via the package.json `scripts` map",
           "correct": true
         },
         {
           "id": "B",
-          "text": "A JavaScript keyword",
+          "text": "Reserved JavaScript keyword introduced in ES2020",
           "correct": false
         },
         {
           "id": "C",
-          "text": "An HTTP status code",
+          "text": "Standard HTTP status family for redirects",
           "correct": false
         },
         {
           "id": "D",
-          "text": "A MongoDB aggregation stage",
+          "text": "MongoDB `$lookup` aggregation stage alias",
           "correct": false
         }
       ],
@@ -4001,22 +4001,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Debug sidebar / Run and Debug view (Call Stack panel) while execution is paused",
+          "text": "Run and Debug sidebar → Call Stack while execution is paused",
           "correct": true
         },
         {
           "id": "B",
-          "text": "The Source Control tab only",
+          "text": "Source Control graph view exclusively",
           "correct": false
         },
         {
           "id": "C",
-          "text": "The Extensions marketplace",
+          "text": "Extensions marketplace search panel",
           "correct": false
         },
         {
           "id": "D",
-          "text": "The Terminal font settings",
+          "text": "Integrated terminal font and theme settings",
           "correct": false
         }
       ],
@@ -4031,22 +4031,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "A defect that reappears after a fix, or old behavior breaking after new changes",
+          "text": "Old bugs return or existing features break after new changes",
           "correct": true
         },
         {
           "id": "B",
-          "text": "A new feature shipped to production",
+          "text": "A brand-new customer-facing capability shipped on schedule",
           "correct": false
         },
         {
           "id": "C",
-          "text": "The first bug ever filed",
+          "text": "The very first defect ticket opened on a repo",
           "correct": false
         },
         {
           "id": "D",
-          "text": "A successful deployment",
+          "text": "A deployment pipeline that finished without errors",
           "correct": false
         }
       ],
@@ -4066,17 +4066,17 @@
         },
         {
           "id": "B",
-          "text": "403",
+          "text": "403 Forbidden (authenticated but not permitted)",
           "correct": false
         },
         {
           "id": "C",
-          "text": "404",
+          "text": "404 Not Found (missing resource)",
           "correct": false
         },
         {
           "id": "D",
-          "text": "500",
+          "text": "500 Internal Server Error (server fault)",
           "correct": false
         }
       ],
@@ -4091,22 +4091,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Machine-parseable logs with consistent fields (e.g., JSON, levels, correlation IDs)",
+          "text": "Machine-readable logs (JSON fields, levels, correlation IDs)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Printing only emojis",
+          "text": "Console output that contains only emoji markers",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Logging only to paper",
+          "text": "Handwritten operator notes stored off-machine",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Disabling all timestamps",
+          "text": "Log streams with all timestamps stripped for privacy",
           "correct": false
         }
       ],
@@ -4121,22 +4121,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Add or update regression tests and verify the fix does not break other behavior",
+          "text": "Add/update regression tests and verify adjacent behavior still passes",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Delete all logs permanently",
+          "text": "Delete every log statement permanently from history",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Never tell teammates",
+          "text": "Skip communicating the fix to teammates or reviewers",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Skip QA",
+          "text": "Bypass QA because the patch was one line",
           "correct": false
         }
       ],
@@ -4156,17 +4156,17 @@
         },
         {
           "id": "B",
-          "text": "Elements",
+          "text": "Elements tree outline",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Console",
+          "text": "Console REPL for JavaScript",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Sources",
+          "text": "Sources debugger with breakpoints",
           "correct": false
         }
       ],
@@ -4181,22 +4181,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Behavior depends on timing/order of concurrent operations",
+          "text": "Outcome depends on interleaving or ordering of concurrent work",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Only one thread is allowed",
+          "text": "Exactly one OS thread may execute JavaScript",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Only CSS can cause it",
+          "text": "Purely a styling issue in responsive CSS",
           "correct": false
         },
         {
           "id": "D",
-          "text": "It means the race car game",
+          "text": "Nickname for arcade racing mini-games",
           "correct": false
         }
       ],
@@ -4211,22 +4211,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "The field must be present; validation fails if missing",
+          "text": "Field must exist; validation errors if absent or null",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Automatically creates an index",
+          "text": "Automatically builds a unique compound index",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Encrypts the field at rest",
+          "text": "Encrypts the field using AES-256 at rest",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Deletes the document",
+          "text": "Deletes the parent document when empty",
           "correct": false
         }
       ],
@@ -4241,22 +4241,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "PUT or PATCH (often PATCH for partial update)",
+          "text": "PUT or PATCH (PATCH is typical for partial document updates)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "GET",
+          "text": "GET for repeatable reads of the resource state",
           "correct": false
         },
         {
           "id": "C",
-          "text": "HEAD",
+          "text": "HEAD for metadata-only retrieval",
           "correct": false
         },
         {
           "id": "D",
-          "text": "OPTIONS",
+          "text": "OPTIONS describing allowed methods on the route",
           "correct": false
         }
       ],
@@ -4271,22 +4271,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Functions that run in the Express pipeline between request and response",
+          "text": "Functions registered on the Express pipeline between request and response",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Only React components",
+          "text": "React class components returned from route handlers",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Only MongoDB queries",
+          "text": "MongoDB aggregation pipelines executed in the browser",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Only HTML templates",
+          "text": "Static HTML templates with no executable logic",
           "correct": false
         }
       ],
@@ -4301,22 +4301,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Ability to handle growth in data volume and traffic (scale up/out)",
+          "text": "Grow with more data and traffic via scale-up or scale-out strategies",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Only encryption strength",
+          "text": "Measure only symmetric encryption algorithm strength",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Only UI pixel density",
+          "text": "Track pixel density of responsive image assets",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Only single-user mode",
+          "text": "Operate strictly in single-user desktop mode",
           "correct": false
         }
       ],
@@ -4331,22 +4331,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "A stored reference / ObjectId to another document (manual referencing)",
+          "text": "Stored ObjectId / manual references between collections",
           "correct": true
         },
         {
           "id": "B",
-          "text": "A SQL FOREIGN KEY constraint",
+          "text": "Declarative SQL FOREIGN KEY constraints enforced by MongoDB",
           "correct": false
         },
         {
           "id": "C",
-          "text": "A browser cookie",
+          "text": "HTTP cookies interpreted as relational pointers",
           "correct": false
         },
         {
           "id": "D",
-          "text": "A CSS selector",
+          "text": "CSS selectors that join two DOM subtrees",
           "correct": false
         }
       ],
@@ -4366,17 +4366,17 @@
         },
         {
           "id": "B",
-          "text": "?",
+          "text": "? introducing the query string",
           "correct": false
         },
         {
           "id": "C",
-          "text": ";",
+          "text": "; as a legacy parameter delimiter",
           "correct": false
         },
         {
           "id": "D",
-          "text": "#",
+          "text": "# beginning the document fragment",
           "correct": false
         }
       ],
@@ -4396,17 +4396,17 @@
         },
         {
           "id": "B",
-          "text": "Redirect to login only",
+          "text": "Issue a 302 redirect to `/login` unconditionally",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Close the TCP connection without responding",
+          "text": "Half-close the socket without responding",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Return only HTML",
+          "text": "Return only `text/html` bodies",
           "correct": false
         }
       ],
@@ -4421,22 +4421,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "The browser developer console for JavaScript/runtime errors",
+          "text": "Browser DevTools console for runtime or bundler errors",
           "correct": true
         },
         {
           "id": "B",
-          "text": "The database first",
+          "text": "Primary inspection of MongoDB Atlas charts",
           "correct": false
         },
         {
           "id": "C",
-          "text": "The Wi-Fi router",
+          "text": "Consumer Wi-Fi router admin dashboards",
           "correct": false
         },
         {
           "id": "D",
-          "text": "The monitor brightness",
+          "text": "Physical display brightness or night mode toggles",
           "correct": false
         }
       ],
@@ -4451,22 +4451,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Detective / investigator",
+          "text": "Detective / investigator piecing together clues",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Chef",
+          "text": "Executive chef planning nightly specials",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Librarian",
+          "text": "Cataloging librarian sorting media collections",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Pilot",
+          "text": "Commercial airline pilot following checklists only",
           "correct": false
         }
       ],
@@ -4481,22 +4481,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "JavaScript runtime / server hosting the backend API",
+          "text": "JavaScript runtime hosting the backend API (Node)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Only the React front end",
+          "text": "Only the React single-page UI bundle",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Only MongoDB",
+          "text": "Only the MongoDB daemon without middleware",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Only the CSS preprocessor",
+          "text": "Only the Sass/CSS preprocessing toolchain",
           "correct": false
         }
       ],
@@ -5261,22 +5261,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "They are easily stolen in a data breach",
+          "text": "Attackers with a DB dump can read every password instantly",
           "correct": true
         },
         {
           "id": "B",
-          "text": "They make the website slow",
+          "text": "Plain text improves page-load performance metrics",
           "correct": false
         },
         {
           "id": "C",
-          "text": "They are hard to type",
+          "text": "Typing complex passwords becomes ergonomically harder",
           "correct": false
         },
         {
           "id": "D",
-          "text": "They take up too much memory",
+          "text": "Password strings consume excessive disk sectors",
           "correct": false
         }
       ],
@@ -5291,22 +5291,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Untrusted data interpreted as part of a command or query (e.g., SQL/LDAP/OS)",
+          "text": "Untrusted input becomes part of a command or query (SQL/LDAP/OS injection)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Only XSS",
+          "text": "Cross-site scripting in the browser DOM exclusively",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Only physical theft",
+          "text": "Physical theft of developer laptops from the office",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Only DDoS",
+          "text": "Distributed denial-of-service bandwidth floods only",
           "correct": false
         }
       ],
@@ -5326,17 +5326,17 @@
         },
         {
           "id": "B",
-          "text": "Faster CPU on the client",
+          "text": "Guaranteed faster single-threaded CPU execution",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Smaller JPEG files automatically",
+          "text": "Automatic lossless compression for raster images",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Stateless requests only",
+          "text": "Forces every HTTP request to be stateless",
           "correct": false
         }
       ],
@@ -5356,17 +5356,17 @@
         },
         {
           "id": "B",
-          "text": "Header (algorithm)",
+          "text": "Header metadata describing algorithms and token type",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Signature",
+          "text": "Signature bytes verifying integrity",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Footer",
+          "text": "Non-standard footer segment for vendors",
           "correct": false
         }
       ],
@@ -5381,22 +5381,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Testing combined modules or subsystems together (e.g., API + DB)",
+          "text": "Verify combined modules (e.g., API handler + persistence) together",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Testing a single function in isolation",
+          "text": "Exercise one pure function with mocked collaborators",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Manual exploratory testing only",
+          "text": "Ad-hoc exploratory testing without scripts",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Linting only",
+          "text": "Static analysis or lint rules without execution",
           "correct": false
         }
       ],
@@ -5411,22 +5411,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "A fake or stub implementation used to isolate the unit under test",
+          "text": "Test double that stands in for collaborators (mock/stub)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "A real production database",
+          "text": "Production database snapshot restored nightly",
           "correct": false
         },
         {
           "id": "C",
-          "text": "A code smell",
+          "text": "Heuristic linter warning about complexity",
           "correct": false
         },
         {
           "id": "D",
-          "text": "A type of E2E browser",
+          "text": "Headless browser used in nightly E2E suites",
           "correct": false
         }
       ],
@@ -5441,22 +5441,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "End-to-end (E2E) tests",
+          "text": "End-to-end UI journeys across the full stack",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Unit tests",
+          "text": "Fast isolated unit tests with mocked I/O",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Static typing",
+          "text": "Static typing annotations checked at compile time",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Comment coverage",
+          "text": "Comment coverage metrics in CI dashboards",
           "correct": false
         }
       ],
@@ -5476,17 +5476,17 @@
         },
         {
           "id": "B",
-          "text": "Central Internet Code",
+          "text": "Central Internet Configuration Desk",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Client Integration Design",
+          "text": "Client Integration Design board",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Compiled Java Distribution",
+          "text": "Compiled Java Distribution pipeline",
           "correct": false
         }
       ],
@@ -5501,22 +5501,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Re-running tests to ensure new changes did not break existing behavior",
+          "text": "Re-run suites to catch unintended breakage after changes",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Testing only brand-new code",
+          "text": "Test only newly added files and ignore legacy modules",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Deleting old test files",
+          "text": "Delete historical tests to speed up CI",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Running tests once per year",
+          "text": "Schedule automated suites once per fiscal year",
           "correct": false
         }
       ],
@@ -5536,17 +5536,17 @@
         },
         {
           "id": "B",
-          "text": "React Native",
+          "text": "React Native (JavaScript bridge to native widgets)",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Electron",
+          "text": "Electron (Chromium + Node desktop shell)",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Xamarin.Forms",
+          "text": "Xamarin.Forms (C# cross-platform UI toolkit)",
           "correct": false
         }
       ],
@@ -5561,22 +5561,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Refresh the running app's UI quickly after code changes without a full restart",
+          "text": "Refresh UI state quickly after edits without rebuilding the whole app",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Reload the database schema only",
+          "text": "Migrate relational schemas without downtime",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Reinstall node_modules",
+          "text": "Reinstall `node_modules` from scratch on each save",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Rotate the screen",
+          "text": "Rotate device orientation to portrait mode only",
           "correct": false
         }
       ],
@@ -5591,22 +5591,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "The bridge between JavaScript and native platform APIs/modules",
+          "text": "Channel between JS and native modules / platform APIs",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Only WebView rendering",
+          "text": "Dedicated WebView rendering for every RN screen",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Only CSS flexbox",
+          "text": "CSS flexbox polyfills shipped with Metro",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Only REST polling",
+          "text": "Long-polling transport for REST responses",
           "correct": false
         }
       ],
@@ -5621,22 +5621,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Progressive Web Apps (via service workers)",
+          "text": "Progressive Web Apps using service workers for offline caches",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Java applets",
+          "text": "Signed Java applets running inside the browser sandbox",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Adobe Flash",
+          "text": "Adobe Flash projector bundles",
           "correct": false
         },
         {
           "id": "D",
-          "text": "FTP",
+          "text": "Classic FTP directory listings",
           "correct": false
         }
       ],
@@ -5651,22 +5651,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "High memory usage (bundled Chromium per app)",
+          "text": "Each app bundles Chromium—RAM usage stacks quickly",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Cannot display HTML",
+          "text": "Cannot render HTML or CSS surfaces",
           "correct": false
         },
         {
           "id": "C",
-          "text": "No network access",
+          "text": "Disallowed from opening outbound network sockets",
           "correct": false
         },
         {
           "id": "D",
-          "text": "No window chrome",
+          "text": "Ships without any window chrome or title bars",
           "correct": false
         }
       ],
@@ -5681,17 +5681,17 @@
       "choices": [
         {
           "id": "A",
-          "text": "Cryptographic failures / sensitive data exposure (OWASP; naming varies by year)",
+          "text": "Sensitive data exposure / weak cryptography (OWASP cryptographic failures)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Injection only",
+          "text": "Injection flaws only",
           "correct": false
         },
         {
           "id": "C",
-          "text": "XSS only",
+          "text": "Cross-site scripting only",
           "correct": false
         },
         {
@@ -5716,17 +5716,17 @@
         },
         {
           "id": "B",
-          "text": "Symmetric image encryption",
+          "text": "Symmetric encryption of large media blobs",
           "correct": false
         },
         {
           "id": "C",
-          "text": "JWT signing only",
+          "text": "Digital signing algorithm for JWT headers exclusively",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Minifying CSS",
+          "text": "CSS minification and whitespace removal",
           "correct": false
         }
       ],
@@ -5741,22 +5741,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "HTTP (with Upgrade to WebSocket)",
+          "text": "HTTP upgraded via `Upgrade: websocket`",
           "correct": true
         },
         {
           "id": "B",
-          "text": "FTP",
+          "text": "Plain FTP control channel negotiation",
           "correct": false
         },
         {
           "id": "C",
-          "text": "SMTP",
+          "text": "SMTP mail submission handshake",
           "correct": false
         },
         {
           "id": "D",
-          "text": "SSH only",
+          "text": "SSH tunnel setup exclusively",
           "correct": false
         }
       ],
@@ -5771,22 +5771,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "The server does not store session state; claims are self-contained in the token",
+          "text": "Server keeps no session store; claims live inside the signed token",
           "correct": true
         },
         {
           "id": "B",
-          "text": "JWT requires SQL",
+          "text": "JWT storage mandates a SQL backing database",
           "correct": false
         },
         {
           "id": "C",
-          "text": "JWT cannot be signed",
+          "text": "JWT tokens cannot be cryptographically signed",
           "correct": false
         },
         {
           "id": "D",
-          "text": "JWT must be stored only in cookies",
+          "text": "JWT may only live in HttpOnly cookies",
           "correct": false
         }
       ],
@@ -5801,22 +5801,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "npm audit / Snyk / Dependabot (dependency vulnerability tools)",
+          "text": "npm audit, Snyk, Dependabot, or similar dependency scanners",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Prettier",
+          "text": "Prettier formatting presets",
           "correct": false
         },
         {
           "id": "C",
-          "text": "ESLint only",
+          "text": "ESLint style rules without security plugins",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Figma",
+          "text": "Vector design tooling such as Figma",
           "correct": false
         }
       ],
@@ -5831,22 +5831,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Testing based on inputs/outputs without knowing internal implementation",
+          "text": "Specification-based testing using external behavior only",
           "correct": true
         },
         {
           "id": "B",
-          "text": "White-box testing only",
+          "text": "Glass-box testing with full source visibility",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Only unit tests",
+          "text": "Single-function unit tests exclusively",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Only compile-time checks",
+          "text": "Compile-time type checking without execution",
           "correct": false
         }
       ],
@@ -5861,22 +5861,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "A hint of a deeper design problem (symptom, not always a syntax error)",
+          "text": "Surface symptom hinting at deeper design or maintainability issues",
           "correct": true
         },
         {
           "id": "B",
-          "text": "A literal bad smell in the office",
+          "text": "Literal odor complaints about office ventilation",
           "correct": false
         },
         {
           "id": "C",
-          "text": "A virus signature",
+          "text": "Antivirus signature for known malware packers",
           "correct": false
         },
         {
           "id": "D",
-          "text": "A successful build",
+          "text": "Indicator that the latest CI build succeeded",
           "correct": false
         }
       ],
@@ -5891,22 +5891,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Flaky tests, over-mocking, or missing assertions",
+          "text": "Brittle tests, excessive mocks, or weak assertions",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Too much coverage",
+          "text": "Having more than 95% statement coverage",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Too many unit tests",
+          "text": "Maintaining thousands of focused unit tests",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Using TypeScript",
+          "text": "Adopting TypeScript across the repository",
           "correct": false
         }
       ],
@@ -5921,22 +5921,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Designing for people with diverse abilities and contexts",
+          "text": "Design that works for varied abilities, devices, and contexts",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Designing only for one browser",
+          "text": "Optimize layouts exclusively for one evergreen browser",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Maximizing animations",
+          "text": "Maximize decorative animation density",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Avoiding accessibility",
+          "text": "Treat accessibility audits as optional polish",
           "correct": false
         }
       ],
@@ -5951,22 +5951,22 @@
       "choices": [
         {
           "id": "A",
-          "text": "Inspect HTTP requests/responses, status codes, and timing",
+          "text": "Inspect requests/responses, HTTP status codes, and network timing",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Edit SQL tables",
+          "text": "Edit relational tables with SQL autocompletion",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Change OS firewall rules",
+          "text": "Reconfigure host operating system firewall tables",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Compile C++ code",
+          "text": "Compile or link native C++ toolchains",
           "correct": false
         }
       ],
@@ -5986,17 +5986,17 @@
         },
         {
           "id": "B",
-          "text": "Meta File Access",
+          "text": "Managed File Archive service",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Multi-frame API",
+          "text": "Multi-frame animation API",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Main function address",
+          "text": "Main firmware attestation key",
           "correct": false
         }
       ],
@@ -6035,28 +6035,28 @@
     },
     {
       "order": 202,
-      "number": 201,
+      "number": 202,
       "section": "S5: Misc. (Group Management)",
       "question": "Which type of conflict involves disagreements about work content and goals?",
       "choices": [
         {
           "id": "A",
-          "text": "Personal Conflict",
+          "text": "Disagreements about interpersonal style, trust, or personalities",
           "correct": false
         },
         {
           "id": "B",
-          "text": "Relationship Conflict",
+          "text": "Tension rooted in how people relate, not the task definition itself",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Logical Conflict",
+          "text": "Disputes over formal logic proofs in specifications",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Task Conflict",
+          "text": "Disagreements focused on the work goals, priorities, or deliverables",
           "correct": true
         }
       ],
@@ -6065,28 +6065,28 @@
     },
     {
       "order": 203,
-      "number": 202,
+      "number": 203,
       "section": "S5: Misc. (Group Management)",
       "question": "What is a characteristic of \"Relationship Conflict\"?",
       "choices": [
         {
           "id": "A",
-          "text": "Solving technical bugs",
+          "text": "Deep focus on defect triage and patch throughput metrics",
           "correct": false
         },
         {
           "id": "B",
-          "text": "Interpersonal tensions and personality clashes",
+          "text": "Interpersonal friction, personality clashes, or strained working relationships",
           "correct": true
         },
         {
           "id": "C",
-          "text": "Increased team innovation",
+          "text": "Sustained lift in measurable team innovation velocity",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Focus on project milestones",
+          "text": "Alignment conversations strictly about milestone dates",
           "correct": false
         }
       ],
@@ -6095,28 +6095,28 @@
     },
     {
       "order": 204,
-      "number": 203,
+      "number": 204,
       "section": "S5: Misc. (Group Management)",
       "question": "Which conflict type is most likely to reduce team performance and satisfaction?",
       "choices": [
         {
           "id": "A",
-          "text": "Task Conflict",
+          "text": "Task-focused debate about priorities, scope, or technical approach",
           "correct": false
         },
         {
           "id": "B",
-          "text": "Relationship Conflict",
+          "text": "Relationship-driven friction that erodes trust and morale",
           "correct": true
         },
         {
           "id": "C",
-          "text": "Resource Conflict",
+          "text": "Resource scarcity arguments (budget, tools, staffing)",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Process Conflict",
+          "text": "Process disagreements about workflows, roles, or ceremonies",
           "correct": false
         }
       ],
@@ -6125,28 +6125,28 @@
     },
     {
       "order": 205,
-      "number": 204,
+      "number": 205,
       "section": "S5: Misc. (Group Management)",
       "question": "According to Tuckman’s stages, what is the first stage of team development?",
       "choices": [
         {
           "id": "A",
-          "text": "Storming",
+          "text": "Storming (open conflict over roles and leadership)",
           "correct": false
         },
         {
           "id": "B",
-          "text": "Forming",
+          "text": "Forming (initial orientation, polite uncertainty, goals unclear)",
           "correct": true
         },
         {
           "id": "C",
-          "text": "Norming",
+          "text": "Norming (stable norms and cohesion after conflict)",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Performing",
+          "text": "Performing (mature execution toward shared goals)",
           "correct": false
         }
       ],
@@ -6155,28 +6155,28 @@
     },
     {
       "order": 206,
-      "number": 205,
+      "number": 206,
       "section": "S5: Misc. (Group Management)",
       "question": "In which stage of team development do members start to resolve differences and develop symbols of local identity?",
       "choices": [
         {
           "id": "A",
-          "text": "Forming",
+          "text": "Politeness norms forming with little conflict yet",
           "correct": false
         },
         {
           "id": "B",
-          "text": "Performing",
+          "text": "High-performing delivery with no further role negotiation",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Norming",
+          "text": "Norms solidify; cohesion improves after early friction",
           "correct": true
         },
         {
           "id": "D",
-          "text": "Adjourning",
+          "text": "Orderly team wrap-up after project completion",
           "correct": false
         }
       ],
@@ -6185,28 +6185,28 @@
     },
     {
       "order": 207,
-      "number": 206,
+      "number": 207,
       "section": "S5: Misc. (Group Management)",
       "question": "What is the \"Storming\" stage characterized by?",
       "choices": [
         {
           "id": "A",
-          "text": "Conflict and jockeying as roles and approaches clash",
+          "text": "Open conflict as roles, influence, and approaches compete",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Perfect harmony with no disagreements",
+          "text": "Perfect harmony with no disagreements whatsoever",
           "correct": false
         },
         {
           "id": "C",
-          "text": "The team disbands immediately",
+          "text": "Immediate permanent disbanding of the team charter",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Only positive feedback is allowed",
+          "text": "Policy that only positive feedback may be spoken aloud",
           "correct": false
         }
       ],
@@ -6215,28 +6215,28 @@
     },
     {
       "order": 208,
-      "number": 207,
+      "number": 208,
       "section": "S5: Misc. (Group Management)",
       "question": "Which Thomas-Kilmann conflict mode is \"High Assertiveness\" and \"Low Cooperativeness\"?",
       "choices": [
         {
           "id": "A",
-          "text": "Competing",
+          "text": "Competing (assert own position, low cooperation)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Collaborating",
+          "text": "Collaborating (pursue integrative win-win outcomes)",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Avoiding",
+          "text": "Avoiding (withdraw from the conflict)",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Accommodating",
+          "text": "Accommodating (yield to preserve harmony)",
           "correct": false
         }
       ],
@@ -6245,28 +6245,28 @@
     },
     {
       "order": 209,
-      "number": 208,
+      "number": 209,
       "section": "S5: Misc. (Group Management)",
       "question": "What is the \"Collaborating\" mode in conflict management?",
       "choices": [
         {
           "id": "A",
-          "text": "High assertiveness and high cooperativeness; seeking a win-win solution",
+          "text": "High assertiveness and high cooperation toward an integrative solution",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Low assertiveness and low cooperativeness",
+          "text": "Low assertiveness paired with low cooperation (withdrawal)",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Ignore the problem entirely",
+          "text": "Ignore the disagreement entirely without follow-up",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Always compromise without discussion",
+          "text": "Split the difference instantly without exploring interests",
           "correct": false
         }
       ],
@@ -6275,28 +6275,28 @@
     },
     {
       "order": 210,
-      "number": 209,
+      "number": 210,
       "section": "S5: Misc. (Group Management)",
       "question": "Which document outlines communication protocols and role assignments for a team?",
       "choices": [
         {
           "id": "A",
-          "text": "Team charter / team agreement",
+          "text": "Team charter or working agreement (communication, roles, norms)",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Gantt chart only",
+          "text": "Gantt chart that only lists task durations",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Personal resume",
+          "text": "Individual résumé or CV for a single member",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Invoice to the client",
+          "text": "Accounts-payable invoice sent to the client",
           "correct": false
         }
       ],
@@ -6305,28 +6305,28 @@
     },
     {
       "order": 211,
-      "number": 210,
+      "number": 211,
       "section": "S5: Misc. (Group Management)",
       "question": "The \"Compromising\" mode is characterized by what?",
       "choices": [
         {
           "id": "A",
-          "text": "Moderate assertiveness and cooperativeness; both sides give up something",
+          "text": "Moderate assertiveness and cooperation—mutual concessions",
           "correct": true
         },
         {
           "id": "B",
-          "text": "Maximum assertiveness and minimum cooperation",
+          "text": "Maximum assertiveness with almost no cooperation",
           "correct": false
         },
         {
           "id": "C",
-          "text": "Complete avoidance",
+          "text": "Complete withdrawal from negotiation",
           "correct": false
         },
         {
           "id": "D",
-          "text": "Unilateral surrender",
+          "text": "One-sided capitulation without any trade-offs",
           "correct": false
         }
       ],
